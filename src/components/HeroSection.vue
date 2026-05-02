@@ -242,7 +242,6 @@ onBeforeUnmount(() => {
 .hero-decoration-text {
   font-size: 16px;
   font-weight: 700;
-  line-height: 1;
   letter-spacing: 2.222px;
 }
 

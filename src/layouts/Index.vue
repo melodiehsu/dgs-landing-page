@@ -7,12 +7,13 @@
     <main>
       <HeroSection />
 
-      <section
-        id="about"
-        class="about-section"
-      ></section>
+      <div
+        class="page-decoration"
+        aria-hidden="true"
+      ></div>
 
-      <!-- <section>awards</section> -->
+      <About />
+
       <!-- <section>services</section> -->
       <!-- <section>insights</section> -->
       <!-- <section>works</section> -->
@@ -23,15 +24,25 @@
 <script setup lang="ts">
 import HeroSection from '@/components/HeroSection.vue';
 import Navbar from '@/components/Navbar.vue';
+import About from '@/components/About.vue';
 </script>
 
 <style scoped lang="scss">
+.page {
+  position: relative;
+  z-index: 0;
+  background: #f2f2f2;
+}
+
 .site-header {
   position: relative;
   z-index: 20;
 }
 
-.about-section {
-  scroll-margin-top: 100px;
+.page-decoration {
+  width: 1px;
+  height: 86px;
+  margin: 0 auto;
+  background: #808080;
 }
 </style>
