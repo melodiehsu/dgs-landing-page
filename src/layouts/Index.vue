@@ -14,6 +14,7 @@
 
       <About />
 
+      <Services />
       <!-- <section>services</section> -->
       <!-- <section>insights</section> -->
       <!-- <section>works</section> -->
@@ -25,6 +26,7 @@
 import HeroSection from '@/components/HeroSection.vue';
 import Navbar from '@/components/Navbar.vue';
 import About from '@/components/About.vue';
+import Services from '@/components/Services.vue';
 </script>
 
 <style scoped lang="scss">
