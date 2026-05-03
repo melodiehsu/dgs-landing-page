@@ -41,7 +41,7 @@
         href="/"
       >
         <img
-          src="../assets/dgs-logo.png"
+          src="../assets/logo/white.png"
           alt="digisalad logo in white"
         />
       </a>
@@ -72,7 +72,7 @@
 
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted, ref } from 'vue';
-import heroCover from '../assets/hero.png';
+import heroCover from '../assets/video/cover.png';
 import type { YouTubePlayer } from '@/types/youtube';
 
 let fadeTimer: ReturnType<typeof setTimeout> | undefined;
@@ -182,8 +182,8 @@ onBeforeUnmount(() => {
   color: #fff;
   letter-spacing: 2px;
   overflow: hidden;
-  border-bottom-left-radius: 48px;
-  border-bottom-right-radius: 48px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
 }
 
 .hero::after {
@@ -255,9 +255,6 @@ onBeforeUnmount(() => {
   align-items: center;
   gap: 11px;
   color: inherit;
-  font-feature-settings:
-    'liga' off,
-    'clig' off;
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 2px;

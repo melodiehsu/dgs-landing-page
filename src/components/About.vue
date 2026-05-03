@@ -1,117 +1,123 @@
 <template>
-  <section
-    id="about"
-    class="about-section"
-  >
-    <div class="about-section-title">
+  <section class="about-section">
+    <div class="about-shell">
       <SectionTitle
-        title="ABOUT DIGISALAD"
+        id="about"
+        title="about digisalad"
         wave-color="#26C6D0"
         dot-color="#EE6C8A"
+        :scroll-margin-top="120"
       />
-    </div>
 
-    <div class="video-wrapper">
-      <iframe
-        id="about-video"
-        :src="youtubeSrc"
-        allowfullscreen
-        tabindex="-1"
-        allow="
-          autoplay;
-          accelerometer;
-          clipboard-write;
-          encrypted-media;
-          gyroscope;
-          picture-in-picture;
-          web-share;
-        "
-        title="About DigiSalad Video"
-      ></iframe>
+      <div class="video-wrapper">
+        <iframe
+          id="about-video"
+          :src="youtubeSrc"
+          allowfullscreen
+          tabindex="-1"
+          allow="
+            autoplay;
+            accelerometer;
+            clipboard-write;
+            encrypted-media;
+            gyroscope;
+            picture-in-picture;
+            web-share;
+          "
+          title="About DigiSalad Video"
+        ></iframe>
+
+        <button
+          v-if="!isPlaying"
+          class="video-overlay"
+          type="button"
+          aria-label="Play About Digisalad video"
+          @click="handlePlay"
+        >
+          <span
+            class="video-overlay-icon"
+            aria-hidden="true"
+          >
+            <img
+              :src="playSymbol"
+              alt=""
+              aria-hidden="true"
+              width="100%"
+              height="100%"
+            />
+          </span>
+        </button>
+      </div>
+
+      <p class="about-content">
+        Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum
+        bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare.
+        Phasellus at semper turpis. Nunc eu tellus tortor. Etiam at condimentum nisl, vitae sagittis
+        orci. Donec id dignissim nunc. Donec elit ante, eleifend a dolor et, venenatis facilisis
+        dolor. In feugiat orci odio, sed lacinia sem elementum quis. Aliquam consectetur, eros et
+        vulputate euismod, nunc leo tempor lacus, ac rhoncus neque eros nec lacus. Cras lobortis
+        molestie faucibus.
+      </p>
 
       <button
-        v-if="!isPlaying"
-        class="video-overlay"
+        class="about-cta"
         type="button"
-        aria-label="Play About Digisalad video"
-        @click="handlePlay"
       >
+        <span>VIEW MORE</span>
         <span
-          class="video-overlay-icon"
+          class="decoration-line"
           aria-hidden="true"
-        >
-          <img
-            :src="playSymbol"
-            alt=""
-            aria-hidden="true"
-            width="100%"
-            height="100%"
-          />
-        </span>
+        ></span>
       </button>
     </div>
 
-    <p class="about-content">
-      Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum
-      bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare.
-      Phasellus at semper turpis. Nunc eu tellus tortor. Etiam at condimentum nisl, vitae sagittis
-      orci. Donec id dignissim nunc. Donec elit ante, eleifend a dolor et, venenatis facilisis
-      dolor. In feugiat orci odio, sed lacinia sem elementum quis. Aliquam consectetur, eros et
-      vulputate euismod, nunc leo tempor lacus, ac rhoncus neque eros nec lacus. Cras lobortis
-      molestie faucibus.
-    </p>
-
-    <button
-      class="about-cta"
-      type="button"
-    >
-      <span>VIEW MORE</span>
-      <span
-        class="decoration-line"
+    <div class="awards-stack">
+      <div
+        class="awards-background"
         aria-hidden="true"
-      ></span>
-    </button>
+      ></div>
 
-    <div class="awards">
-      <div class="left-col">
-        <div class="awards-section-title">
-          <SectionTitle
-            title="AWARDS"
-            wave-color="#26C6D0"
-            dot-color="#EE6C8A"
-            :first-wave-width="191"
-            :second-wave-width="0"
-            :wave-offset-x="8"
-            :wave-offset-y="10"
-            :dot-offset-x="7"
-          />
+      <div class="awards">
+        <div class="awards-info">
+          <div class="awards-section-title">
+            <SectionTitle
+              title="awards"
+              wave-color="#26C6D0"
+              dot-color="#EE6C8A"
+              :first-wave-width="191"
+              :second-wave-width="0"
+              :wave-offset-x="8"
+              :wave-offset-y="10"
+              :dot-offset-x="7"
+            />
+          </div>
+
+          <p class="awards-description">
+            Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum
+            bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel
+            ornare. Phasellus at semper turpis. Nunc eu tellus tortor. Etiam at condimentum nisl,
+            vitae sagittis orci. Donec id dignissim nunc.
+          </p>
         </div>
 
-        <p class="awards-content">
-          Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum
-          bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare.
-          Phasellus at semper turpis. Nunc eu tellus tortor. Etiam at condimentum nisl, vitae
-          sagittis orci. Donec id dignissim nunc.
-        </p>
-      </div>
-
-      <div class="right-col">
-        <img
-          src="../assets/award.png"
-          alt="Award"
-        />
-        <img
-          src="../assets/award.png"
-          alt="Award"
-        />
-        <img
-          src="../assets/award.png"
-          alt="Award"
-        />
-        <img
-          src="../assets/award.png"
-          alt="Award"
-        />
+        <div class="awards-gallery">
+          <img
+            src="../assets/awards/award.png"
+            alt="Award"
+          />
+          <img
+            src="../assets/awards/award.png"
+            alt="Award"
+          />
+          <img
+            src="../assets/awards/award.png"
+            alt="Award"
+          />
+          <img
+            src="../assets/awards/award.png"
+            alt="Award"
+          />
+        </div>
       </div>
     </div>
   </section>
@@ -120,7 +126,7 @@
 <script setup lang="ts">
 import SectionTitle from '@/components/SectionTitle.vue';
 import { computed, ref } from 'vue';
-import playSymbol from '../assets/media-play-symbol.png';
+import playSymbol from '../assets/video/media-play-symbol.png';
 
 const videoId = 'IeIRJ9jZ5Ro';
 const isPlaying = ref(false);
@@ -139,18 +145,21 @@ const handlePlay = () => {
 .about-section {
   width: 100%;
   scroll-margin-top: 100px;
+  box-sizing: border-box;
+}
+
+.about-shell {
+  width: 100%;
+  padding: 40px 150px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.about-section-title {
-  margin: 40px 0;
-}
-
 .video-wrapper {
   position: relative;
-  width: 960px;
+  width: 100%;
+  max-width: 960px;
   aspect-ratio: 16 / 9;
   overflow: hidden;
   margin: 30px 0;
@@ -183,7 +192,8 @@ const handlePlay = () => {
 }
 
 .about-content {
-  width: 70%;
+  width: 100%;
+  max-width: 960px;
   color: #262626;
   text-align: center;
   font-size: 16px;
@@ -197,6 +207,7 @@ const handlePlay = () => {
   display: flex;
   align-items: center;
   justify-content: center;
+  align-self: center;
   border: 0;
   appearance: none;
   border-radius: 1px;
@@ -218,16 +229,34 @@ const handlePlay = () => {
   margin-left: 14px;
 }
 
+.awards-stack {
+  position: relative;
+  width: 100vw;
+  margin-top: 70px;
+  margin-left: calc(50% - 50vw);
+}
+
+.awards-background {
+  position: absolute;
+  inset: 50% 0 0;
+  background: #26c6d0;
+  z-index: 0;
+  border-top-left-radius: 50px;
+}
+
 .awards {
+  position: relative;
+  z-index: 1;
   background: #fff;
   width: 93%;
-  margin: 70px 0 0 auto;
+  margin: 0 0 0 auto;
   padding: 65px 70px;
-  border-top-left-radius: 30px;
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
   overflow: hidden;
   display: flex;
+  align-items: center;
   gap: 35px;
 }
 
@@ -235,12 +264,15 @@ const handlePlay = () => {
   width: 200px;
 }
 
-.left-col {
+.awards-info {
   width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
-.awards-content {
-  margin-top: 30px;
+.awards-description {
+  margin-top: auto;
   color: #262626;
   font-size: 16px;
   font-weight: 200;
@@ -248,10 +280,9 @@ const handlePlay = () => {
   letter-spacing: 1px;
 }
 
-.right-col {
+.awards-gallery {
   width: auto;
   display: grid;
-  padding-top: 30px;
   grid-template-columns: repeat(2, max-content);
   grid-template-rows: repeat(2, max-content);
   justify-items: center;

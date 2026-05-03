@@ -1,15 +1,15 @@
 <template>
   <nav :class="{ 'nav--scrolled': isScrolled }">
-      <a
-        class="nav-logo"
-        :class="{ 'nav-logo--hidden': !isScrolled }"
-        href="/"
-        :tabindex="isScrolled ? 0 : -1"
-        :aria-hidden="!isScrolled"
-      >
-        <img
-          src="../assets/nav-logo.png"
-          alt="digisalad logo in blue"
+    <a
+      class="nav-logo"
+      :class="{ 'nav-logo--hidden': !isScrolled }"
+      href="/"
+      :tabindex="isScrolled ? 0 : -1"
+      :aria-hidden="!isScrolled"
+    >
+      <img
+        src="../assets/logo/blue.png"
+        alt="digisalad logo in blue"
         width="120"
       />
     </a>
@@ -22,13 +22,13 @@
         START YOUR PROJECT
       </a>
 
-        <button
-          class="menu-button"
-          type="button"
-          aria-label="Open menu"
-          aria-haspopup="dialog"
-          aria-expanded="false"
-        >
+      <button
+        class="menu-button"
+        type="button"
+        aria-label="Open menu"
+        aria-haspopup="dialog"
+        aria-expanded="false"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="30"

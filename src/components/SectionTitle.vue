@@ -1,5 +1,9 @@
 <template>
-  <div class="section-title">
+  <div
+    :id="id"
+    class="section-title"
+    :style="sectionTitleStyle"
+  >
     <div class="section-title-row">
       <h2 class="section-title-text">{{ title }}</h2>
       <span
@@ -64,6 +68,8 @@ const props = withDefaults(
     dotColor?: string;
     dotOffsetX?: number;
     firstWaveWidth?: number | string;
+    id?: string;
+    scrollMarginTop?: number;
     secondWaveOffsetX?: number;
     secondWaveWidth?: number | string;
     title: string;
@@ -75,6 +81,8 @@ const props = withDefaults(
     dotColor: '#ee6c8a',
     dotOffsetX: 22,
     firstWaveWidth: 191,
+    id: '',
+    scrollMarginTop: 0,
     secondWaveOffsetX: -10,
     secondWaveWidth: 189,
     waveColor: '#26c6d0',
@@ -95,6 +103,16 @@ const dotStyle = computed(() => ({
 const secondWaveStyle = computed(() => ({
   transform: `translateX(${props.secondWaveOffsetX}px)`,
 }));
+
+const sectionTitleStyle = computed(() => {
+  if (!props.scrollMarginTop) {
+    return undefined;
+  }
+
+  return {
+    scrollMarginTop: `${props.scrollMarginTop}px`,
+  };
+});
 </script>
 
 <style scoped lang="scss">
@@ -118,6 +136,7 @@ const secondWaveStyle = computed(() => ({
   font-weight: 700;
   line-height: normal;
   letter-spacing: 3.636px;
+  text-transform: uppercase;
 }
 
 .section-title-dot {
