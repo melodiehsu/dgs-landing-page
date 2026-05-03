@@ -1,0 +1,57 @@
+<template>
+  <section>
+    <SectionTitle
+      id="works"
+      title="our brand experience"
+      wave-color="#26C6D0"
+      dot-color="#EE6C8A"
+      :wave-loop-count="3"
+      :scroll-margin-top="120"
+    />
+
+    <p class="experience">
+      Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum
+      bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare.
+      Phasellus at semper turpis. Nunc eu tellus tortor. Etiam at condimentum nisl, vitae sagittis
+      orci. Donec id dignissim nunc. Donec elit ante, eleifend a dolor et, venenatis facilisis
+      dolor. In feugiat orci odio, sed lacinia sem elementum quis. Aliquam consectetur, eros et
+      vulputate euismod, nunc leo tempor lacus, ac rhoncus neque eros nec lacus. Cras lobortis
+      molestie faucibus.
+    </p>
+
+    <div class="client-list">
+      <img
+        src="../assets/digisalad-client-list.png"
+        alt=""
+      />
+    </div>
+  </section>
+</template>
+
+<script setup lang="ts">
+import SectionTitle from './SectionTitle.vue';
+</script>
+
+<style scoped lang="scss">
+section {
+  background: #fff;
+  width: 100%;
+  margin: 0 auto;
+  padding: 70px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.experience {
+  width: 70%;
+  color: #262626;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 50px 0;
+}
+</style>

@@ -23,15 +23,9 @@
       aria-hidden="true"
     >
       <svg
-        v-for="segment in waveSegments"
+        v-for="segment in waveRepeatIndexes"
         :key="segment"
-        :class="[
-          'section-title-wave-svg',
-          {
-            'section-title-wave-svg--first': segment === 0,
-            'section-title-wave-svg--repeat': segment > 0,
-          },
-        ]"
+        class="section-title-wave-svg"
         xmlns="http://www.w3.org/2000/svg"
         width="191"
         height="13"
@@ -79,7 +73,7 @@ const props = withDefaults(
   },
 );
 
-const waveSegments = computed(() =>
+const waveRepeatIndexes = computed(() =>
   Array.from({ length: Math.max(1, Math.trunc(props.waveLoopCount)) }, (_, index) => index),
 );
 

@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="insights-section">
     <div class="insights-stack">
       <div class="insights">
         <div class="insights-profile">
@@ -35,6 +35,11 @@
 <script setup lang="ts"></script>
 
 <style scoped lang="scss">
+.insights-section {
+  width: 100%;
+  background: #fff;
+}
+
 .insights-stack {
   position: relative;
   width: 100%;

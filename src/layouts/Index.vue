@@ -20,7 +20,7 @@
 
       <Insights />
 
-      <!-- <section>works</section> -->
+      <Works />
     </main>
   </div>
 </template>
@@ -32,6 +32,7 @@ import About from '@/components/About.vue';
 import Services from '@/components/Services.vue';
 import Insights from '@/components/Insights.vue';
 import Awards from '@/components/Awards.vue';
+import Works from '@/components/Works.vue';
 </script>
 
 <style scoped lang="scss">
