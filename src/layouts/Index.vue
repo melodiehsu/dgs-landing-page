@@ -21,6 +21,8 @@
       <Insights />
 
       <Works />
+
+      <ShowCase />
     </main>
   </div>
 </template>
@@ -33,6 +35,7 @@ import Services from '@/components/Services.vue';
 import Insights from '@/components/Insights.vue';
 import Awards from '@/components/Awards.vue';
 import Works from '@/components/Works.vue';
+import ShowCase from '@/components/Showcase.vue';
 </script>
 
 <style scoped lang="scss">
