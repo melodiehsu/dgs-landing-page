@@ -14,9 +14,12 @@
 
       <About />
 
+      <Awards />
+
       <Services />
-      <!-- <section>services</section> -->
-      <!-- <section>insights</section> -->
+
+      <Insights />
+
       <!-- <section>works</section> -->
     </main>
   </div>
@@ -27,6 +30,8 @@ import HeroSection from '@/components/HeroSection.vue';
 import Navbar from '@/components/Navbar.vue';
 import About from '@/components/About.vue';
 import Services from '@/components/Services.vue';
+import Insights from '@/components/Insights.vue';
+import Awards from '@/components/Awards.vue';
 </script>
 
 <style scoped lang="scss">

@@ -226,7 +226,6 @@ const services = [
     height: 10px;
     background: #ffbc58;
     z-index: -1;
-    // transform: translateX(-6px);
   }
 }
 </style>
