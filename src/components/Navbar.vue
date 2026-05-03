@@ -91,6 +91,7 @@ nav {
 .nav-logo {
   opacity: 1;
   transition: opacity 0.25s ease;
+  margin-left: 40px;
 }
 
 .nav-logo--hidden {
