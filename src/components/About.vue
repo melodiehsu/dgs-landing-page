@@ -6,6 +6,7 @@
         title="about digisalad"
         wave-color="#26C6D0"
         dot-color="#EE6C8A"
+        :wave-loop-count="2"
         :scroll-margin-top="120"
       />
 

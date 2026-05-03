@@ -6,6 +6,9 @@
         title="our ingredients"
         wave-color="#585880"
         dot-color="#EE6C8A"
+        titleColor="#fff"
+        :dotOffsetX="7"
+        :wave-loop-count="2"
         :scroll-margin-top="200"
       />
 
