@@ -103,9 +103,9 @@ nav {
   border-radius: 10px;
   opacity: 1;
   transition:
-    opacity 0.25s ease,
-    transform 0.2s ease,
-    filter 0.2s ease;
+    opacity 0.32s ease,
+    transform 0.32s ease,
+    filter 0.32s ease;
   margin-left: 40px;
 }
 
@@ -141,9 +141,9 @@ nav {
   color: #fff;
   cursor: pointer;
   transition:
-    color 0.25s ease,
-    transform 0.2s ease,
-    filter 0.2s ease;
+    color 0.32s ease,
+    transform 0.32s ease,
+    filter 0.32s ease;
 }
 
 .nav--scrolled .menu-button {
@@ -183,16 +183,19 @@ nav {
   text-decoration: none;
   box-shadow: 0 0 0 0 rgba(255, 188, 88, 0);
   transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    filter 0.2s ease;
+    transform 0.32s ease,
+    box-shadow 0.32s ease,
+    filter 0.32s ease;
 }
 
 .nav-cta:hover,
 .nav-cta:focus-visible {
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(14, 47, 61, 0.18);
-  filter: brightness(1.04);
+  background: #fff;
+  color: #26c6d0;
+  box-shadow:
+    inset 0 0 0 2px #26c6d0,
+    0 10px 24px rgba(14, 47, 61, 0.12);
 }
 
 @media (max-width: 960px) {

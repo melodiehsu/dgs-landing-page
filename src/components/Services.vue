@@ -216,8 +216,8 @@ const services = [
   text-decoration: none;
   white-space: nowrap;
   transition:
-    transform 0.2s ease,
-    filter 0.2s ease;
+    transform 0.32s ease,
+    filter 0.32s ease;
 
   &::after {
     content: '';
@@ -228,7 +228,7 @@ const services = [
     height: clamp(6px, 0.8vw, 10px);
     background: #ffbc58;
     z-index: -1;
-    transition: height 0.2s ease;
+    transition: height 0.32s ease;
   }
 
   &:hover,

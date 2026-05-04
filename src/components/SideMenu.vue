@@ -352,9 +352,9 @@ onBeforeUnmount(() => {
   background: transparent;
   cursor: pointer;
   transition:
-    transform 0.2s ease,
-    background-color 0.2s ease,
-    box-shadow 0.2s ease;
+    transform 0.32s ease,
+    background-color 0.32s ease,
+    box-shadow 0.32s ease;
 }
 
 .close-button svg {
@@ -445,9 +445,9 @@ onBeforeUnmount(() => {
   transform: translateY(var(--card-translate-y, 0px));
   box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    filter 0.2s ease;
+    transform 0.32s ease,
+    box-shadow 0.32s ease,
+    filter 0.32s ease;
 }
 
 .menu-card::before {

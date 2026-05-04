@@ -6,12 +6,12 @@ body {
 
 :where(a, button, [role='button']) {
   transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    color 0.2s ease,
-    background-color 0.2s ease,
-    opacity 0.2s ease,
-    filter 0.2s ease;
+    transform 0.32s ease,
+    box-shadow 0.32s ease,
+    color 0.32s ease,
+    background-color 0.32s ease,
+    opacity 0.32s ease,
+    filter 0.32s ease;
 }
 
 :where(a, button, [role='button']):focus-visible {

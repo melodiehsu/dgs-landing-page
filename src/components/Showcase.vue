@@ -154,7 +154,7 @@ const nextShowcase = () => {
   width: clamp(42px, 3.6vw, 53px);
   height: clamp(42px, 3.6vw, 53px);
   border-radius: 50%;
-  border: none;
+  border: 2px solid transparent;
   background: #26c6d0;
   cursor: pointer;
   display: flex;
@@ -163,9 +163,9 @@ const nextShowcase = () => {
   flex: 0 0 auto;
   box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    filter 0.2s ease;
+    transform 0.32s ease,
+    box-shadow 0.32s ease,
+    filter 0.32s ease;
 }
 
 .last-page-button:hover,
@@ -173,8 +173,9 @@ const nextShowcase = () => {
 .last-page-button:focus-visible,
 .next-page-button:focus-visible {
   transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(7, 43, 53, 0.24);
-  filter: brightness(1.06);
+  background: #fff;
+  border-color: #26c6d0;
+  box-shadow: 0 12px 28px rgba(7, 43, 53, 0.12);
 }
 
 .button-icon {
@@ -191,6 +192,7 @@ const nextShowcase = () => {
   height: 100%;
   object-fit: contain;
   display: block;
+  transition: filter 0.32s ease;
 }
 
 .next-page-button .button-icon {
@@ -205,6 +207,21 @@ const nextShowcase = () => {
 .next-page-button:hover .button-icon,
 .next-page-button:focus-visible .button-icon {
   transform: rotate(180deg) scale(1.08);
+}
+
+.last-page-button:hover .button-icon img,
+.last-page-button:focus-visible .button-icon img,
+.next-page-button:hover .button-icon img,
+.next-page-button:focus-visible .button-icon img {
+  filter:
+    brightness(0)
+    saturate(100%)
+    invert(59%)
+    sepia(71%)
+    saturate(508%)
+    hue-rotate(138deg)
+    brightness(94%)
+    contrast(92%);
 }
 
 .last-page-button {

@@ -137,9 +137,9 @@ const handlePlay = () => {
   cursor: pointer;
   border: 1px solid #f2f2f2;
   transition:
-    background-color 0.2s ease,
-    box-shadow 0.2s ease,
-    transform 0.2s ease;
+    background-color 0.32s ease,
+    box-shadow 0.32s ease,
+    transform 0.32s ease;
 }
 
 .video-overlay:hover,
@@ -158,7 +158,7 @@ const handlePlay = () => {
   place-items: center;
   width: clamp(72px, 9vw, 112.514px);
   height: clamp(72px, 9vw, 113.181px);
-  transition: transform 0.2s ease;
+  transition: transform 0.32s ease;
 }
 
 .about-content {
@@ -178,7 +178,7 @@ const handlePlay = () => {
   align-items: center;
   justify-content: center;
   align-self: center;
-  border: 0;
+  border: 2px solid transparent;
   appearance: none;
   border-radius: 1px;
   background: #26c6d0;
@@ -192,16 +192,18 @@ const handlePlay = () => {
   padding: 33px 24.53px;
   box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    filter 0.2s ease;
+    transform 0.32s ease,
+    box-shadow 0.32s ease,
+    filter 0.32s ease;
 }
 
 .about-cta:hover,
 .about-cta:focus-visible {
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(38, 198, 208, 0.22);
-  filter: brightness(1.04);
+  background: #fff;
+  border-color: #26c6d0;
+  color: #26c6d0;
+  box-shadow: 0 10px 24px rgba(38, 198, 208, 0.14);
 }
 
 .about-cta:hover .decoration-line,
@@ -212,7 +214,7 @@ const handlePlay = () => {
 .decoration-line {
   width: clamp(40px, 5vw, 52.033px);
   height: 2px;
-  background: #fff;
+  background: currentColor;
   margin-left: 14px;
 }
 

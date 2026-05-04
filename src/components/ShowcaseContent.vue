@@ -65,7 +65,7 @@ defineProps<{
   height: auto;
   border-radius: 50px;
   overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.32s ease, box-shadow 0.32s ease;
 
   img {
     position: absolute;
@@ -76,10 +76,12 @@ defineProps<{
   }
 }
 
-.showcase-content__media:hover .showcase-content__image-wrapper,
-.showcase-content__media:focus-within .showcase-content__image-wrapper {
-  transform: scale(1.01);
-  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.16);
+@supports selector(.showcase-content__media:has(.showcase-content__cta:hover)) {
+  .showcase-content__media:has(.showcase-content__cta:hover) .showcase-content__image-wrapper,
+  .showcase-content__media:has(.showcase-content__cta:focus-visible) .showcase-content__image-wrapper {
+    transform: scale(1.01);
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.16);
+  }
 }
 
 .showcase-content__media,
@@ -98,7 +100,7 @@ defineProps<{
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 0;
+  border: 2px solid transparent;
   appearance: none;
   border-radius: 1px;
   background: #26c6d0;
@@ -115,16 +117,18 @@ defineProps<{
   white-space: nowrap;
   box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    filter 0.2s ease;
+    transform 0.32s ease,
+    box-shadow 0.32s ease,
+    filter 0.32s ease;
 }
 
 .showcase-content__cta:hover,
 .showcase-content__cta:focus-visible {
   transform: translateY(-3px);
-  box-shadow: 0 14px 28px rgba(38, 198, 208, 0.24);
-  filter: brightness(1.05);
+  background: #fff;
+  border-color: #26c6d0;
+  color: #26c6d0;
+  box-shadow: 0 14px 28px rgba(38, 198, 208, 0.14);
 }
 
 .showcase-content__cta:hover .showcase-content__cta-line,
@@ -135,7 +139,7 @@ defineProps<{
 .showcase-content__cta-line {
   width: clamp(50px, 4.861vw, 70px);
   height: 2px;
-  background: #fff;
+  background: currentColor;
   margin-left: clamp(16px, 1.806vw, 26px);
 }
 
