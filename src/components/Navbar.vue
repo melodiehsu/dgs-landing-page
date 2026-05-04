@@ -149,7 +149,7 @@ nav {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: clamp(160px, 14vw, 200px);
+  min-width: clamp(200px, 14vw, 200px);
   height: 41.026px;
   border: 0;
   border-radius: 24px;
@@ -186,6 +186,10 @@ nav {
   nav {
     height: 72px;
     padding: 0 16px;
+  }
+
+  .nav-actions {
+    gap: 20px;
   }
 
   .nav-logo {

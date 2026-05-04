@@ -128,6 +128,12 @@ withDefaults(
   .service-content {
     width: 100%;
     max-width: 345px;
+    min-height: 0;
+    overflow: visible;
+    display: block;
+    -webkit-line-clamp: unset;
+    line-clamp: unset;
+    -webkit-box-orient: initial;
   }
 
   .service-title {

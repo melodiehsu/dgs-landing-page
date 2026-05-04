@@ -202,11 +202,19 @@ import SectionTitle from './SectionTitle.vue';
   .awards-description {
     font-size: 14px;
     line-height: 24px;
+    width: 100%;
+    align-self: stretch;
   }
 
   .awards-gallery {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px 12px;
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    justify-items: center;
+  }
+
+  .award-item {
+    width: min(100%, 283px);
   }
 }
 </style>

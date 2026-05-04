@@ -200,7 +200,7 @@ onBeforeUnmount(() => {
     left: 50%;
     bottom: 0;
     width: 1px;
-    height: 44.044px;
+    height: clamp(32px, 3vw, 44.044px);
     background: #fff;
     transform: translateX(-50%);
   }
@@ -334,8 +334,8 @@ onBeforeUnmount(() => {
         position: absolute;
         top: 55%;
         right: -11px;
-        width: 10px;
-        height: 10px;
+        width: clamp(8px, 0.694vw, 10px);
+        height: clamp(8px, 0.694vw, 10px);
         border-radius: 50%;
         background: #ee6c8a;
       }
@@ -361,8 +361,8 @@ onBeforeUnmount(() => {
     border-bottom-left-radius: 40px;
     border-bottom-right-radius: 40px;
 
-    h1 span ::after {
-      bottom: 16px;
+    h1 span::after {
+      bottom: clamp(12px, 1.2vw, 16px);
     }
   }
 
@@ -405,6 +405,11 @@ onBeforeUnmount(() => {
     height: min(680px, 88vh);
     border-bottom-left-radius: 28px;
     border-bottom-right-radius: 28px;
+
+    h1 span::after {
+      height: 6px;
+      bottom: 10px;
+    }
   }
 
   #hero-video-player {
@@ -426,7 +431,7 @@ onBeforeUnmount(() => {
 
   .hero-content {
     left: 24px;
-    top: 18%;
+    top: 30%;
 
     h1 {
       font-size: 22px;
