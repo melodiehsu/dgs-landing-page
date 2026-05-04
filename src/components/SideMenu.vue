@@ -48,19 +48,19 @@
               @click="$emit('close')"
             >
               <div class="menu-card menu-card--about">
-              <div class="about-wrapper">
-                <img
-                  class="menu-icon menu-icon--lettuce"
-                  src="../assets/sidemenu/food/lettuce.png"
-                  alt=""
-                />
+                <div class="about-wrapper">
+                  <img
+                    class="menu-icon menu-icon--lettuce"
+                    src="../assets/side-menu/food/lettuce.png"
+                    alt=""
+                  />
 
-                <div>
-                  <div class="menu-card__eyebrow">EMPOWERING BRANDS</div>
-                  <div class="menu-card__title">ABOUT US</div>
+                  <div>
+                    <div class="menu-card__eyebrow">EMPOWERING BRANDS</div>
+                    <div class="menu-card__title">ABOUT US</div>
+                  </div>
                 </div>
               </div>
-            </div>
             </a>
 
             <a
@@ -69,14 +69,14 @@
               @click="$emit('close')"
             >
               <div class="menu-card menu-card--careers">
-              <img
-                class="menu-icon menu-icon--cheese"
-                src="../assets/sidemenu/food/cheese.png"
-                alt=""
-              />
-              <div class="menu-card__eyebrow">BE COOL WITH US</div>
-              <div class="menu-card__title">CAREERS</div>
-            </div>
+                <img
+                  class="menu-icon menu-icon--cheese"
+                  src="../assets/side-menu/food/cheese.png"
+                  alt=""
+                />
+                <div class="menu-card__eyebrow">BE COOL WITH US</div>
+                <div class="menu-card__title">CAREERS</div>
+              </div>
             </a>
 
             <a
@@ -85,14 +85,14 @@
               @click="$emit('close')"
             >
               <div class="menu-card menu-card--services">
-              <img
-                class="menu-icon menu-icon--carrot"
-                src="../assets/sidemenu/food/carrot.png"
-                alt=""
-              />
-              <div class="menu-card__eyebrow">AREAS OF EXPERTISE</div>
-              <div class="menu-card__title">SERVICES</div>
-            </div>
+                <img
+                  class="menu-icon menu-icon--carrot"
+                  src="../assets/side-menu/food/carrot.png"
+                  alt=""
+                />
+                <div class="menu-card__eyebrow">AREAS OF EXPERTISE</div>
+                <div class="menu-card__title">SERVICES</div>
+              </div>
             </a>
 
             <a
@@ -101,18 +101,18 @@
               @click="$emit('close')"
             >
               <div class="menu-card menu-card--works">
-              <div class="works-wrapper">
-                <img
-                  class="menu-icon menu-icon--tomato"
-                  src="../assets/sidemenu/food/tomato.png"
-                  alt=""
-                />
-                <div>
-                  <div class="menu-card__eyebrow">CASE STUDIES</div>
-                  <div class="menu-card__title">WORKS</div>
+                <div class="works-wrapper">
+                  <img
+                    class="menu-icon menu-icon--tomato"
+                    src="../assets/side-menu/food/tomato.png"
+                    alt=""
+                  />
+                  <div>
+                    <div class="menu-card__eyebrow">CASE STUDIES</div>
+                    <div class="menu-card__title">WORKS</div>
+                  </div>
                 </div>
               </div>
-            </div>
             </a>
 
             <a
@@ -121,14 +121,14 @@
               @click="$emit('close')"
             >
               <div class="menu-card menu-card--insights">
-              <img
-                class="menu-icon menu-icon--pickle"
-                src="../assets/sidemenu/food/pickle.png"
-                alt=""
-              />
-              <div class="menu-card__eyebrow">OUR STRATEGIES</div>
-              <div class="menu-card__title">INSIGHTS</div>
-            </div>
+                <img
+                  class="menu-icon menu-icon--pickle"
+                  src="../assets/side-menu/food/pickle.png"
+                  alt=""
+                />
+                <div class="menu-card__eyebrow">OUR STRATEGIES</div>
+                <div class="menu-card__title">INSIGHTS</div>
+              </div>
             </a>
 
             <a
@@ -137,9 +137,9 @@
               @click="$emit('close')"
             >
               <div class="menu-card menu-card--contact">
-              <div class="menu-card__eyebrow">START YOUR JOURNEY WITH US</div>
-              <div class="menu-card__title">CONTACT</div>
-            </div>
+                <div class="menu-card__eyebrow">START YOUR JOURNEY WITH US</div>
+                <div class="menu-card__title">CONTACT</div>
+              </div>
             </a>
           </div>
         </div>
@@ -375,23 +375,23 @@ onBeforeUnmount(() => {
 }
 
 .menu-card--about::before {
-  background-image: url('../assets/sidemenu/about-bg.png');
+  background-image: url('../assets/side-menu/about-bg.png');
 }
 
 .menu-card--careers::before {
-  background-image: url('../assets/sidemenu/career-bg.png');
+  background-image: url('../assets/side-menu/career-bg.png');
 }
 
 .menu-card--services::before {
-  background-image: url('../assets/sidemenu/services-bg.png');
+  background-image: url('../assets/side-menu/services-bg.png');
 }
 
 .menu-card--works::before {
-  background-image: url('../assets/sidemenu/works-bg.png');
+  background-image: url('../assets/side-menu/works-bg.png');
 }
 
 .menu-card--insights::before {
-  background-image: url('../assets/sidemenu/insights-bg.png');
+  background-image: url('../assets/side-menu/insights-bg.png');
 }
 
 .menu-card--contact::before {
@@ -452,13 +452,15 @@ onBeforeUnmount(() => {
 }
 
 .menu-icon--cheese {
-  width: 58px;
-  height: 30px;
+  width: 91.95px;
+  height: 46.742px;
+  margin-bottom: 22px;
 }
 
 .menu-icon--carrot {
-  width: 30px;
-  height: 58px;
+  width: 36px;
+  height: 67px;
+  margin-bottom: 15px;
 }
 
 .menu-icon--tomato {
@@ -467,8 +469,9 @@ onBeforeUnmount(() => {
 }
 
 .menu-icon--pickle {
-  width: 18px;
-  height: 60px;
+  width: 24.889px;
+  height: 79px;
+  margin-bottom: 15px;
 }
 
 .menu-card--about {
