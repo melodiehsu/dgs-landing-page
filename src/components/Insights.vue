@@ -17,10 +17,12 @@
         </div>
 
         <div class="insights-quote">
-          <img
-            src="../assets/left-quote.png"
-            alt=""
-          />
+          <div class="insights-quote-mark">
+            <img
+              src="../assets/left-quote.png"
+              alt=""
+            />
+          </div>
 
           <p>
             A great digital work isn’t about designing beautiful pages purely. It is about context -
@@ -127,12 +129,21 @@
   width: 100%;
   max-width: 734px;
   transform: translateY(-10px);
+}
 
-  img {
-    width: 90px;
-    height: 90px;
-    margin-bottom: 13px;
-  }
+.insights-quote-mark {
+  position: relative;
+  width: 90px;
+  aspect-ratio: 1 / 1;
+  margin-bottom: 13px;
+}
+
+.insights-quote-mark img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .insights-avatar {
@@ -236,9 +247,8 @@
     transform: none;
   }
 
-  .insights-quote img {
+  .insights-quote-mark {
     width: 64px;
-    height: 64px;
   }
 
   .insights-quote p {

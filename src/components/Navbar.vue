@@ -7,11 +7,12 @@
       :tabindex="isScrolled ? 0 : -1"
       :aria-hidden="!isScrolled"
     >
-      <img
-        src="../assets/logo/blue.png"
-        alt="digisalad logo in blue"
-        width="120"
-      />
+      <div class="nav-logo__image">
+        <img
+          src="../assets/logo/blue.png"
+          alt="digisalad logo in blue"
+        />
+      </div>
     </a>
 
     <div class="nav-actions">
@@ -103,6 +104,19 @@ nav {
   margin-left: 40px;
 }
 
+.nav-logo__image {
+  position: relative;
+  width: 120px;
+  aspect-ratio: 120 / 54;
+}
+
+.nav-logo__image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .nav-logo--hidden {
   opacity: 0;
   pointer-events: none;
@@ -178,7 +192,7 @@ nav {
     width: 92px;
   }
 
-  .nav-logo img {
+  .nav-logo__image {
     width: 92px;
   }
 

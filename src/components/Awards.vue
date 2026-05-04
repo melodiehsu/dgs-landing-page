@@ -29,29 +29,39 @@
         </div>
 
         <div class="awards-gallery">
-          <img
-            src="../assets/awards/award.png"
-            alt="Award"
-          />
-          <img
-            src="../assets/awards/award.png"
-            alt="Award"
-          />
-          <img
-            src="../assets/awards/award.png"
-            alt="Award"
-          />
-          <img
-            src="../assets/awards/award.png"
-            alt="Award"
-          />
+          <div class="award-item">
+            <img
+              src="../assets/awards/award.png"
+              alt="Award"
+            />
+          </div>
+          <div class="award-item">
+            <img
+              src="../assets/awards/award.png"
+              alt="Award"
+            />
+          </div>
+          <div class="award-item">
+            <img
+              src="../assets/awards/award.png"
+              alt="Award"
+            />
+          </div>
+          <div class="award-item">
+            <img
+              src="../assets/awards/award.png"
+              alt="Award"
+            />
+          </div>
         </div>
       </div>
     </div>
   </section>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import SectionTitle from './SectionTitle.vue';
+</script>
 
 <style scoped lang="scss">
 .awards-section {
@@ -85,11 +95,8 @@
   overflow: hidden;
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
   gap: 35px;
-}
-
-.awards-section-title {
-  width: clamp(160px, 14vw, 200px);
 }
 
 .awards-info {
@@ -109,52 +116,27 @@
 }
 
 .awards-gallery {
-  width: auto;
+  width: 45%;
   display: grid;
-  grid-template-columns: repeat(2, max-content);
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   grid-template-rows: repeat(2, max-content);
   justify-items: center;
   align-items: center;
   gap: 37px 19px;
-
-  img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: contain;
-  }
 }
 
-@media (max-width: 1440px) {
-  .awards {
+.award-item {
+  position: relative;
+  width: clamp(180px, 20vw, 283px);
+  aspect-ratio: 283 / 108;
+
+  img {
+    position: absolute;
+    inset: 0;
     width: 100%;
-    margin: 0;
-    padding: 56px 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 32px;
-    border-top-right-radius: 50px;
-  }
-
-  .awards-info {
-    width: 100%;
-    max-width: none;
-  }
-
-  .awards-section-title {
-    width: auto;
-  }
-
-  .awards-gallery {
-    width: 100%;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    grid-template-rows: auto;
-    gap: 24px 20px;
-  }
-
-  .awards-gallery img {
-    max-width: 180px;
+    height: 100%;
+    object-fit: contain;
+    display: block;
   }
 }
 

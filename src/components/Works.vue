@@ -20,10 +20,12 @@
     </p>
 
     <div class="client-list">
-      <img
-        src="../assets/digisalad-client-list.png"
-        alt=""
-      />
+      <div class="client-list-image">
+        <img
+          src="../assets/digisalad-client-list.png"
+          alt=""
+        />
+      </div>
     </div>
   </section>
 </template>
@@ -56,9 +58,19 @@ import SectionTitle from './SectionTitle.vue';
   padding: 50px 0;
 }
 
-.client-list img {
+.client-list-image {
+  position: relative;
+  width: min(100%, 960px);
+  aspect-ratio: 1040 / 720;
+}
+
+.client-list-image img {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  max-width: 960px;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
 @media (max-width: 960px) {

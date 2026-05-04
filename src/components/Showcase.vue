@@ -8,10 +8,12 @@
       type="button"
       @click="prevShowcase"
     >
-      <img
-        src="../assets/arrow.png"
-        alt=""
-      />
+      <span class="button-icon" aria-hidden="true">
+        <img
+          src="../assets/arrow.png"
+          alt=""
+        />
+      </span>
     </button>
 
     <button
@@ -19,10 +21,12 @@
       type="button"
       @click="nextShowcase"
     >
-      <img
-        src="../assets/arrow.png"
-        alt=""
-      />
+      <span class="button-icon" aria-hidden="true">
+        <img
+          src="../assets/arrow.png"
+          alt=""
+        />
+      </span>
     </button>
 
     <div class="showcase-page">
@@ -134,6 +138,22 @@ const nextShowcase = () => {
   border: none;
   background: #26c6d0;
   cursor: pointer;
+}
+
+.button-icon {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.button-icon img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
 .left-button {

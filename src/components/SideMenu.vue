@@ -18,10 +18,12 @@
             class="digisalad-logo-white"
             href="/"
           >
-            <img
-              src="../assets/logo/white.png"
-              alt="digisalad logo in white"
-            />
+            <div class="digisalad-logo-white__image">
+              <img
+                src="../assets/logo/white.png"
+                alt="digisalad logo in white"
+              />
+            </div>
           </a>
 
           <button
@@ -49,11 +51,13 @@
             >
               <div class="menu-card menu-card--about">
                 <div class="about-wrapper">
-                  <img
-                    class="menu-icon menu-icon--lettuce"
-                    src="../assets/side-menu/food/lettuce.png"
-                    alt=""
-                  />
+                  <div class="menu-icon-wrap menu-icon-wrap--lettuce">
+                    <img
+                      class="menu-icon menu-icon--lettuce"
+                      src="../assets/side-menu/food/lettuce.png"
+                      alt=""
+                    />
+                  </div>
 
                   <div>
                     <div class="menu-card__eyebrow">EMPOWERING BRANDS</div>
@@ -69,11 +73,13 @@
               @click="$emit('close')"
             >
               <div class="menu-card menu-card--careers">
-                <img
-                  class="menu-icon menu-icon--cheese"
-                  src="../assets/side-menu/food/cheese.png"
-                  alt=""
-                />
+                <div class="menu-icon-wrap menu-icon-wrap--cheese">
+                  <img
+                    class="menu-icon menu-icon--cheese"
+                    src="../assets/side-menu/food/cheese.png"
+                    alt=""
+                  />
+                </div>
                 <div class="menu-card__eyebrow">BE COOL WITH US</div>
                 <div class="menu-card__title">CAREERS</div>
               </div>
@@ -85,11 +91,13 @@
               @click="$emit('close')"
             >
               <div class="menu-card menu-card--services">
-                <img
-                  class="menu-icon menu-icon--carrot"
-                  src="../assets/side-menu/food/carrot.png"
-                  alt=""
-                />
+                <div class="menu-icon-wrap menu-icon-wrap--carrot">
+                  <img
+                    class="menu-icon menu-icon--carrot"
+                    src="../assets/side-menu/food/carrot.png"
+                    alt=""
+                  />
+                </div>
                 <div class="menu-card__eyebrow">AREAS OF EXPERTISE</div>
                 <div class="menu-card__title">SERVICES</div>
               </div>
@@ -102,11 +110,13 @@
             >
               <div class="menu-card menu-card--works">
                 <div class="works-wrapper">
-                  <img
-                    class="menu-icon menu-icon--tomato"
-                    src="../assets/side-menu/food/tomato.png"
-                    alt=""
-                  />
+                  <div class="menu-icon-wrap menu-icon-wrap--tomato">
+                    <img
+                      class="menu-icon menu-icon--tomato"
+                      src="../assets/side-menu/food/tomato.png"
+                      alt=""
+                    />
+                  </div>
                   <div>
                     <div class="menu-card__eyebrow">CASE STUDIES</div>
                     <div class="menu-card__title">WORKS</div>
@@ -121,11 +131,13 @@
               @click="$emit('close')"
             >
               <div class="menu-card menu-card--insights">
-                <img
-                  class="menu-icon menu-icon--pickle"
-                  src="../assets/side-menu/food/pickle.png"
-                  alt=""
-                />
+                <div class="menu-icon-wrap menu-icon-wrap--pickle">
+                  <img
+                    class="menu-icon menu-icon--pickle"
+                    src="../assets/side-menu/food/pickle.png"
+                    alt=""
+                  />
+                </div>
                 <div class="menu-card__eyebrow">OUR STRATEGIES</div>
                 <div class="menu-card__title">INSIGHTS</div>
               </div>
@@ -322,16 +334,20 @@ onBeforeUnmount(() => {
 .digisalad-logo-white {
   position: relative;
   display: inline-block;
-  width: 140px;
-  height: 62px;
   margin-left: 14px;
+}
 
-  img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-  }
+.digisalad-logo-white__image {
+  position: relative;
+  width: 140px;
+  aspect-ratio: 199 / 88;
+}
+
+.digisalad-logo-white__image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .menu-grid {
@@ -445,9 +461,17 @@ onBeforeUnmount(() => {
 }
 
 .menu-icon {
-  flex: 0 0 auto;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   display: block;
+}
+
+.menu-icon-wrap {
+  position: relative;
+  flex: 0 0 auto;
 }
 
 .menu-icon--lettuce {
@@ -455,13 +479,26 @@ onBeforeUnmount(() => {
   height: 60px;
 }
 
+.menu-icon-wrap--lettuce {
+  width: 40px;
+  height: 60px;
+}
+
 .menu-icon--cheese {
+  margin-bottom: 22px;
+}
+
+.menu-icon-wrap--cheese {
   width: 91.95px;
   height: 46.742px;
   margin-bottom: 22px;
 }
 
 .menu-icon--carrot {
+  margin-bottom: 15px;
+}
+
+.menu-icon-wrap--carrot {
   width: 36px;
   height: 67px;
   margin-bottom: 15px;
@@ -472,7 +509,16 @@ onBeforeUnmount(() => {
   height: 56px;
 }
 
+.menu-icon-wrap--tomato {
+  width: 56px;
+  height: 56px;
+}
+
 .menu-icon--pickle {
+  margin-bottom: 15px;
+}
+
+.menu-icon-wrap--pickle {
   width: 24.889px;
   height: 79px;
   margin-bottom: 15px;
@@ -596,9 +642,11 @@ onBeforeUnmount(() => {
   }
 
   .digisalad-logo-white {
-    width: 112px;
-    height: 50px;
     margin-left: 0;
+  }
+
+  .digisalad-logo-white__image {
+    width: 112px;
   }
 
   .menu-grid {

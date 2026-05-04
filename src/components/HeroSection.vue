@@ -1,13 +1,15 @@
 <template>
   <section class="hero">
     <div class="hero-video">
-      <img
-        class="hero-cover"
-        :class="{ 'hero-cover--hidden': coverHidden }"
-        :src="heroCover"
-        alt=""
-        aria-hidden="true"
-      />
+      <div class="hero-cover-wrap">
+        <img
+          class="hero-cover"
+          :class="{ 'hero-cover--hidden': coverHidden }"
+          :src="heroCover"
+          alt=""
+          aria-hidden="true"
+        />
+      </div>
 
       <iframe
         id="hero-video-player"
@@ -40,10 +42,12 @@
         class="digisalad-logo-white"
         href="/"
       >
-        <img
-          src="../assets/logo/white.png"
-          alt="digisalad logo in white"
-        />
+        <div class="digisalad-logo-white__image">
+          <img
+            src="../assets/logo/white.png"
+            alt="digisalad logo in white"
+          />
+        </div>
       </a>
 
       <h1>
@@ -58,13 +62,15 @@
       href="#about"
       aria-label="Go to about section"
     >
-      <img
-        src="../assets/salad-image.png"
-        alt=""
-        width="65"
-        height="65"
-        aria-hidden="true"
-      />
+      <span class="hero-cta-icon" aria-hidden="true">
+        <img
+          src="../assets/salad-image.png"
+          alt=""
+          width="65"
+          height="65"
+          aria-hidden="true"
+        />
+      </span>
       <span>TASTE US NOW!</span>
     </a>
   </section>
@@ -203,6 +209,11 @@ onBeforeUnmount(() => {
   z-index: 0;
 }
 
+.hero-cover-wrap {
+  position: absolute;
+  inset: 0;
+}
+
 .hero-cover {
   position: absolute;
   inset: 0;
@@ -264,14 +275,35 @@ onBeforeUnmount(() => {
   transform: translateX(-50%);
 }
 
+.hero-cta-icon {
+  position: relative;
+  width: 65px;
+  aspect-ratio: 1 / 1;
+}
+
+.hero-cta-icon img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .digisalad-logo-white {
   display: block;
   margin-bottom: 32px;
+}
 
-  img {
-    width: 140px;
-    height: auto;
-  }
+.digisalad-logo-white__image {
+  position: relative;
+  width: 140px;
+  aspect-ratio: 199 / 88;
+}
+
+.digisalad-logo-white__image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .hero-content {
@@ -370,10 +402,10 @@ onBeforeUnmount(() => {
 
   .digisalad-logo-white {
     margin-bottom: 20px;
+  }
 
-    img {
-      width: 108px;
-    }
+  .digisalad-logo-white__image {
+    width: 108px;
   }
 
   .hero-content {
@@ -393,9 +425,8 @@ onBeforeUnmount(() => {
     font-size: 12px;
   }
 
-  .hero-cta img {
+  .hero-cta-icon {
     width: 48px;
-    height: 48px;
   }
 }
 </style>
