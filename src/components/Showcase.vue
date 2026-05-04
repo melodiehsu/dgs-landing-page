@@ -8,7 +8,10 @@
       type="button"
       @click="prevShowcase"
     >
-      <span class="button-icon" aria-hidden="true">
+      <span
+        class="button-icon"
+        aria-hidden="true"
+      >
         <img
           src="../assets/arrow.png"
           alt=""
@@ -21,7 +24,10 @@
       type="button"
       @click="nextShowcase"
     >
-      <span class="button-icon" aria-hidden="true">
+      <span
+        class="button-icon"
+        aria-hidden="true"
+      >
         <img
           src="../assets/arrow.png"
           alt=""

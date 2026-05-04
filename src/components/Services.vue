@@ -239,10 +239,6 @@ const services = [
     padding: 80px 48px;
   }
 
-  .services-description {
-    padding: 24px 0 0;
-  }
-
   .services-gallery {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 24px 28px;

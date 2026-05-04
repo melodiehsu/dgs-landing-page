@@ -62,7 +62,10 @@
       href="#about"
       aria-label="Go to about section"
     >
-      <span class="hero-cta-icon" aria-hidden="true">
+      <span
+        class="hero-cta-icon"
+        aria-hidden="true"
+      >
         <img
           src="../assets/salad-image.png"
           alt=""
@@ -190,17 +193,17 @@ onBeforeUnmount(() => {
   overflow: hidden;
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
-}
 
-.hero::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  width: 1px;
-  height: 44.044px;
-  background: #fff;
-  transform: translateX(-50%);
+  &::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 1px;
+    height: 44.044px;
+    background: #fff;
+    transform: translateX(-50%);
+  }
 }
 
 .hero-video {
@@ -260,7 +263,7 @@ onBeforeUnmount(() => {
 .hero-cta {
   position: absolute;
   left: 50%;
-  bottom: 103px;
+  bottom: 75px;
   z-index: 1;
   display: flex;
   flex-direction: column;
@@ -277,7 +280,7 @@ onBeforeUnmount(() => {
 
 .hero-cta-icon {
   position: relative;
-  width: 65px;
+  width: clamp(65px, 4.5vw, 65px);
   aspect-ratio: 1 / 1;
 }
 
@@ -324,6 +327,7 @@ onBeforeUnmount(() => {
       position: relative;
       z-index: 0;
       display: inline-block;
+      white-space: nowrap;
 
       &::before {
         content: '';
@@ -356,6 +360,14 @@ onBeforeUnmount(() => {
     height: min(820px, 92vh);
     border-bottom-left-radius: 40px;
     border-bottom-right-radius: 40px;
+
+    h1 span ::after {
+      bottom: 16px;
+    }
+  }
+
+  .hero-decoration-text {
+    font-size: 14px;
   }
 
   #hero-video-player {
@@ -364,7 +376,7 @@ onBeforeUnmount(() => {
   }
 
   .hero-content {
-    left: clamp(48px, 8vw, 120px);
+    left: clamp(72px, 10vw, 150px);
     top: 21%;
 
     h1 {
@@ -380,7 +392,11 @@ onBeforeUnmount(() => {
   }
 
   .hero-cta {
-    bottom: 72px;
+    bottom: 56px;
+  }
+
+  .hero-cta-icon {
+    width: clamp(54px, 5.7vw, 56px);
   }
 }
 
@@ -426,7 +442,7 @@ onBeforeUnmount(() => {
   }
 
   .hero-cta-icon {
-    width: 48px;
+    width: clamp(42px, 4vw, 48px);
   }
 }
 </style>

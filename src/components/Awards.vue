@@ -151,16 +151,32 @@ import SectionTitle from './SectionTitle.vue';
     padding: 48px 32px;
     gap: 28px;
     border-top-right-radius: 50px;
+    flex-direction: column;
+    align-items: stretch;
   }
 
   .awards-info {
     width: 100%;
-    max-width: 100%;
+  }
+
+  .awards-description {
+    width: 80%;
+    align-self: center;
+  }
+
+  .awards-section-title {
+    width: auto;
   }
 
   .awards-gallery {
+    width: 80%;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px 16px;
+    align-self: center;
+  }
+
+  .award-item {
+    width: clamp(200px, 24vw, 283px);
   }
 }
 

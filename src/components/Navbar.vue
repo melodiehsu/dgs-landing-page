@@ -174,11 +174,11 @@ nav {
   }
 
   .nav-actions {
-    gap: 20px;
+    gap: 40px;
   }
 
   .nav-cta {
-    width: 168px;
+    width: 200px;
   }
 }
 
@@ -197,7 +197,8 @@ nav {
   }
 
   .nav-cta {
-    display: none;
+    width: 180px;
+    font-size: 12px;
   }
 
   .menu-button svg {

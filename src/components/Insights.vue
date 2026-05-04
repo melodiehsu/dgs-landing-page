@@ -197,6 +197,10 @@
     width: 240px;
   }
 
+  .insights-role {
+    font-size: 14px;
+  }
+
   .insights-avatar {
     width: 180px;
     height: 180px;
@@ -231,11 +235,6 @@
   .insights-name {
     font-size: 18px;
     margin-top: 24px;
-  }
-
-  .insights-role {
-    font-size: 14px;
-    text-align: center;
   }
 
   .insights-avatar {
