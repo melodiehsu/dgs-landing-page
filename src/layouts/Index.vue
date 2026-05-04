@@ -23,7 +23,7 @@
 
       <Insights />
 
-      <Works />
+      <Experience />
 
       <ShowCase />
 
@@ -43,7 +43,7 @@ import About from '@/components/About.vue';
 import Services from '@/components/Services.vue';
 import Insights from '@/components/Insights.vue';
 import Awards from '@/components/Awards.vue';
-import Works from '@/components/Works.vue';
+import Experience from '@/components/Experience.vue';
 import ShowCase from '@/components/Showcase.vue';
 import SideMenu from '@/components/SideMenu.vue';
 

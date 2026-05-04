@@ -1,7 +1,7 @@
 <template>
   <section class="experience-section">
     <SectionTitle
-      id="works"
+      id="experience"
       title="our brand experience"
       wave-color="#26C6D0"
       dot-color="#EE6C8A"

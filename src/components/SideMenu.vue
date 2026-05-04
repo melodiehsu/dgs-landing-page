@@ -123,7 +123,7 @@
               <li>
                 <a
                   class="menu-card-link"
-                  href="#showcase"
+                  href="#works"
                   @click="$emit('close')"
                 >
                   <div class="menu-card menu-card--works">

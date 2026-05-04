@@ -1,6 +1,6 @@
 <template>
   <section
-    id="showcase"
+    id="works"
     class="showcase-section"
   >
     <div class="showcase-stage">
