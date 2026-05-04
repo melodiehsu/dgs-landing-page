@@ -109,7 +109,7 @@ const sectionTitleStyle = computed(() => {
 
 .section-title-text {
   text-align: center;
-  font-size: 28px;
+  font-size: clamp(20px, 1.95vw, 28px);
   font-weight: 700;
   line-height: normal;
   letter-spacing: 3.636px;
@@ -119,8 +119,8 @@ const sectionTitleStyle = computed(() => {
 .section-title-dot {
   position: absolute;
   top: 50%;
-  width: 10px;
-  height: 10px;
+  width: clamp(8px, 0.694vw, 10px);
+  height: clamp(8px, 0.694vw, 10px);
   border-radius: 50%;
 }
 
@@ -140,7 +140,7 @@ const sectionTitleStyle = computed(() => {
 
 @media (max-width: 960px) {
   .section-title-text {
-    font-size: 24px;
+    font-size: clamp(18px, 2vw, 24px);
     letter-spacing: 2.8px;
   }
 
@@ -151,7 +151,7 @@ const sectionTitleStyle = computed(() => {
 
 @media (max-width: 480px) {
   .section-title-text {
-    font-size: 20px;
+    font-size: clamp(16px, 4.2vw, 20px);
     letter-spacing: 2px;
   }
 
@@ -161,8 +161,8 @@ const sectionTitleStyle = computed(() => {
   }
 
   .section-title-dot {
-    width: 8px;
-    height: 8px;
+    width: clamp(6px, 1.8vw, 8px);
+    height: clamp(6px, 1.8vw, 8px);
   }
 }
 </style>
