@@ -141,8 +141,8 @@ const handlePlay = () => {
 .video-overlay-icon {
   display: grid;
   place-items: center;
-  width: 112.514px;
-  height: 113.181px;
+  width: clamp(72px, 9vw, 112.514px);
+  height: clamp(72px, 9vw, 113.181px);
 }
 
 .about-content {
@@ -177,7 +177,7 @@ const handlePlay = () => {
 }
 
 .decoration-line {
-  width: 52.033px;
+  width: clamp(40px, 5vw, 52.033px);
   height: 2px;
   background: #fff;
   margin-left: 14px;

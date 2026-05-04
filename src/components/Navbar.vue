@@ -135,7 +135,7 @@ nav {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 200px;
+  width: clamp(160px, 14vw, 200px);
   height: 41.026px;
   border: 0;
   border-radius: 24px;

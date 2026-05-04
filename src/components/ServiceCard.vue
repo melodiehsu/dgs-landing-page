@@ -64,7 +64,7 @@ withDefaults(
   font-size: 16px;
   font-weight: 200;
   padding: 5px;
-  width: 345px;
+  width: clamp(0px, 100%, 345px);
   letter-spacing: 1px;
   line-height: 28px;
   min-height: calc(28px * 5);
@@ -78,7 +78,7 @@ withDefaults(
 .service-title {
   color: #fff;
   text-align: center;
-  width: 270px;
+  width: clamp(0px, 100%, 270px);
   margin: 0 auto;
   display: flex;
   align-items: center;

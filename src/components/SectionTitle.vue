@@ -131,7 +131,7 @@ const sectionTitleStyle = computed(() => {
 
 .section-title-wave-svg {
   flex: 0 0 auto;
-  width: 181.612px;
+  width: clamp(120px, 12vw, 181.612px);
   display: block;
   transform-origin: left top;
   transform: translateY(10px);

@@ -119,7 +119,7 @@
   flex-direction: column;
   align-items: center;
   justify-self: center;
-  width: 300px;
+  width: clamp(240px, 20vw, 300px);
 }
 
 .insights-quote {
@@ -137,8 +137,8 @@
 
 .insights-avatar {
   position: relative;
-  width: 204px;
-  height: 204px;
+  width: clamp(140px, 14vw, 204px);
+  height: clamp(140px, 14vw, 204px);
   border-radius: 50%;
   overflow: hidden;
   margin: 10px 0;
