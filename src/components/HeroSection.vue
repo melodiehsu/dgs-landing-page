@@ -221,7 +221,7 @@ onBeforeUnmount(() => {
 
 .hero-decoration {
   position: absolute;
-  left: 4.34%;
+  left: clamp(24px, 4.34vw, 83px);
   top: 55%;
   z-index: 1;
   display: flex;
@@ -271,7 +271,7 @@ onBeforeUnmount(() => {
 .hero-content {
   position: absolute;
   top: 19.255%;
-  left: 15.278%;
+  left: clamp(120px, 15.278vw, 280px);
   z-index: 1;
   width: fit-content;
 

@@ -97,10 +97,13 @@ const handlePlay = () => {
   width: 100%;
   scroll-margin-top: 100px;
   box-sizing: border-box;
+  background: #f2f2f2;
 }
 
 .about-shell {
   width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
   padding: 40px 150px 0;
   display: flex;
   flex-direction: column;

@@ -150,6 +150,8 @@ const services = [
 
 .services-shell {
   width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
   padding: 104px 150px;
   box-sizing: border-box;
   display: flex;

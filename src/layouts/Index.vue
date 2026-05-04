@@ -10,20 +10,16 @@
     <main>
       <HeroSection />
 
-      <div
-        class="page-decoration"
-        aria-hidden="true"
-      ></div>
+      <div class="page-decoration-wrapper">
+        <div
+          class="page-decoration"
+          aria-hidden="true"
+        ></div>
+      </div>
 
       <About />
 
       <Awards />
-
-      <div
-        id="careers"
-        class="page-anchor"
-        aria-hidden="true"
-      ></div>
 
       <Services />
 
@@ -32,12 +28,6 @@
       <Works />
 
       <ShowCase />
-
-      <div
-        id="contact"
-        class="page-anchor"
-        aria-hidden="true"
-      ></div>
 
       <SideMenu
         :open="isSideMenuOpen"
@@ -74,7 +64,6 @@ const closeSideMenu = () => {
 .page {
   position: relative;
   z-index: 0;
-  background: #f2f2f2;
 }
 
 .site-header {
@@ -82,16 +71,15 @@ const closeSideMenu = () => {
   z-index: 20;
 }
 
+.page-decoration-wrapper {
+  width: 100%;
+  background: #f2f2f2;
+}
+
 .page-decoration {
   width: 1px;
   height: 86px;
   margin: 0 auto;
   background: #808080;
-}
-
-.page-anchor {
-  width: 1px;
-  height: 1px;
-  scroll-margin-top: 120px;
 }
 </style>

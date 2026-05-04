@@ -45,7 +45,9 @@ defineProps<{
 <style scoped lang="scss">
 .showcase {
   position: relative;
-  width: 72%;
+  width: min(72%, 1440px);
+  max-width: 1440px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;

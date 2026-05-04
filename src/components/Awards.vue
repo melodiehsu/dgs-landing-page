@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="awards-section">
     <div class="awards-stack">
       <div
         class="awards-background"
@@ -54,10 +54,14 @@
 <script setup lang="ts"></script>
 
 <style scoped lang="scss">
+.awards-section {
+  background: #f2f2f2;
+}
+
 .awards-stack {
   position: relative;
   width: 100vw;
-  margin-top: 70px;
+  padding-top: 70px;
   margin-left: calc(50% - 50vw);
 }
 
@@ -73,7 +77,7 @@
   position: relative;
   z-index: 1;
   background: #fff;
-  width: 93%;
+  width: min(93%, 1440px);
   margin: 0 0 0 auto;
   padding: 65px 70px;
   border-top-left-radius: 50px;
@@ -90,7 +94,7 @@
 }
 
 .awards-info {
-  width: 30%;
+  width: min(30%, 420px);
   display: flex;
   flex-direction: column;
   gap: 30px;

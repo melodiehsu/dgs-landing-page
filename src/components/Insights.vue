@@ -64,7 +64,8 @@
 
 .insights {
   position: relative;
-  width: 92%;
+  width: min(92%, 1440px);
+  margin: 0 auto;
   overflow: hidden;
   background: #26c6d0;
   border-top-right-radius: 50px;

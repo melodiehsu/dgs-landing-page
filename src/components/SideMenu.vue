@@ -288,6 +288,8 @@ onBeforeUnmount(() => {
 .menu-shell {
   position: relative;
   width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
   height: 100%;
   padding: 28px 30px 28px 30px;
   z-index: 1;
@@ -334,6 +336,8 @@ onBeforeUnmount(() => {
 
 .menu-grid {
   width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
   height: calc(100% - 86px);
   display: grid;
   grid-template-columns: 1.05fr 0.78fr 1fr;

@@ -36,6 +36,7 @@ import SectionTitle from './SectionTitle.vue';
 section {
   background: #fff;
   width: 100%;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 70px 0;
   display: flex;
@@ -45,6 +46,7 @@ section {
 
 .experience {
   width: 70%;
+  max-width: 960px;
   color: #262626;
   text-align: center;
   font-size: 16px;
