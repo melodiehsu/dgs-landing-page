@@ -136,6 +136,21 @@ const handlePlay = () => {
   background: transparent;
   cursor: pointer;
   border: 1px solid #f2f2f2;
+  transition:
+    background-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.video-overlay:hover,
+.video-overlay:focus-visible {
+  background: rgba(38, 198, 208, 0.08);
+  box-shadow: inset 0 0 0 2px rgba(38, 198, 208, 0.45);
+}
+
+.video-overlay:hover .video-overlay-icon,
+.video-overlay:focus-visible .video-overlay-icon {
+  transform: scale(1.05);
 }
 
 .video-overlay-icon {
@@ -143,6 +158,7 @@ const handlePlay = () => {
   place-items: center;
   width: clamp(72px, 9vw, 112.514px);
   height: clamp(72px, 9vw, 113.181px);
+  transition: transform 0.2s ease;
 }
 
 .about-content {
@@ -174,6 +190,23 @@ const handlePlay = () => {
   text-decoration: none;
   cursor: pointer;
   padding: 33px 24.53px;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+
+.about-cta:hover,
+.about-cta:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(38, 198, 208, 0.22);
+  filter: brightness(1.04);
+}
+
+.about-cta:hover .decoration-line,
+.about-cta:focus-visible .decoration-line {
+  width: clamp(44px, 5.2vw, 58px);
 }
 
 .decoration-line {

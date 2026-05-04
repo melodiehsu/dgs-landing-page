@@ -215,6 +215,9 @@ const services = [
   text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease;
 
   &::after {
     content: '';
@@ -225,6 +228,18 @@ const services = [
     height: clamp(6px, 0.8vw, 10px);
     background: #ffbc58;
     z-index: -1;
+    transition: height 0.2s ease;
+  }
+
+  &:hover,
+  &:focus-visible {
+    transform: translateY(-2px);
+    filter: brightness(1.05);
+  }
+
+  &:hover::after,
+  &:focus-visible::after {
+    height: clamp(8px, 1vw, 12px);
   }
 }
 

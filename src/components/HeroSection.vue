@@ -276,12 +276,27 @@ onBeforeUnmount(() => {
   text-decoration: none;
   cursor: pointer;
   transform: translateX(-50%);
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease;
+}
+
+.hero-cta:hover,
+.hero-cta:focus-visible {
+  transform: translateX(-50%) translateY(-4px);
+  filter: brightness(1.08);
+}
+
+.hero-cta:hover .hero-cta-icon,
+.hero-cta:focus-visible .hero-cta-icon {
+  transform: scale(1.05);
 }
 
 .hero-cta-icon {
   position: relative;
   width: clamp(65px, 4.5vw, 65px);
   aspect-ratio: 1 / 1;
+  transition: transform 0.2s ease;
 }
 
 .hero-cta-icon img {
@@ -294,6 +309,16 @@ onBeforeUnmount(() => {
 .digisalad-logo-white {
   display: block;
   margin-bottom: 32px;
+  border-radius: 8px;
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease;
+}
+
+.digisalad-logo-white:hover,
+.digisalad-logo-white:focus-visible {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
 }
 
 .digisalad-logo-white__image {

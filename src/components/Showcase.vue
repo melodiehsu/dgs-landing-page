@@ -161,6 +161,20 @@ const nextShowcase = () => {
   align-items: center;
   justify-content: center;
   flex: 0 0 auto;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+
+.last-page-button:hover,
+.next-page-button:hover,
+.last-page-button:focus-visible,
+.next-page-button:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(7, 43, 53, 0.24);
+  filter: brightness(1.06);
 }
 
 .button-icon {
@@ -181,6 +195,16 @@ const nextShowcase = () => {
 
 .next-page-button .button-icon {
   transform: rotate(180deg);
+}
+
+.last-page-button:hover .button-icon,
+.last-page-button:focus-visible .button-icon {
+  transform: scale(1.08);
+}
+
+.next-page-button:hover .button-icon,
+.next-page-button:focus-visible .button-icon {
+  transform: rotate(180deg) scale(1.08);
 }
 
 .last-page-button {

@@ -65,6 +65,7 @@ defineProps<{
   height: auto;
   border-radius: 50px;
   overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 
   img {
     position: absolute;
@@ -73,6 +74,12 @@ defineProps<{
     height: 100%;
     object-fit: cover;
   }
+}
+
+.showcase-content__media:hover .showcase-content__image-wrapper,
+.showcase-content__media:focus-within .showcase-content__image-wrapper {
+  transform: scale(1.01);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.16);
 }
 
 .showcase-content__media,
@@ -106,6 +113,23 @@ defineProps<{
   cursor: pointer;
   text-transform: uppercase;
   white-space: nowrap;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+
+.showcase-content__cta:hover,
+.showcase-content__cta:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(38, 198, 208, 0.24);
+  filter: brightness(1.05);
+}
+
+.showcase-content__cta:hover .showcase-content__cta-line,
+.showcase-content__cta:focus-visible .showcase-content__cta-line {
+  width: clamp(58px, 5.2vw, 78px);
 }
 
 .showcase-content__cta-line {

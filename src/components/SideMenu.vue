@@ -351,6 +351,10 @@ onBeforeUnmount(() => {
   border-radius: 50%;
   background: transparent;
   cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .close-button svg {
@@ -365,10 +369,23 @@ onBeforeUnmount(() => {
   stroke: currentColor;
 }
 
+.close-button:hover,
+.close-button:focus-visible {
+  transform: rotate(8deg) scale(1.05);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.18) inset;
+}
+
 .digisalad-logo-white {
   position: relative;
   display: inline-block;
   margin-left: 14px;
+  border-radius: 8px;
+}
+
+.digisalad-logo-white:hover,
+.digisalad-logo-white:focus-visible {
+  transform: translateY(-2px);
 }
 
 .digisalad-logo-white__image {
@@ -403,6 +420,14 @@ onBeforeUnmount(() => {
   display: block;
   color: inherit;
   text-decoration: none;
+  border-radius: 30px;
+}
+
+.menu-card-link:hover .menu-card,
+.menu-card-link:focus-visible .menu-card {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 18px 40px rgba(17, 31, 53, 0.18);
+  filter: saturate(1.05);
 }
 
 .menu-card {
@@ -417,6 +442,11 @@ onBeforeUnmount(() => {
   padding: 28px 34px;
   color: #fff;
   text-transform: uppercase;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
 }
 
 .menu-card::before {

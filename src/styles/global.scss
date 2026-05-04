@@ -3,3 +3,18 @@ body {
     Proxima Nova,
     sans-serif;
 }
+
+:where(a, button, [role='button']) {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    color 0.2s ease,
+    background-color 0.2s ease,
+    opacity 0.2s ease,
+    filter 0.2s ease;
+}
+
+:where(a, button, [role='button']):focus-visible {
+  outline: 3px solid #ffbc58;
+  outline-offset: 4px;
+}

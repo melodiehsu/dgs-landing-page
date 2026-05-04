@@ -99,9 +99,20 @@ nav {
 }
 
 .nav-logo {
+  display: inline-flex;
+  border-radius: 10px;
   opacity: 1;
-  transition: opacity 0.25s ease;
+  transition:
+    opacity 0.25s ease,
+    transform 0.2s ease,
+    filter 0.2s ease;
   margin-left: 40px;
+}
+
+.nav-logo:hover,
+.nav-logo:focus-visible {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
 }
 
 .nav-logo__image {
@@ -129,11 +140,20 @@ nav {
   background: transparent;
   color: #fff;
   cursor: pointer;
-  transition: color 0.25s ease;
+  transition:
+    color 0.25s ease,
+    transform 0.2s ease,
+    filter 0.2s ease;
 }
 
 .nav--scrolled .menu-button {
   color: #585880;
+}
+
+.menu-button:hover,
+.menu-button:focus-visible {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
 }
 
 .menu-button svg {
@@ -161,6 +181,18 @@ nav {
   font-weight: 700;
   letter-spacing: 1.143px;
   text-decoration: none;
+  box-shadow: 0 0 0 0 rgba(255, 188, 88, 0);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+
+.nav-cta:hover,
+.nav-cta:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(14, 47, 61, 0.18);
+  filter: brightness(1.04);
 }
 
 @media (max-width: 960px) {
