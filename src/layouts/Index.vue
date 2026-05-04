@@ -1,7 +1,10 @@
 <template>
   <div class="page">
     <header class="site-header">
-      <Navbar />
+      <Navbar
+        :show-menu="isSideMenuOpen"
+        @open-menu="openSideMenu"
+      />
     </header>
 
     <main>
@@ -23,11 +26,17 @@
       <Works />
 
       <ShowCase />
+
+      <SideMenu
+        :open="isSideMenuOpen"
+        @close="closeSideMenu"
+      />
     </main>
   </div>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue';
 import HeroSection from '@/components/HeroSection.vue';
 import Navbar from '@/components/Navbar.vue';
 import About from '@/components/About.vue';
@@ -36,6 +45,17 @@ import Insights from '@/components/Insights.vue';
 import Awards from '@/components/Awards.vue';
 import Works from '@/components/Works.vue';
 import ShowCase from '@/components/Showcase.vue';
+import SideMenu from '@/components/SideMenu.vue';
+
+const isSideMenuOpen = ref(false);
+
+const openSideMenu = () => {
+  isSideMenuOpen.value = true;
+};
+
+const closeSideMenu = () => {
+  isSideMenuOpen.value = false;
+};
 </script>
 
 <style scoped lang="scss">

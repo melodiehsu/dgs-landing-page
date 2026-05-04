@@ -151,7 +151,6 @@ const nextShowcase = () => {
   top: 250px;
   width: 48px;
   height: 48px;
-  transform: translateY(-100%);
   z-index: 1;
   pointer-events: none;
 

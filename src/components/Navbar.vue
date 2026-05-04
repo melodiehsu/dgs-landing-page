@@ -27,7 +27,8 @@
         type="button"
         aria-label="Open menu"
         aria-haspopup="dialog"
-        aria-expanded="false"
+        :aria-expanded="showMenu"
+        @click="$emit('open-menu')"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -50,6 +51,14 @@
 
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted, ref } from 'vue';
+
+defineProps<{
+  showMenu: boolean;
+}>();
+
+defineEmits<{
+  (event: 'open-menu'): void;
+}>();
 
 const isScrolled = ref(false);
 const threshold = 100;
