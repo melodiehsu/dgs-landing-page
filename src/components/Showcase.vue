@@ -21,14 +21,20 @@
         </span>
       </button>
 
-      <ShowcaseContent
-        :key="activeShowcase!.showcaseName"
-        :image-src="activeShowcase!.imageSrc"
-        :image-alt="activeShowcase!.imageAlt"
-        :title="activeShowcase!.title"
-        :showcase-name="activeShowcase!.showcaseName"
-        :showcase-description="activeShowcase!.showcaseDescription"
-      />
+      <Transition
+        :name="showcaseTransitionName"
+        mode="out-in"
+        appear
+      >
+        <ShowcaseContent
+          :key="activeShowcase!.showcaseName"
+          :image-src="activeShowcase!.imageSrc"
+          :image-alt="activeShowcase!.imageAlt"
+          :title="activeShowcase!.title"
+          :showcase-name="activeShowcase!.showcaseName"
+          :showcase-description="activeShowcase!.showcaseDescription"
+        />
+      </Transition>
 
       <button
         class="next-page-button"
@@ -48,9 +54,18 @@
       </button>
 
       <div class="showcase-pagination">
-        <span class="showcase-pagination__current">
-          {{ formatPaginationNumber(activeIndex + 1) }}
-        </span>
+        <Transition
+          :name="showcasePaginationTransitionName"
+          mode="out-in"
+          appear
+        >
+          <span
+            :key="activeIndex"
+            class="showcase-pagination__current"
+          >
+            {{ formatPaginationNumber(activeIndex + 1) }}
+          </span>
+        </Transition>
         <span class="showcase-pagination__total">
           {{ formatPaginationNumber(showcaseItems.length) }}
         </span>
@@ -100,16 +115,28 @@ const showcaseItems = [
 ] as const;
 
 const activeIndex = ref(0);
+const transitionDirection = ref<'prev' | 'next'>('next');
 
 const activeShowcase = computed(() => showcaseItems[activeIndex.value]);
+const showcaseTransitionName = computed(
+  () => (transitionDirection.value === 'prev' ? 'showcase-slide-right' : 'showcase-slide-left'),
+);
+const showcasePaginationTransitionName = computed(
+  () =>
+    transitionDirection.value === 'prev'
+      ? 'showcase-pagination-slide-up'
+      : 'showcase-pagination-slide-down',
+);
 
 const formatPaginationNumber = (value: number) => String(value).padStart(2, '0');
 
 const prevShowcase = () => {
+  transitionDirection.value = 'prev';
   activeIndex.value = (activeIndex.value - 1 + showcaseItems.length) % showcaseItems.length;
 };
 
 const nextShowcase = () => {
+  transitionDirection.value = 'next';
   activeIndex.value = (activeIndex.value + 1) % showcaseItems.length;
 };
 </script>
@@ -271,12 +298,71 @@ const nextShowcase = () => {
   right: 50%;
   bottom: 50%;
   transform: translate(-5px, -5px);
+  will-change: opacity, transform;
 }
 
 .showcase-pagination__total {
   left: 50%;
   top: 50%;
   transform: translate(5px, 5px);
+}
+
+.showcase-pagination :deep(.showcase-pagination-slide-up-enter-active),
+.showcase-pagination :deep(.showcase-pagination-slide-up-leave-active),
+.showcase-pagination :deep(.showcase-pagination-slide-down-enter-active),
+.showcase-pagination :deep(.showcase-pagination-slide-down-leave-active) {
+  transition:
+    opacity 0.32s ease,
+    transform 0.32s ease;
+}
+
+.showcase-pagination :deep(.showcase-pagination-slide-up-enter-from),
+.showcase-pagination :deep(.showcase-pagination-slide-down-leave-to) {
+  opacity: 0;
+  transform: translate(-5px, -5px) translateY(16px);
+}
+
+.showcase-pagination :deep(.showcase-pagination-slide-up-leave-to),
+.showcase-pagination :deep(.showcase-pagination-slide-down-enter-from) {
+  opacity: 0;
+  transform: translate(-5px, -5px) translateY(-16px);
+}
+
+.showcase-pagination :deep(.showcase-pagination-slide-up-enter-to),
+.showcase-pagination :deep(.showcase-pagination-slide-up-leave-from),
+.showcase-pagination :deep(.showcase-pagination-slide-down-enter-to),
+.showcase-pagination :deep(.showcase-pagination-slide-down-leave-from) {
+  opacity: 1;
+  transform: translate(-5px, -5px) translateY(0);
+}
+
+.showcase-slide-left-enter-active,
+.showcase-slide-left-leave-active,
+.showcase-slide-right-enter-active,
+.showcase-slide-right-leave-active {
+  transition:
+    opacity 0.38s ease,
+    transform 0.38s ease;
+}
+
+.showcase-slide-left-enter-from,
+.showcase-slide-right-leave-to {
+  opacity: 0;
+  transform: translateX(-28px);
+}
+
+.showcase-slide-left-leave-to,
+.showcase-slide-right-enter-from {
+  opacity: 0;
+  transform: translateX(28px);
+}
+
+.showcase-slide-left-enter-to,
+.showcase-slide-left-leave-from,
+.showcase-slide-right-enter-to,
+.showcase-slide-right-leave-from {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 @media (max-width: 960px) {
