@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="experience-section">
     <SectionTitle
       id="works"
       title="our brand experience"
@@ -33,15 +33,14 @@ import SectionTitle from './SectionTitle.vue';
 </script>
 
 <style scoped lang="scss">
-section {
-  background: #fff;
+.experience-section {
   width: 100%;
-  max-width: 1440px;
   margin: 0 auto;
   padding: 70px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: #fff;
 }
 
 .experience {

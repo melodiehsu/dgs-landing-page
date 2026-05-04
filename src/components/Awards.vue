@@ -62,7 +62,6 @@
   position: relative;
   width: 100vw;
   padding-top: 70px;
-  margin-left: calc(50% - 50vw);
 }
 
 .awards-background {

@@ -47,7 +47,6 @@
 .insights-stack {
   position: relative;
   width: 100%;
-  margin-left: calc(50% - 50vw);
 
   &::after {
     content: '';
@@ -65,7 +64,7 @@
 .insights {
   position: relative;
   width: min(92%, 1440px);
-  margin: 0 auto;
+  margin: 0 auto 0 0;
   overflow: hidden;
   background: #26c6d0;
   border-top-right-radius: 50px;

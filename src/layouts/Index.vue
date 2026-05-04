@@ -10,12 +10,10 @@
     <main>
       <HeroSection />
 
-      <div class="page-decoration-wrapper">
-        <div
-          class="page-decoration"
-          aria-hidden="true"
-        ></div>
-      </div>
+      <div
+        class="page-decoration"
+        aria-hidden="true"
+      ></div>
 
       <About />
 
@@ -64,16 +62,12 @@ const closeSideMenu = () => {
 .page {
   position: relative;
   z-index: 0;
+  background: #f2f2f2;
 }
 
 .site-header {
   position: relative;
   z-index: 20;
-}
-
-.page-decoration-wrapper {
-  width: 100%;
-  background: #f2f2f2;
 }
 
 .page-decoration {

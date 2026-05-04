@@ -1,6 +1,6 @@
 <template>
   <section class="hero">
-    <div class="hero-background">
+    <div class="hero-video">
       <img
         class="hero-cover"
         :class="{ 'hero-cover--hidden': coverHidden }"
@@ -10,7 +10,7 @@
       />
 
       <iframe
-        id="hero-video"
+        id="hero-video-player"
         :src="youtubeSrc"
         allowfullscreen
         tabindex="-1"
@@ -98,7 +98,7 @@ const createPlayer = () => {
     return;
   }
 
-  player = new window.YT.Player('hero-video', {
+  player = new window.YT.Player('hero-video-player', {
     videoId,
     playerVars: {
       autoplay: 1,
@@ -163,11 +163,11 @@ onBeforeUnmount(() => {
 </script>
 
 <style scoped lang="scss">
-#hero-video {
+#hero-video-player {
   position: absolute;
   top: 50%;
   left: 50%;
-  z-index: -1;
+  z-index: 0;
   border: 0;
   width: max(112vw, 200vh);
   height: max(63vw, 112vh);
@@ -197,15 +197,16 @@ onBeforeUnmount(() => {
   transform: translateX(-50%);
 }
 
-.hero-background {
+.hero-video {
   position: absolute;
   inset: 0;
+  z-index: 0;
 }
 
 .hero-cover {
   position: absolute;
   inset: 0;
-  z-index: 0;
+  z-index: 1;
   width: 100%;
   height: 100%;
   object-fit: cover;
