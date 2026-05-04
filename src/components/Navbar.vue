@@ -148,4 +148,47 @@ nav {
   letter-spacing: 1.143px;
   text-decoration: none;
 }
+
+@media (max-width: 960px) {
+  nav {
+    height: 84px;
+    padding: 0 24px;
+  }
+
+  .nav-logo {
+    margin-left: 0;
+  }
+
+  .nav-actions {
+    gap: 20px;
+  }
+
+  .nav-cta {
+    width: 168px;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    height: 72px;
+    padding: 0 16px;
+  }
+
+  .nav-logo {
+    width: 92px;
+  }
+
+  .nav-logo img {
+    width: 92px;
+  }
+
+  .nav-cta {
+    display: none;
+  }
+
+  .menu-button svg {
+    width: 26px;
+    height: 18px;
+  }
+}
 </style>

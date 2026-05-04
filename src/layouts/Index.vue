@@ -76,4 +76,16 @@ const closeSideMenu = () => {
   margin: 0 auto;
   background: #808080;
 }
+
+@media (max-width: 960px) {
+  .page-decoration {
+    height: 64px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-decoration {
+    height: 48px;
+  }
+}
 </style>

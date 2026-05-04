@@ -55,4 +55,33 @@ import SectionTitle from './SectionTitle.vue';
   text-align: center;
   padding: 50px 0;
 }
+
+.client-list img {
+  width: 100%;
+  max-width: 960px;
+}
+
+@media (max-width: 960px) {
+  .experience-section {
+    padding: 56px 0;
+  }
+
+  .experience {
+    width: min(88%, 720px);
+    padding: 36px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-section {
+    padding: 40px 0;
+  }
+
+  .experience {
+    width: calc(100% - 40px);
+    font-size: 14px;
+    line-height: 22px;
+    padding: 24px 0 32px;
+  }
+}
 </style>

@@ -154,4 +154,66 @@ defineProps<{
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+@media (max-width: 960px) {
+  .showcase {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    padding: 0 32px;
+  }
+
+  .left {
+    width: 100%;
+    max-width: 554px;
+  }
+
+  .image-wrapper {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    height: auto;
+  }
+
+  .showcase-cta {
+    right: -20px;
+    bottom: -28px;
+    padding: 28px 20px;
+  }
+
+  .right {
+    width: 100%;
+    max-width: 554px;
+  }
+}
+
+@media (max-width: 480px) {
+  .showcase {
+    gap: 24px;
+    padding: 0 20px;
+  }
+
+  .showcase-cta {
+    right: 12px;
+    bottom: 12px;
+    padding: 18px 16px;
+    font-size: 13px;
+  }
+
+  .decoration-line {
+    width: 42px;
+    margin-left: 12px;
+  }
+
+  .showcase-name {
+    font-size: 22px;
+    white-space: normal;
+    margin: 16px 0;
+  }
+
+  .showcase-description {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
 </style>

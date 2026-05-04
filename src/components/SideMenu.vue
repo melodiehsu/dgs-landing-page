@@ -543,4 +543,98 @@ onBeforeUnmount(() => {
   display: flex;
   gap: 17px;
 }
+
+@media (max-width: 960px) {
+  .menu-shell {
+    padding: 24px 24px 24px;
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto;
+    gap: 18px;
+    height: auto;
+    padding-top: 20px;
+  }
+
+  .menu-card {
+    min-height: 180px;
+    height: auto;
+    padding: 22px 24px;
+  }
+
+  .menu-card--about,
+  .menu-card--careers,
+  .menu-card--services,
+  .menu-card--works,
+  .menu-card--insights,
+  .menu-card--contact {
+    grid-column: auto;
+    grid-row: auto;
+    transform: none;
+  }
+
+  .menu-card__title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    overflow-y: auto;
+  }
+
+  .menu-shell {
+    padding: 20px 16px 28px;
+  }
+
+  .close-button {
+    top: 18px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .digisalad-logo-white {
+    width: 112px;
+    height: 50px;
+    margin-left: 0;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding-top: 16px;
+  }
+
+  .menu-card {
+    min-height: 150px;
+    padding: 18px 20px;
+    border-radius: 24px;
+  }
+
+  .menu-card__eyebrow {
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+
+  .menu-card__title {
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+
+  .about-wrapper,
+  .works-wrapper {
+    gap: 14px;
+  }
+
+  .menu-icon--lettuce,
+  .menu-icon--carrot,
+  .menu-icon--tomato,
+  .menu-icon--pickle,
+  .menu-icon--cheese {
+    transform: scale(0.82);
+    transform-origin: left top;
+  }
+}
 </style>

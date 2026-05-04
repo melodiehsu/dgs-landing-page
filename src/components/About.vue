@@ -182,4 +182,45 @@ const handlePlay = () => {
   background: #fff;
   margin-left: 14px;
 }
+
+@media (max-width: 960px) {
+  .about-shell {
+    padding: 32px 48px 0;
+  }
+
+  .about-content {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-shell {
+    padding: 24px 20px 0;
+  }
+
+  .video-wrapper {
+    margin: 20px 0;
+  }
+
+  .about-content {
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+  }
+
+  .about-cta {
+    padding: 24px 18px;
+    font-size: 14px;
+  }
+
+  .decoration-line {
+    width: 40px;
+    margin-left: 10px;
+  }
+
+  .video-overlay-icon {
+    width: 72px;
+    height: 72px;
+  }
+}
 </style>

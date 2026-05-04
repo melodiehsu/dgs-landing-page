@@ -123,4 +123,44 @@ withDefaults(
   font-weight: 700;
   letter-spacing: 2.222px;
 }
+
+@media (max-width: 960px) {
+  .service-content {
+    width: 100%;
+    max-width: 345px;
+  }
+
+  .service-title {
+    width: 100%;
+    max-width: 270px;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-card {
+    gap: 12px;
+  }
+
+  .service-content {
+    font-size: 14px;
+    line-height: 24px;
+    min-height: 0;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+  }
+
+  .service-title {
+    font-size: 18px;
+    height: auto;
+  }
+
+  .image-wrapper {
+    width: 88px;
+    height: 88px;
+  }
+
+  .service-cta {
+    padding: 16px 24px;
+  }
+}
 </style>

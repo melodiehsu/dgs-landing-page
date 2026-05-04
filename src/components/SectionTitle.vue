@@ -137,4 +137,32 @@ const sectionTitleStyle = computed(() => {
   transform: translateY(10px);
   margin-right: -10px;
 }
+
+@media (max-width: 960px) {
+  .section-title-text {
+    font-size: 24px;
+    letter-spacing: 2.8px;
+  }
+
+  .section-title-wave-svg {
+    width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title-text {
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+
+  .section-title-wave-svg {
+    width: 120px;
+    transform: translateY(8px);
+  }
+
+  .section-title-dot {
+    width: 8px;
+    height: 8px;
+  }
+}
 </style>

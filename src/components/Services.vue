@@ -233,4 +233,52 @@ const services = [
     z-index: -1;
   }
 }
+
+@media (max-width: 960px) {
+  .services-shell {
+    padding: 80px 48px;
+  }
+
+  .services-description {
+    padding: 24px 0 0;
+  }
+
+  .services-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 28px;
+    padding: 64px 0 72px;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-shell {
+    padding: 56px 20px;
+  }
+
+  .services-description {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .services-label-link {
+    padding: 24px 18px;
+    font-size: 14px;
+  }
+
+  .decoration-line {
+    width: 36px;
+    margin-left: 10px;
+  }
+
+  .services-gallery {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 48px 0 56px;
+  }
+
+  .services-cta {
+    font-size: 14px;
+    text-align: center;
+  }
+}
 </style>

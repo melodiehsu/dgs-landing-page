@@ -168,4 +168,83 @@
     color: #ffbc58;
   }
 }
+
+@media (max-width: 960px) {
+  .insights-stack::after {
+    height: 42%;
+  }
+
+  .insights {
+    width: 100%;
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: 40px;
+    padding: 72px 40px;
+    border-top-left-radius: 50px;
+  }
+
+  .insights-profile {
+    width: 240px;
+  }
+
+  .insights-avatar {
+    width: 180px;
+    height: 180px;
+  }
+
+  .insights-quote p {
+    font-size: 18px;
+    line-height: 34px;
+  }
+}
+
+@media (max-width: 480px) {
+  .insights-stack::after {
+    height: 34%;
+    border-bottom-right-radius: 28px;
+  }
+
+  .insights {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 48px 20px;
+    border-top-left-radius: 28px;
+    border-top-right-radius: 28px;
+    border-bottom-right-radius: 28px;
+    border-bottom-left-radius: 28px;
+  }
+
+  .insights-profile {
+    width: 100%;
+  }
+
+  .insights-name {
+    font-size: 18px;
+    margin-top: 24px;
+  }
+
+  .insights-role {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .insights-avatar {
+    width: 140px;
+    height: 140px;
+  }
+
+  .insights-quote {
+    transform: none;
+  }
+
+  .insights-quote img {
+    width: 64px;
+    height: 64px;
+  }
+
+  .insights-quote p {
+    font-size: 15px;
+    line-height: 28px;
+    letter-spacing: 1px;
+  }
+}
 </style>

@@ -193,4 +193,53 @@ const nextShowcase = () => {
   top: 50%;
   transform: translate(4px, 4px);
 }
+
+@media (max-width: 960px) {
+  .showcase-section {
+    padding: 180px 0 160px;
+  }
+
+  .left-button {
+    left: 24px;
+  }
+
+  .right-button {
+    right: 24px;
+  }
+
+  .showcase-page {
+    right: 32px;
+    top: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .showcase-section {
+    padding: 120px 0 120px;
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px;
+  }
+
+  .left-button,
+  .right-button {
+    width: 42px;
+    height: 42px;
+    top: 24px;
+  }
+
+  .left-button {
+    left: 16px;
+  }
+
+  .right-button {
+    right: 16px;
+  }
+
+  .showcase-page {
+    right: 16px;
+    top: 18px;
+    width: 40px;
+    height: 40px;
+  }
+}
 </style>

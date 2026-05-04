@@ -117,4 +117,61 @@
   align-items: center;
   gap: 37px 19px;
 }
+
+@media (max-width: 960px) {
+  .awards-stack {
+    width: 100%;
+    padding-top: 56px;
+  }
+
+  .awards {
+    width: 100%;
+    padding: 48px 32px;
+    gap: 28px;
+    border-top-right-radius: 50px;
+  }
+
+  .awards-info {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .awards-section-title {
+    width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .awards-stack {
+    padding-top: 40px;
+  }
+
+  .awards {
+    padding: 32px 20px;
+    border-top-right-radius: 36px;
+    border-top-left-radius: 36px;
+    border-bottom-left-radius: 36px;
+    border-bottom-right-radius: 36px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .awards-info {
+    gap: 18px;
+  }
+
+  .awards-description {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .awards-gallery {
+    gap: 20px 12px;
+  }
+
+  .awards-gallery img {
+    width: 100%;
+    max-width: 140px;
+  }
+}
 </style>
