@@ -19,6 +19,12 @@
 
       <Awards />
 
+      <div
+        id="careers"
+        class="page-anchor"
+        aria-hidden="true"
+      ></div>
+
       <Services />
 
       <Insights />
@@ -26,6 +32,12 @@
       <Works />
 
       <ShowCase />
+
+      <div
+        id="contact"
+        class="page-anchor"
+        aria-hidden="true"
+      ></div>
 
       <SideMenu
         :open="isSideMenuOpen"
@@ -75,5 +87,11 @@ const closeSideMenu = () => {
   height: 86px;
   margin: 0 auto;
   background: #808080;
+}
+
+.page-anchor {
+  width: 1px;
+  height: 1px;
+  scroll-margin-top: 120px;
 }
 </style>

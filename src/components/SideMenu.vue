@@ -42,7 +42,12 @@
           </button>
 
           <div class="menu-grid">
-            <div class="menu-card menu-card--about">
+            <a
+              class="menu-card-link"
+              href="#about"
+              @click="$emit('close')"
+            >
+              <div class="menu-card menu-card--about">
               <div class="about-wrapper">
                 <img
                   class="menu-icon menu-icon--lettuce"
@@ -56,8 +61,14 @@
                 </div>
               </div>
             </div>
+            </a>
 
-            <div class="menu-card menu-card--careers">
+            <a
+              class="menu-card-link"
+              href="#careers"
+              @click="$emit('close')"
+            >
+              <div class="menu-card menu-card--careers">
               <img
                 class="menu-icon menu-icon--cheese"
                 src="../assets/sidemenu/food/cheese.png"
@@ -66,8 +77,14 @@
               <div class="menu-card__eyebrow">BE COOL WITH US</div>
               <div class="menu-card__title">CAREERS</div>
             </div>
+            </a>
 
-            <div class="menu-card menu-card--services">
+            <a
+              class="menu-card-link"
+              href="#services"
+              @click="$emit('close')"
+            >
+              <div class="menu-card menu-card--services">
               <img
                 class="menu-icon menu-icon--carrot"
                 src="../assets/sidemenu/food/carrot.png"
@@ -76,8 +93,14 @@
               <div class="menu-card__eyebrow">AREAS OF EXPERTISE</div>
               <div class="menu-card__title">SERVICES</div>
             </div>
+            </a>
 
-            <div class="menu-card menu-card--works">
+            <a
+              class="menu-card-link"
+              href="#showcase"
+              @click="$emit('close')"
+            >
+              <div class="menu-card menu-card--works">
               <div class="works-wrapper">
                 <img
                   class="menu-icon menu-icon--tomato"
@@ -90,8 +113,14 @@
                 </div>
               </div>
             </div>
+            </a>
 
-            <div class="menu-card menu-card--insights">
+            <a
+              class="menu-card-link"
+              href="#insights"
+              @click="$emit('close')"
+            >
+              <div class="menu-card menu-card--insights">
               <img
                 class="menu-icon menu-icon--pickle"
                 src="../assets/sidemenu/food/pickle.png"
@@ -100,11 +129,18 @@
               <div class="menu-card__eyebrow">OUR STRATEGIES</div>
               <div class="menu-card__title">INSIGHTS</div>
             </div>
+            </a>
 
-            <div class="menu-card menu-card--contact">
+            <a
+              class="menu-card-link"
+              href="#contact"
+              @click="$emit('close')"
+            >
+              <div class="menu-card menu-card--contact">
               <div class="menu-card__eyebrow">START YOUR JOURNEY WITH US</div>
               <div class="menu-card__title">CONTACT</div>
             </div>
+            </a>
           </div>
         </div>
       </aside>
@@ -308,6 +344,12 @@ onBeforeUnmount(() => {
   align-items: start;
 }
 
+.menu-card-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
 .menu-card {
   position: relative;
   height: var(--card-height, 220px);
@@ -365,17 +407,25 @@ onBeforeUnmount(() => {
 }
 
 .menu-card__title {
+  position: relative;
+  width: fit-content;
+  align-self: flex-start;
+  display: inline-block;
+
   &::after {
     content: '';
     position: absolute;
     left: calc(100% + 10px);
-    top: 55%;
+    top: 50%;
     width: 10px;
     height: 10px;
     border-radius: 50%;
     background: #ee6c8a;
-    transform: translateY(-50%);
   }
+}
+
+.menu-card--works .menu-card__title::after {
+  background: #26c6d0;
 }
 
 .menu-card__eyebrow {

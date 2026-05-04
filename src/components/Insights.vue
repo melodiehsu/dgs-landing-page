@@ -1,5 +1,8 @@
 <template>
-  <section class="insights-section">
+  <section
+    id="insights"
+    class="insights-section"
+  >
     <div class="insights-stack">
       <div class="insights">
         <div class="insights-profile">
@@ -38,6 +41,7 @@
 .insights-section {
   width: 100%;
   background: #fff;
+  scroll-margin-top: 120px;
 }
 
 .insights-stack {

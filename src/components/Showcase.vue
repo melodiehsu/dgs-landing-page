@@ -1,5 +1,8 @@
 <template>
-  <section class="showcase-section">
+  <section
+    id="showcase"
+    class="showcase-section"
+  >
     <button
       class="left-button"
       type="button"
@@ -107,6 +110,7 @@ const nextShowcase = () => {
   border-bottom-right-radius: 50px;
   overflow: hidden;
   color: #fff;
+  scroll-margin-top: -90px;
 
   &::after {
     content: '';
