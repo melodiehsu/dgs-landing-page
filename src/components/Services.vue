@@ -22,19 +22,16 @@
         molestie faucibus.
       </p>
 
-      <div class="services-label">
-        <a
-          id="services"
-          href="#services"
-          class="services-label-link"
-        >
-          <span>our services</span>
-          <span
-            class="decoration-line"
-            aria-hidden="true"
-          ></span>
-        </a>
-      </div>
+      <h3
+        id="services"
+        class="services-heading"
+      >
+        <span>our services</span>
+        <span
+          class="decoration-line"
+          aria-hidden="true"
+        ></span>
+      </h3>
 
       <div class="services-gallery">
         <ServiceCard
@@ -183,16 +180,11 @@ const services = [
   padding: 85px 0 100px;
 }
 
-.services-label {
-  align-self: center;
-}
-
-.services-label-link {
+.services-heading {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border: 0;
-  appearance: none;
   border-radius: 1px;
   color: #fff;
   font-size: 16px;
@@ -202,6 +194,7 @@ const services = [
   text-decoration: none;
   padding: 33px 24.53px;
   background: #585880;
+  text-transform: uppercase;
 }
 
 .decoration-line {
@@ -256,7 +249,7 @@ const services = [
     line-height: 24px;
   }
 
-  .services-label-link {
+  .services-heading {
     padding: 24px 18px;
     font-size: 14px;
   }

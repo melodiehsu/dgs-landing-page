@@ -9,7 +9,7 @@
       :scroll-margin-top="120"
     />
 
-    <p class="experience">
+    <p class="experience-description">
       Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum
       bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare.
       Phasellus at semper turpis. Nunc eu tellus tortor. Etiam at condimentum nisl, vitae sagittis
@@ -19,14 +19,13 @@
       molestie faucibus.
     </p>
 
-    <div class="client-list">
-      <div class="client-list-image">
-        <img
-          src="../assets/digisalad-client-list.png"
-          alt=""
-        />
-      </div>
-    </div>
+    <figure class="experience-clients">
+      <img
+        class="experience-clients__image"
+        src="../assets/digisalad-client-list.png"
+        alt="Digisalad client list"
+      />
+    </figure>
   </section>
 </template>
 
@@ -45,26 +44,26 @@ import SectionTitle from './SectionTitle.vue';
   background: #fff;
 }
 
-.experience {
+.experience-description {
   width: 70%;
   max-width: 960px;
   color: #262626;
   text-align: center;
   font-size: 16px;
   font-weight: 400;
-  line-height: 24px; /* 150% */
+  line-height: 1.5;
   letter-spacing: 1px;
-  text-align: center;
   padding: 50px 0;
 }
 
-.client-list-image {
+.experience-clients {
   position: relative;
   width: min(100%, 960px);
   aspect-ratio: 1040 / 720;
+  margin: 0;
 }
 
-.client-list-image img {
+.experience-clients__image {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -78,7 +77,7 @@ import SectionTitle from './SectionTitle.vue';
     padding: 56px 0;
   }
 
-  .experience {
+  .experience-description {
     width: min(88%, 720px);
     padding: 36px 0;
   }
@@ -89,7 +88,7 @@ import SectionTitle from './SectionTitle.vue';
     padding: 40px 0;
   }
 
-  .experience {
+  .experience-description {
     width: calc(100% - 40px);
     font-size: 14px;
     line-height: 22px;

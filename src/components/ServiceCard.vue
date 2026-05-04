@@ -1,33 +1,31 @@
 <template>
-  <div class="service-card">
+  <article class="service-card">
     <div
       v-if="imgSrc"
-      class="service-icon"
+      class="service-card__image-wrapper"
     >
-      <div class="image-wrapper">
-        <img
-          :src="imgSrc"
-          :alt="imgAlt"
-        />
-      </div>
+      <img
+        :src="imgSrc"
+        :alt="imgAlt"
+      />
     </div>
 
-    <h4 class="service-title">
+    <h3 class="service-card__title">
       {{ title }}
-    </h4>
+    </h3>
 
-    <div class="service-content">
+    <p class="service-card__content">
       {{ content }}
-    </div>
+    </p>
 
     <button
       v-if="ctaLabel"
-      class="service-cta"
+      class="service-card__cta"
       type="button"
     >
       {{ ctaLabel }}
     </button>
-  </div>
+  </article>
 </template>
 
 <script setup lang="ts">
@@ -59,7 +57,7 @@ withDefaults(
   color: #fff;
 }
 
-.service-content {
+.service-card__content {
   text-align: center;
   font-size: 16px;
   font-weight: 200;
@@ -67,15 +65,12 @@ withDefaults(
   width: clamp(0px, 100%, 345px);
   letter-spacing: 1px;
   line-height: 28px;
-  min-height: calc(28px * 5);
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  line-clamp: 5;
-  -webkit-line-clamp: 5;
+  display: block;
+  min-height: 0;
+  overflow: visible;
 }
 
-.service-title {
+.service-card__title {
   color: #fff;
   text-align: center;
   width: clamp(0px, 100%, 270px);
@@ -93,7 +88,7 @@ withDefaults(
   white-space: pre-line;
 }
 
-.image-wrapper {
+.service-card__image-wrapper {
   position: relative;
   width: 108px;
   height: 108px;
@@ -110,7 +105,7 @@ withDefaults(
   }
 }
 
-.service-cta {
+.service-card__cta {
   color: #fff;
   border-radius: 30px;
   border: 2px solid #fff;
@@ -125,7 +120,7 @@ withDefaults(
 }
 
 @media (max-width: 960px) {
-  .service-content {
+  .service-card__content {
     width: 100%;
     max-width: 345px;
     min-height: 0;
@@ -136,7 +131,7 @@ withDefaults(
     -webkit-box-orient: initial;
   }
 
-  .service-title {
+  .service-card__title {
     width: 100%;
     max-width: 270px;
   }
@@ -147,25 +142,22 @@ withDefaults(
     gap: 12px;
   }
 
-  .service-content {
+  .service-card__content {
     font-size: 14px;
     line-height: 24px;
-    min-height: 0;
-    -webkit-line-clamp: 4;
-    line-clamp: 4;
   }
 
-  .service-title {
+  .service-card__title {
     font-size: 18px;
     height: auto;
   }
 
-  .image-wrapper {
+  .service-card__image-wrapper {
     width: 88px;
     height: 88px;
   }
 
-  .service-cta {
+  .service-card__cta {
     padding: 16px 24px;
   }
 }

@@ -1,7 +1,7 @@
 <template>
-  <div class="showcase">
-    <div class="left">
-      <div class="image-wrapper">
+  <article class="showcase-content">
+    <div class="showcase-content__media">
+      <div class="showcase-content__image-wrapper">
         <img
           :src="imageSrc"
           :alt="imageAlt"
@@ -9,29 +9,31 @@
       </div>
 
       <button
-        class="showcase-cta"
+        class="showcase-content__cta"
         type="button"
       >
         <span>view project</span>
         <span
-          class="decoration-line"
+          class="showcase-content__cta-line"
           aria-hidden="true"
         ></span>
       </button>
     </div>
 
-    <div class="right">
-      <div class="title">{{ title }}</div>
+    <div class="showcase-content__body">
+      <h3 class="showcase-content__title">
+        {{ title }}
+      </h3>
 
-      <div class="showcase-name">
-        <span class="showcase-name__text">{{ showcaseName }}</span>
+      <div class="showcase-content__name">
+        <span class="showcase-content__name-text">{{ showcaseName }}</span>
       </div>
 
-      <div class="showcase-description">
+      <div class="showcase-content__description">
         {{ showcaseDescription }}
       </div>
     </div>
-  </div>
+  </article>
 </template>
 
 <script setup lang="ts">
@@ -45,7 +47,7 @@ defineProps<{
 </script>
 
 <style scoped lang="scss">
-.showcase {
+.showcase-content {
   position: relative;
   width: 100%;
   display: grid;
@@ -55,7 +57,7 @@ defineProps<{
   grid-column: 2;
 }
 
-.image-wrapper {
+.showcase-content__image-wrapper {
   position: relative;
   width: 100%;
   max-width: 554px;
@@ -73,16 +75,16 @@ defineProps<{
   }
 }
 
-.left,
-.right {
+.showcase-content__media,
+.showcase-content__body {
   min-width: 0;
 }
 
-.left {
+.showcase-content__media {
   position: relative;
 }
 
-.showcase-cta {
+.showcase-content__cta {
   position: absolute;
   right: clamp(-68px, -4.722vw, -20px);
   bottom: clamp(-75px, -5.208vw, -28px);
@@ -106,27 +108,27 @@ defineProps<{
   white-space: nowrap;
 }
 
-.decoration-line {
+.showcase-content__cta-line {
   width: clamp(50px, 4.861vw, 70px);
   height: 2px;
   background: #fff;
   margin-left: clamp(16px, 1.806vw, 26px);
 }
 
-.title {
+.showcase-content__title {
   width: 100%;
   font-size: clamp(14px, 1.1vw, 16px);
   font-weight: 700;
   letter-spacing: 2.222px;
 }
 
-.showcase-name {
+.showcase-content__name {
   width: fit-content;
   max-width: 100%;
   margin: 20px 0;
 }
 
-.showcase-name__text {
+.showcase-content__name-text {
   position: relative;
   display: inline;
   max-width: 100%;
@@ -154,7 +156,7 @@ defineProps<{
   }
 }
 
-.showcase-description {
+.showcase-content__description {
   width: 90%;
   font-size: clamp(14px, 1.1vw, 16px);
   font-weight: 200;
@@ -169,44 +171,44 @@ defineProps<{
 }
 
 @media (max-width: 960px) {
-  .showcase {
+  .showcase-content {
     width: 100%;
     grid-template-columns: 1fr;
     gap: 32px;
   }
 
-  .left {
+  .showcase-content__media {
     width: 80%;
     justify-self: center;
   }
 
-  .right {
+  .showcase-content__body {
     width: 80%;
     justify-self: center;
   }
 
-  .title {
+  .showcase-content__title {
     margin-top: 20px;
     text-align: center;
   }
 
-  .showcase-name {
+  .showcase-content__name {
     justify-self: center;
     text-align: center;
   }
 
-  .showcase-description {
+  .showcase-content__description {
     text-align: center;
     justify-self: center;
   }
 
-  .image-wrapper {
+  .showcase-content__image-wrapper {
     max-width: 100%;
     aspect-ratio: 1 / 1;
     height: auto;
   }
 
-  .showcase-cta {
+  .showcase-content__cta {
     right: clamp(-20px, -2vw, -8px);
     bottom: clamp(-28px, -2.5vw, -16px);
     padding: 28px 20px;
@@ -214,41 +216,41 @@ defineProps<{
 }
 
 @media (max-width: 480px) {
-  .showcase {
+  .showcase-content {
     width: 100%;
     grid-column: 1 / span 3;
     gap: 24px;
   }
 
-  .showcase-cta {
+  .showcase-content__cta {
     // right: clamp(8px, 2vw, 12px);
     // bottom: clamp(8px, 2vw, 12px);
     padding: 18px 16px;
     font-size: 13px;
   }
 
-  .decoration-line {
+  .showcase-content__cta-line {
     width: 42px;
     margin-left: 12px;
   }
 
-  .showcase-name {
+  .showcase-content__name {
     font-size: 22px;
     margin: 16px 0;
   }
 
-  .showcase-description {
+  .showcase-content__description {
     font-size: 14px;
     line-height: 22px;
   }
 
-  .left {
+  .showcase-content__media {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .showcase-cta {
+  .showcase-content__cta {
     position: relative;
   }
 }

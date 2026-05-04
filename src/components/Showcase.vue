@@ -7,6 +7,7 @@
       <button
         class="last-page-button"
         type="button"
+        aria-label="Previous showcase"
         @click="prevShowcase"
       >
         <span
@@ -32,6 +33,7 @@
       <button
         class="next-page-button"
         type="button"
+        aria-label="Next showcase"
         @click="nextShowcase"
       >
         <span
@@ -45,13 +47,13 @@
         </span>
       </button>
 
-      <div class="showcase-page">
-        <div class="page">
-          {{ String(activeIndex + 1).padStart(2, '0') }}
-        </div>
-        <div class="total-page">
-          {{ String(showcaseItems.length).padStart(2, '0') }}
-        </div>
+      <div class="showcase-pagination">
+        <span class="showcase-pagination__current">
+          {{ formatPaginationNumber(activeIndex + 1) }}
+        </span>
+        <span class="showcase-pagination__total">
+          {{ formatPaginationNumber(showcaseItems.length) }}
+        </span>
       </div>
     </div>
   </section>
@@ -100,6 +102,8 @@ const showcaseItems = [
 const activeIndex = ref(0);
 
 const activeShowcase = computed(() => showcaseItems[activeIndex.value]);
+
+const formatPaginationNumber = (value: number) => String(value).padStart(2, '0');
 
 const prevShowcase = () => {
   activeIndex.value = (activeIndex.value - 1 + showcaseItems.length) % showcaseItems.length;
@@ -189,7 +193,7 @@ const nextShowcase = () => {
   grid-row: 2;
 }
 
-.showcase-page {
+.showcase-pagination {
   position: relative;
   grid-row: 1;
   grid-column: 3;
@@ -211,8 +215,8 @@ const nextShowcase = () => {
   }
 }
 
-.page,
-.total-page {
+.showcase-pagination__current,
+.showcase-pagination__total {
   position: absolute;
   color: #fff;
   font-size: 14px;
@@ -222,13 +226,13 @@ const nextShowcase = () => {
   white-space: nowrap;
 }
 
-.page {
+.showcase-pagination__current {
   right: 50%;
   bottom: 50%;
   transform: translate(-5px, -5px);
 }
 
-.total-page {
+.showcase-pagination__total {
   left: 50%;
   top: 50%;
   transform: translate(5px, 5px);
@@ -252,7 +256,7 @@ const nextShowcase = () => {
     align-self: center;
   }
 
-  .showcase-page {
+  .showcase-pagination {
     grid-row: 3;
     grid-column: 2;
     justify-self: center;
@@ -274,7 +278,7 @@ const nextShowcase = () => {
 
   .last-page-button,
   .next-page-button,
-  .showcase-page {
+  .showcase-pagination {
     width: 40px;
     height: 40px;
   }

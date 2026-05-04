@@ -43,137 +43,151 @@
             </svg>
           </button>
 
-          <div class="menu-grid">
-            <a
-              class="menu-card-link"
-              href="#about"
-              @click="$emit('close')"
-            >
-              <div class="menu-card menu-card--about">
-                <div class="row-card-content">
-                  <div class="menu-icon-wrap menu-icon-wrap--lettuce">
-                    <img
-                      class="menu-icon menu-icon--lettuce"
-                      src="../assets/side-menu/food/lettuce.png"
-                      alt=""
-                    />
-                  </div>
+          <nav aria-label="Site sections">
+            <ul class="menu-grid">
+              <li>
+                <a
+                  class="menu-card-link"
+                  href="#about"
+                  @click="$emit('close')"
+                >
+                  <div class="menu-card menu-card--about">
+                    <div class="row-card-content">
+                      <div class="menu-icon-wrap menu-icon-wrap--lettuce">
+                        <img
+                          class="menu-icon menu-icon--lettuce"
+                          src="../assets/side-menu/food/lettuce.png"
+                          alt=""
+                        />
+                      </div>
 
-                  <div>
-                    <div class="menu-card__eyebrow">EMPOWERING BRANDS</div>
-                    <div class="menu-card__title">ABOUT US</div>
+                      <div>
+                        <div class="menu-card__eyebrow">EMPOWERING BRANDS</div>
+                        <div class="menu-card__title">ABOUT US</div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            </a>
+                </a>
+              </li>
 
-            <a
-              class="menu-card-link"
-              href="#careers"
-              @click="$emit('close')"
-            >
-              <div class="menu-card menu-card--careers">
-                <div class="column-card-content">
-                  <div class="menu-icon-wrap menu-icon-wrap--cheese">
-                    <img
-                      class="menu-icon menu-icon--cheese"
-                      src="../assets/side-menu/food/cheese.png"
-                      alt=""
-                    />
-                  </div>
+              <li>
+                <a
+                  class="menu-card-link"
+                  href="#careers"
+                  @click="$emit('close')"
+                >
+                  <div class="menu-card menu-card--careers">
+                    <div class="column-card-content">
+                      <div class="menu-icon-wrap menu-icon-wrap--cheese">
+                        <img
+                          class="menu-icon menu-icon--cheese"
+                          src="../assets/side-menu/food/cheese.png"
+                          alt=""
+                        />
+                      </div>
 
-                  <div>
-                    <div class="menu-card__eyebrow">BE COOL WITH US</div>
-                    <div class="menu-card__title">CAREERS</div>
+                      <div>
+                        <div class="menu-card__eyebrow">BE COOL WITH US</div>
+                        <div class="menu-card__title">CAREERS</div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            </a>
+                </a>
+              </li>
 
-            <a
-              class="menu-card-link"
-              href="#services"
-              @click="$emit('close')"
-            >
-              <div class="menu-card menu-card--services">
-                <div class="column-card-content">
-                  <div class="menu-icon-wrap menu-icon-wrap--carrot">
-                    <img
-                      class="menu-icon menu-icon--carrot"
-                      src="../assets/side-menu/food/carrot.png"
-                      alt=""
-                    />
-                  </div>
+              <li>
+                <a
+                  class="menu-card-link"
+                  href="#services"
+                  @click="$emit('close')"
+                >
+                  <div class="menu-card menu-card--services">
+                    <div class="column-card-content">
+                      <div class="menu-icon-wrap menu-icon-wrap--carrot">
+                        <img
+                          class="menu-icon menu-icon--carrot"
+                          src="../assets/side-menu/food/carrot.png"
+                          alt=""
+                        />
+                      </div>
 
-                  <div>
-                    <div class="menu-card__eyebrow">AREAS OF EXPERTISE</div>
-                    <div class="menu-card__title">SERVICES</div>
+                      <div>
+                        <div class="menu-card__eyebrow">AREAS OF EXPERTISE</div>
+                        <div class="menu-card__title">SERVICES</div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            </a>
+                </a>
+              </li>
 
-            <a
-              class="menu-card-link"
-              href="#showcase"
-              @click="$emit('close')"
-            >
-              <div class="menu-card menu-card--works">
-                <div class="row-card-content">
-                  <div class="menu-icon-wrap menu-icon-wrap--tomato">
-                    <img
-                      class="menu-icon menu-icon--tomato"
-                      src="../assets/side-menu/food/tomato.png"
-                      alt=""
-                    />
-                  </div>
+              <li>
+                <a
+                  class="menu-card-link"
+                  href="#showcase"
+                  @click="$emit('close')"
+                >
+                  <div class="menu-card menu-card--works">
+                    <div class="row-card-content">
+                      <div class="menu-icon-wrap menu-icon-wrap--tomato">
+                        <img
+                          class="menu-icon menu-icon--tomato"
+                          src="../assets/side-menu/food/tomato.png"
+                          alt=""
+                        />
+                      </div>
 
-                  <div>
-                    <div class="menu-card__eyebrow">CASE STUDIES</div>
-                    <div class="menu-card__title">WORKS</div>
+                      <div>
+                        <div class="menu-card__eyebrow">CASE STUDIES</div>
+                        <div class="menu-card__title">WORKS</div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            </a>
+                </a>
+              </li>
 
-            <a
-              class="menu-card-link"
-              href="#insights"
-              @click="$emit('close')"
-            >
-              <div class="menu-card menu-card--insights">
-                <div class="column-card-content">
-                  <div class="menu-icon-wrap menu-icon-wrap--pickle">
-                    <img
-                      class="menu-icon menu-icon--pickle"
-                      src="../assets/side-menu/food/pickle.png"
-                      alt=""
-                    />
-                  </div>
+              <li>
+                <a
+                  class="menu-card-link"
+                  href="#insights"
+                  @click="$emit('close')"
+                >
+                  <div class="menu-card menu-card--insights">
+                    <div class="column-card-content">
+                      <div class="menu-icon-wrap menu-icon-wrap--pickle">
+                        <img
+                          class="menu-icon menu-icon--pickle"
+                          src="../assets/side-menu/food/pickle.png"
+                          alt=""
+                        />
+                      </div>
 
-                  <div>
-                    <div class="menu-card__eyebrow">OUR STRATEGIES</div>
-                    <div class="menu-card__title">INSIGHTS</div>
+                      <div>
+                        <div class="menu-card__eyebrow">OUR STRATEGIES</div>
+                        <div class="menu-card__title">INSIGHTS</div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            </a>
+                </a>
+              </li>
 
-            <a
-              class="menu-card-link"
-              href="#contact"
-              @click="$emit('close')"
-            >
-              <div class="menu-card menu-card--contact">
-                <div class="column-card-content">
-                  <div class="contact-card">
-                    <div class="menu-card__eyebrow">START YOUR JOURNEY WITH US</div>
-                    <div class="menu-card__title menu-card--contact__title">CONTACT</div>
+              <li>
+                <a
+                  class="menu-card-link"
+                  href="#contact"
+                  @click="$emit('close')"
+                >
+                  <div class="menu-card menu-card--contact">
+                    <div class="column-card-content">
+                      <div class="contact-card">
+                        <div class="menu-card__eyebrow">START YOUR JOURNEY WITH US</div>
+                        <div class="menu-card__title">CONTACT</div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            </a>
-          </div>
+                </a>
+              </li>
+            </ul>
+          </nav>
         </div>
       </aside>
     </div>
@@ -373,6 +387,8 @@ onBeforeUnmount(() => {
 .menu-grid {
   width: clamp(960px, 92vw, 1440px);
   margin: 0 auto;
+  padding: 0;
+  list-style: none;
   height: clamp(540px, calc(100svh - 86px), 854px);
   display: grid;
   grid-template-columns: 1.05fr 0.78fr 1fr;
@@ -392,12 +408,12 @@ onBeforeUnmount(() => {
 .menu-card {
   position: relative;
   height: var(--card-height, 220px);
-  align-self: start;
   border-radius: 30px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: end;
+  align-items: start;
   padding: 28px 34px;
   color: #fff;
   text-transform: uppercase;
@@ -502,6 +518,7 @@ onBeforeUnmount(() => {
 .menu-icon-wrap--lettuce {
   width: 40px;
   height: 60px;
+  margin-left: 15px;
 }
 
 .menu-icon-wrap--cheese {
@@ -535,6 +552,8 @@ onBeforeUnmount(() => {
   grid-row: 1;
   background: rgba(44, 217, 221, 0.82);
   transform: translateY(10vh);
+  justify-content: center;
+  align-items: start;
 }
 
 .menu-card--careers {
@@ -575,6 +594,8 @@ onBeforeUnmount(() => {
   background: rgba(255, 255, 255, 0.94);
   color: #3e526d;
   transform: translateY(-7vh);
+  justify-content: center;
+  align-items: center;
 }
 
 .menu-card--contact .menu-card__eyebrow {
@@ -617,6 +638,8 @@ onBeforeUnmount(() => {
     height: clamp(160px, 24vh, 220px);
     min-height: clamp(160px, 24vh, 220px);
     padding: clamp(16px, 2.2vh, 22px) 24px;
+    justify-content: center;
+    align-items: center;
   }
 
   .contact-card {
@@ -643,11 +666,6 @@ onBeforeUnmount(() => {
     gap: 2vw;
     align-items: center;
     justify-content: center;
-  }
-
-  .menu-card--contact .menu-card__eyebrow,
-  .menu-card--contact .menu-card__title {
-    text-align: center;
   }
 
   .menu-card--contact .menu-card__title {
