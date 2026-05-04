@@ -449,13 +449,13 @@ onBeforeUnmount(() => {
 }
 
 .menu-card__eyebrow {
-  font-size: 16px;
+  font-size: clamp(13px, 1.11vw, 16px);
   font-weight: 200;
   letter-spacing: 1.8px;
 }
 
 .menu-card__title {
-  font-size: 32px;
+  font-size: clamp(20px, 2.22vw, 32px);
   font-weight: 700;
   letter-spacing: 3.636px;
 }
@@ -621,7 +621,7 @@ onBeforeUnmount(() => {
   }
 
   .menu-card__title {
-    font-size: 24px;
+    font-size: clamp(18px, 2vw, 24px);
   }
 }
 
@@ -662,12 +662,12 @@ onBeforeUnmount(() => {
   }
 
   .menu-card__eyebrow {
-    font-size: 13px;
+    font-size: clamp(12px, 2.6vw, 13px);
     letter-spacing: 1px;
   }
 
   .menu-card__title {
-    font-size: 20px;
+    font-size: clamp(16px, 4.2vw, 20px);
     letter-spacing: 2px;
   }
 
