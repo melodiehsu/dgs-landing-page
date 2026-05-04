@@ -385,7 +385,7 @@ onBeforeUnmount(() => {
 
 .digisalad-logo-white:hover,
 .digisalad-logo-white:focus-visible {
-  transform: translateY(-2px);
+  transform: translateY(-4px);
 }
 
 .digisalad-logo-white__image {
@@ -425,9 +425,9 @@ onBeforeUnmount(() => {
 
 .menu-card-link:hover .menu-card,
 .menu-card-link:focus-visible .menu-card {
-  transform: translateY(-4px) scale(1.01);
-  box-shadow: 0 18px 40px rgba(17, 31, 53, 0.18);
-  filter: saturate(1.05);
+  transform: translateY(calc(var(--card-translate-y, 0px) - 4px));
+  box-shadow: 0 14px 32px rgba(17, 31, 53, 0.14);
+  filter: saturate(1.04) brightness(1.02);
 }
 
 .menu-card {
@@ -442,6 +442,7 @@ onBeforeUnmount(() => {
   padding: 28px 34px;
   color: #fff;
   text-transform: uppercase;
+  transform: translateY(var(--card-translate-y, 0px));
   box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   transition:
     transform 0.2s ease,
@@ -578,16 +579,17 @@ onBeforeUnmount(() => {
 
 .menu-card--about {
   --card-height: clamp(180px, 24vh, 210px);
+  --card-translate-y: 10vh;
   grid-column: 1;
   grid-row: 1;
   background: rgba(44, 217, 221, 0.82);
-  transform: translateY(10vh);
   justify-content: center;
   align-items: start;
 }
 
 .menu-card--careers {
   --card-height: clamp(320px, 52vh, 480px);
+  --card-translate-y: 0px;
   grid-column: 2;
   grid-row: 1;
   background: rgba(248, 176, 69, 0.9);
@@ -595,35 +597,35 @@ onBeforeUnmount(() => {
 
 .menu-card--services {
   --card-height: clamp(260px, 34vh, 320px);
+  --card-translate-y: 10vh;
   grid-column: 3;
   grid-row: 1;
   background: rgba(102, 96, 165, 0.9);
-  transform: translateY(10vh);
 }
 
 .menu-card--works {
   --card-height: clamp(260px, 34vh, 320px);
+  --card-translate-y: -18vh;
   grid-column: 1;
   grid-row: 2;
   background: rgba(236, 123, 164, 0.82);
-  transform: translateY(-18vh);
 }
 
 .menu-card--insights {
   --card-height: clamp(220px, 30vh, 282px);
+  --card-translate-y: clamp(0px, 1vh, 5px);
   grid-column: 2;
   grid-row: 2;
   background: rgba(42, 212, 167, 0.84);
-  transform: translateY(clamp(0px, 1vh, 5px));
 }
 
 .menu-card--contact {
   --card-height: clamp(180px, 24vh, 210px);
+  --card-translate-y: -7vh;
   grid-column: 3;
   grid-row: 2;
   background: rgba(255, 255, 255, 0.94);
   color: #3e526d;
-  transform: translateY(-7vh);
   justify-content: center;
   align-items: center;
 }
@@ -684,7 +686,7 @@ onBeforeUnmount(() => {
   .menu-card--contact {
     grid-column: auto;
     grid-row: auto;
-    transform: none;
+    --card-translate-y: 0px;
   }
 
   .menu-card__title {
