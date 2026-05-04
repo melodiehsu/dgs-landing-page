@@ -114,6 +114,7 @@
   font-style: italic;
   font-weight: 400;
   letter-spacing: 2px;
+  white-space: nowrap;
 }
 
 .insights-profile {
@@ -133,7 +134,7 @@
 
 .insights-quote-mark {
   position: relative;
-  width: 90px;
+  width: clamp(64px, 6vw, 90px);
   aspect-ratio: 1 / 1;
   margin-bottom: 13px;
 }
@@ -187,14 +188,14 @@
 
   .insights {
     width: 100%;
-    grid-template-columns: 240px minmax(0, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 40px;
     padding: 72px 40px;
     border-top-left-radius: 50px;
   }
 
   .insights-profile {
-    width: 240px;
+    width: min(100%, 300px);
   }
 
   .insights-role {
@@ -219,7 +220,6 @@
   }
 
   .insights {
-    grid-template-columns: 1fr;
     gap: 28px;
     padding: 48px 20px;
     border-top-left-radius: 28px;
@@ -244,10 +244,6 @@
 
   .insights-quote {
     transform: none;
-  }
-
-  .insights-quote-mark {
-    width: 64px;
   }
 
   .insights-quote p {

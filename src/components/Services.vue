@@ -209,11 +209,12 @@ const services = [
   position: relative;
   z-index: 0;
   display: inline-block;
-  font-size: 18px;
+  font-size: clamp(14px, 1.25vw, 18px);
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
   text-decoration: none;
+  white-space: nowrap;
 
   &::after {
     content: '';
@@ -221,7 +222,7 @@ const services = [
     right: 0;
     left: 0;
     bottom: 4px;
-    height: 10px;
+    height: clamp(6px, 0.8vw, 10px);
     background: #ffbc58;
     z-index: -1;
   }
