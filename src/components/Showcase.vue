@@ -73,7 +73,7 @@ const showcaseItems = [
   },
   {
     imageSrc: highlightedShowcase,
-    imageAlt: 'LP Club mobile app showcase preview',
+    imageAlt: 'Service platform preview',
     title: 'HIGHLIGHTED SHOWCASE',
     showcaseName: 'SERVICE PLATFORM',
     showcaseDescription:
@@ -81,7 +81,7 @@ const showcaseItems = [
   },
   {
     imageSrc: highlightedShowcase,
-    imageAlt: 'LP Club mobile app showcase preview',
+    imageAlt: 'Brand experience preview',
     title: 'HIGHLIGHTED SHOWCASE',
     showcaseName: 'BRAND EXPERIENCE',
     showcaseDescription:
@@ -89,7 +89,7 @@ const showcaseItems = [
   },
   {
     imageSrc: highlightedShowcase,
-    imageAlt: 'LP Club mobile app showcase preview',
+    imageAlt: 'Digital campaign preview',
     title: 'HIGHLIGHTED SHOWCASE',
     showcaseName: 'DIGITAL CAMPAIGN',
     showcaseDescription:

@@ -21,7 +21,7 @@
             <div class="digisalad-logo-white__image">
               <img
                 src="../assets/logo/white.png"
-                alt="digisalad logo in white"
+                alt="Digisalad"
               />
             </div>
           </a>
