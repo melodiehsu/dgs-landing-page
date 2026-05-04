@@ -3,55 +3,57 @@
     id="showcase"
     class="showcase-section"
   >
-    <button
-      class="left-button"
-      type="button"
-      @click="prevShowcase"
-    >
-      <span
-        class="button-icon"
-        aria-hidden="true"
+    <div class="showcase-stage">
+      <button
+        class="last-page-button"
+        type="button"
+        @click="prevShowcase"
       >
-        <img
-          src="../assets/arrow.png"
-          alt=""
-        />
-      </span>
-    </button>
+        <span
+          class="button-icon"
+          aria-hidden="true"
+        >
+          <img
+            src="../assets/arrow.png"
+            alt=""
+          />
+        </span>
+      </button>
 
-    <button
-      class="right-button"
-      type="button"
-      @click="nextShowcase"
-    >
-      <span
-        class="button-icon"
-        aria-hidden="true"
+      <ShowcaseContent
+        :key="activeShowcase!.showcaseName"
+        :image-src="activeShowcase!.imageSrc"
+        :image-alt="activeShowcase!.imageAlt"
+        :title="activeShowcase!.title"
+        :showcase-name="activeShowcase!.showcaseName"
+        :showcase-description="activeShowcase!.showcaseDescription"
+      />
+
+      <button
+        class="next-page-button"
+        type="button"
+        @click="nextShowcase"
       >
-        <img
-          src="../assets/arrow.png"
-          alt=""
-        />
-      </span>
-    </button>
+        <span
+          class="button-icon"
+          aria-hidden="true"
+        >
+          <img
+            src="../assets/arrow.png"
+            alt=""
+          />
+        </span>
+      </button>
 
-    <div class="showcase-page">
-      <div class="page">
-        {{ String(activeIndex + 1).padStart(2, '0') }}
-      </div>
-      <div class="total-page">
-        {{ String(showcaseItems.length).padStart(2, '0') }}
+      <div class="showcase-page">
+        <div class="page">
+          {{ String(activeIndex + 1).padStart(2, '0') }}
+        </div>
+        <div class="total-page">
+          {{ String(showcaseItems.length).padStart(2, '0') }}
+        </div>
       </div>
     </div>
-
-    <ShowcaseContent
-      :key="activeShowcase!.showcaseName"
-      :image-src="activeShowcase!.imageSrc"
-      :image-alt="activeShowcase!.imageAlt"
-      :title="activeShowcase!.title"
-      :showcase-name="activeShowcase!.showcaseName"
-      :showcase-description="activeShowcase!.showcaseDescription"
-    />
   </section>
 </template>
 
@@ -112,10 +114,7 @@ const nextShowcase = () => {
 .showcase-section {
   position: relative;
   width: 100%;
-  padding: 250px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: clamp(120px, 13vw, 250px) 0;
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
   overflow: hidden;
@@ -136,14 +135,28 @@ const nextShowcase = () => {
   }
 }
 
-.left-button,
-.right-button {
-  width: 53px;
-  height: 53px;
+.showcase-stage {
+  position: relative;
+  width: min(90%, 1440px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: clamp(20px, 3vw, 48px);
+  align-items: center;
+}
+
+.last-page-button,
+.next-page-button {
+  width: clamp(42px, 3.6vw, 53px);
+  height: clamp(42px, 3.6vw, 53px);
   border-radius: 50%;
   border: none;
   background: #26c6d0;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
 }
 
 .button-icon {
@@ -162,27 +175,28 @@ const nextShowcase = () => {
   display: block;
 }
 
-.left-button {
-  position: absolute;
-  left: 100px;
-  top: 50%;
-}
-
-.right-button {
-  position: absolute;
-  right: 100px;
-  top: 50%;
+.next-page-button .button-icon {
   transform: rotate(180deg);
 }
 
+.last-page-button {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.next-page-button {
+  grid-column: 3;
+  grid-row: 2;
+}
+
 .showcase-page {
-  position: absolute;
-  right: 100px;
-  top: 250px;
-  width: 48px;
-  height: 48px;
-  z-index: 1;
+  position: relative;
+  grid-row: 1;
+  grid-column: 3;
+  width: clamp(40px, 3vw, 48px);
+  height: clamp(40px, 3vw, 48px);
   pointer-events: none;
+  margin-right: clamp(2px, 0.5vw, 8px);
 
   &::before {
     content: '';
@@ -190,7 +204,7 @@ const nextShowcase = () => {
     left: 50%;
     top: 50%;
     width: 1px;
-    height: 34px;
+    height: 72%;
     background: #26c6d0;
     transform: translate(-50%, -50%) rotate(45deg);
     transform-origin: center;
@@ -211,31 +225,37 @@ const nextShowcase = () => {
 .page {
   right: 50%;
   bottom: 50%;
-  transform: translate(-4px, -4px);
+  transform: translate(-5px, -5px);
 }
 
 .total-page {
   left: 50%;
   top: 50%;
-  transform: translate(4px, 4px);
+  transform: translate(5px, 5px);
 }
 
 @media (max-width: 960px) {
   .showcase-section {
-    padding: 180px 0 160px;
+    padding: 160px 0 140px;
   }
 
-  .left-button {
-    left: 24px;
+  .showcase-stage {
+    width: min(94%, 1440px);
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 24px;
   }
 
-  .right-button {
-    right: 24px;
+  .next-page-button {
+    grid-column: 3;
+    grid-row: 2;
+    justify-self: end;
+    align-self: center;
   }
 
   .showcase-page {
-    right: 32px;
-    top: 180px;
+    grid-row: 3;
+    grid-column: 2;
+    justify-self: center;
   }
 }
 
@@ -246,26 +266,31 @@ const nextShowcase = () => {
     border-bottom-right-radius: 28px;
   }
 
-  .left-button,
-  .right-button {
-    width: 42px;
-    height: 42px;
-    top: 24px;
+  .showcase-stage {
+    width: min(92%, 1440px);
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 16px;
   }
 
-  .left-button {
-    left: 16px;
-  }
-
-  .right-button {
-    right: 16px;
-  }
-
+  .last-page-button,
+  .next-page-button,
   .showcase-page {
-    right: 16px;
-    top: 18px;
     width: 40px;
     height: 40px;
+  }
+
+  .last-page-button,
+  .next-page-button {
+    grid-row: 3;
+    grid-column: 2;
+  }
+
+  .last-page-button {
+    transform: translateX(30px);
+  }
+
+  .next-page-button {
+    transform: translateX(-30px);
   }
 }
 </style>
