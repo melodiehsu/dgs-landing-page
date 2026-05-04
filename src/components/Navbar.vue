@@ -192,16 +192,11 @@ nav {
     gap: 20px;
   }
 
-  .nav-logo {
-    width: 92px;
-  }
-
   .nav-logo__image {
-    width: 92px;
+    width: 85px;
   }
 
   .nav-cta {
-    width: 180px;
     font-size: 12px;
   }
 

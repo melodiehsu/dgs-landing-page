@@ -50,7 +50,7 @@
               @click="$emit('close')"
             >
               <div class="menu-card menu-card--about">
-                <div class="about-wrapper">
+                <div class="row-card-content">
                   <div class="menu-icon-wrap menu-icon-wrap--lettuce">
                     <img
                       class="menu-icon menu-icon--lettuce"
@@ -73,15 +73,20 @@
               @click="$emit('close')"
             >
               <div class="menu-card menu-card--careers">
-                <div class="menu-icon-wrap menu-icon-wrap--cheese">
-                  <img
-                    class="menu-icon menu-icon--cheese"
-                    src="../assets/side-menu/food/cheese.png"
-                    alt=""
-                  />
+                <div class="column-card-content">
+                  <div class="menu-icon-wrap menu-icon-wrap--cheese">
+                    <img
+                      class="menu-icon menu-icon--cheese"
+                      src="../assets/side-menu/food/cheese.png"
+                      alt=""
+                    />
+                  </div>
+
+                  <div>
+                    <div class="menu-card__eyebrow">BE COOL WITH US</div>
+                    <div class="menu-card__title">CAREERS</div>
+                  </div>
                 </div>
-                <div class="menu-card__eyebrow">BE COOL WITH US</div>
-                <div class="menu-card__title">CAREERS</div>
               </div>
             </a>
 
@@ -91,15 +96,20 @@
               @click="$emit('close')"
             >
               <div class="menu-card menu-card--services">
-                <div class="menu-icon-wrap menu-icon-wrap--carrot">
-                  <img
-                    class="menu-icon menu-icon--carrot"
-                    src="../assets/side-menu/food/carrot.png"
-                    alt=""
-                  />
+                <div class="column-card-content">
+                  <div class="menu-icon-wrap menu-icon-wrap--carrot">
+                    <img
+                      class="menu-icon menu-icon--carrot"
+                      src="../assets/side-menu/food/carrot.png"
+                      alt=""
+                    />
+                  </div>
+
+                  <div>
+                    <div class="menu-card__eyebrow">AREAS OF EXPERTISE</div>
+                    <div class="menu-card__title">SERVICES</div>
+                  </div>
                 </div>
-                <div class="menu-card__eyebrow">AREAS OF EXPERTISE</div>
-                <div class="menu-card__title">SERVICES</div>
               </div>
             </a>
 
@@ -109,7 +119,7 @@
               @click="$emit('close')"
             >
               <div class="menu-card menu-card--works">
-                <div class="works-wrapper">
+                <div class="row-card-content">
                   <div class="menu-icon-wrap menu-icon-wrap--tomato">
                     <img
                       class="menu-icon menu-icon--tomato"
@@ -117,6 +127,7 @@
                       alt=""
                     />
                   </div>
+
                   <div>
                     <div class="menu-card__eyebrow">CASE STUDIES</div>
                     <div class="menu-card__title">WORKS</div>
@@ -131,15 +142,20 @@
               @click="$emit('close')"
             >
               <div class="menu-card menu-card--insights">
-                <div class="menu-icon-wrap menu-icon-wrap--pickle">
-                  <img
-                    class="menu-icon menu-icon--pickle"
-                    src="../assets/side-menu/food/pickle.png"
-                    alt=""
-                  />
+                <div class="column-card-content">
+                  <div class="menu-icon-wrap menu-icon-wrap--pickle">
+                    <img
+                      class="menu-icon menu-icon--pickle"
+                      src="../assets/side-menu/food/pickle.png"
+                      alt=""
+                    />
+                  </div>
+
+                  <div>
+                    <div class="menu-card__eyebrow">OUR STRATEGIES</div>
+                    <div class="menu-card__title">INSIGHTS</div>
+                  </div>
                 </div>
-                <div class="menu-card__eyebrow">OUR STRATEGIES</div>
-                <div class="menu-card__title">INSIGHTS</div>
               </div>
             </a>
 
@@ -149,8 +165,12 @@
               @click="$emit('close')"
             >
               <div class="menu-card menu-card--contact">
-                <div class="menu-card__eyebrow">START YOUR JOURNEY WITH US</div>
-                <div class="menu-card__title">CONTACT</div>
+                <div class="column-card-content">
+                  <div class="contact-card">
+                    <div class="menu-card__eyebrow">START YOUR JOURNEY WITH US</div>
+                    <div class="menu-card__title menu-card--contact__title">CONTACT</div>
+                  </div>
+                </div>
               </div>
             </a>
           </div>
@@ -351,14 +371,13 @@ onBeforeUnmount(() => {
 }
 
 .menu-grid {
-  width: 100%;
-  max-width: 1440px;
+  width: clamp(960px, 92vw, 1440px);
   margin: 0 auto;
-  height: calc(100% - 86px);
+  height: clamp(540px, calc(100svh - 86px), 854px);
   display: grid;
   grid-template-columns: 1.05fr 0.78fr 1fr;
   grid-template-rows: auto auto;
-  row-gap: 30px;
+  row-gap: 3vh;
   column-gap: 40px;
   padding-top: 12px;
   align-items: start;
@@ -378,7 +397,7 @@ onBeforeUnmount(() => {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   padding: 28px 34px;
   color: #fff;
   text-transform: uppercase;
@@ -435,12 +454,13 @@ onBeforeUnmount(() => {
   &::after {
     content: '';
     position: absolute;
-    left: calc(100% + 10px);
-    top: 50%;
-    width: 10px;
-    height: 10px;
+    left: calc(100% + 1vw);
+    bottom: 0;
+    width: clamp(6px, 0.72vw, 10px);
+    height: clamp(6px, 0.72vw, 10px);
     border-radius: 50%;
     background: #ee6c8a;
+    transform: translateY(-100%);
   }
 }
 
@@ -484,24 +504,14 @@ onBeforeUnmount(() => {
   height: 60px;
 }
 
-.menu-icon--cheese {
-  margin-bottom: 22px;
-}
-
 .menu-icon-wrap--cheese {
   width: 91.95px;
   height: 46.742px;
-  margin-bottom: 22px;
-}
-
-.menu-icon--carrot {
-  margin-bottom: 15px;
 }
 
 .menu-icon-wrap--carrot {
   width: 36px;
   height: 67px;
-  margin-bottom: 15px;
 }
 
 .menu-icon--tomato {
@@ -514,62 +524,57 @@ onBeforeUnmount(() => {
   height: 56px;
 }
 
-.menu-icon--pickle {
-  margin-bottom: 15px;
-}
-
 .menu-icon-wrap--pickle {
   width: 24.889px;
   height: 79px;
-  margin-bottom: 15px;
 }
 
 .menu-card--about {
-  --card-height: 210px;
+  --card-height: clamp(180px, 24vh, 210px);
   grid-column: 1;
   grid-row: 1;
   background: rgba(44, 217, 221, 0.82);
-  transform: translateY(100px);
+  transform: translateY(10vh);
 }
 
 .menu-card--careers {
-  --card-height: 480px;
+  --card-height: clamp(320px, 52vh, 480px);
   grid-column: 2;
   grid-row: 1;
   background: rgba(248, 176, 69, 0.9);
 }
 
 .menu-card--services {
-  --card-height: 320px;
+  --card-height: clamp(260px, 34vh, 320px);
   grid-column: 3;
   grid-row: 1;
   background: rgba(102, 96, 165, 0.9);
-  transform: translateY(100px);
+  transform: translateY(10vh);
 }
 
 .menu-card--works {
-  --card-height: 320px;
+  --card-height: clamp(260px, 34vh, 320px);
   grid-column: 1;
   grid-row: 2;
   background: rgba(236, 123, 164, 0.82);
-  transform: translateY(-160px);
+  transform: translateY(-18vh);
 }
 
 .menu-card--insights {
-  --card-height: 282px;
+  --card-height: clamp(220px, 30vh, 282px);
   grid-column: 2;
   grid-row: 2;
   background: rgba(42, 212, 167, 0.84);
-  transform: translateY(5px);
+  transform: translateY(clamp(0px, 1vh, 5px));
 }
 
 .menu-card--contact {
-  --card-height: 210px;
+  --card-height: clamp(180px, 24vh, 210px);
   grid-column: 3;
   grid-row: 2;
   background: rgba(255, 255, 255, 0.94);
   color: #3e526d;
-  transform: translateY(-50px);
+  transform: translateY(-7vh);
 }
 
 .menu-card--contact .menu-card__eyebrow {
@@ -580,14 +585,18 @@ onBeforeUnmount(() => {
   color: #26c6d0;
 }
 
-.about-wrapper {
+.row-card-content {
   display: flex;
-  gap: 27px;
+  align-items: center;
+  justify-content: center;
+  gap: 2vw;
 }
 
-.works-wrapper {
+.column-card-content {
   display: flex;
-  gap: 17px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
 }
 
 @media (max-width: 960px) {
@@ -596,17 +605,22 @@ onBeforeUnmount(() => {
   }
 
   .menu-grid {
+    width: 100%;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-template-rows: auto;
     gap: 18px;
     height: auto;
-    padding-top: 20px;
+    padding-top: 40px;
   }
 
   .menu-card {
-    min-height: 180px;
-    height: auto;
-    padding: 22px 24px;
+    height: clamp(160px, 24vh, 220px);
+    min-height: clamp(160px, 24vh, 220px);
+    padding: clamp(16px, 2.2vh, 22px) 24px;
+  }
+
+  .contact-card {
+    text-align: center;
   }
 
   .menu-card--about,
@@ -621,7 +635,28 @@ onBeforeUnmount(() => {
   }
 
   .menu-card__title {
-    font-size: clamp(18px, 2vw, 24px);
+    font-size: clamp(14px, 2vw, 24px);
+  }
+
+  .column-card-content {
+    flex-direction: row;
+    gap: 2vw;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .menu-card--contact .menu-card__eyebrow,
+  .menu-card--contact .menu-card__title {
+    text-align: center;
+  }
+
+  .menu-card--contact .menu-card__title {
+    align-self: center;
+  }
+
+  .menu-icon-wrap--cheese {
+    width: clamp(68px, 7vw, 78px);
+    height: clamp(34px, 3.5vw, 40px);
   }
 }
 
@@ -656,9 +691,11 @@ onBeforeUnmount(() => {
   }
 
   .menu-card {
-    min-height: 150px;
-    padding: 18px 20px;
+    height: 105px;
+    min-height: 105px;
+    padding: 14px 16px;
     border-radius: 24px;
+    justify-content: center;
   }
 
   .menu-card__eyebrow {
@@ -671,9 +708,10 @@ onBeforeUnmount(() => {
     letter-spacing: 2px;
   }
 
-  .about-wrapper,
-  .works-wrapper {
+  .row-card-content,
+  .column-card-content {
     gap: 14px;
+    justify-content: center;
   }
 
   .menu-icon--lettuce,
@@ -682,7 +720,7 @@ onBeforeUnmount(() => {
   .menu-icon--pickle,
   .menu-icon--cheese {
     transform: scale(0.82);
-    transform-origin: left top;
+    transform-origin: center;
   }
 }
 </style>
