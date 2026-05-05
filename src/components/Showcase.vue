@@ -157,7 +157,7 @@ const nextShowcase = () => {
     inset: 0;
     background:
       linear-gradient(0deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.75) 100%),
-      url('../assets/highlighted-showcase.png') lightgray 50% / cover no-repeat;
+      url('../assets/showcase/highlighted-showcase.png') lightgray 50% / cover no-repeat;
     background-blend-mode: normal, multiply;
     filter: blur(10px);
     transform: scale(1.06);

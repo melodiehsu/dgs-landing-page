@@ -803,5 +803,9 @@ onBeforeUnmount(() => {
     transform: scale(0.82);
     transform-origin: center;
   }
+
+  .menu-grid {
+    padding-bottom: 100px;
+  }
 }
 </style>

@@ -168,6 +168,7 @@ const isCompactLayout = computed(() => props.showcaseDescription.length < 260);
   width: fit-content;
   max-width: 100%;
   margin: 20px 0;
+  font-size: clamp(20px, 2.3vw, 32px);
 }
 
 .showcase-content__name-text {
@@ -245,11 +246,13 @@ const isCompactLayout = computed(() => props.showcaseDescription.length < 260);
   }
 
   .showcase-content__name {
+    width: 100%;
     justify-self: center;
     text-align: center;
   }
 
   .showcase-content__description {
+    width: 100%;
     text-align: center;
     justify-self: center;
   }
@@ -261,12 +264,13 @@ const isCompactLayout = computed(() => props.showcaseDescription.length < 260);
   }
 
   .showcase-content__cta {
+    position: relative;
     right: clamp(-20px, -2vw, -8px);
     bottom: clamp(-28px, -2.5vw, -16px);
     padding: 28px 20px;
-    position: relative;
     justify-self: center;
-    transform: translateX(-10px);
+    transform: translateX(-18px);
+    width: 100%;
   }
 }
 
@@ -286,6 +290,7 @@ const isCompactLayout = computed(() => props.showcaseDescription.length < 260);
   .showcase-content__cta {
     padding: 18px 16px;
     font-size: 13px;
+    transform: translateX(-8px);
   }
 
   .showcase-content__cta-line {
@@ -294,7 +299,6 @@ const isCompactLayout = computed(() => props.showcaseDescription.length < 260);
   }
 
   .showcase-content__name {
-    font-size: 22px;
     margin: 16px 0;
   }
 
