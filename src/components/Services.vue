@@ -37,6 +37,7 @@
         <ServiceCard
           v-for="service in services"
           :key="service.title"
+          :style="{ '--reveal-delay': `${service.revealDelay}ms` }"
           :img-src="service.imgSrc"
           :img-alt="service.imgAlt"
           :title="service.title"
@@ -65,6 +66,7 @@ const ingredientImage = (fileName: string) =>
 const services = [
   {
     title: 'UX Design',
+    revealDelay: 0,
     content:
       'Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare.',
     ctaLabel: 'view more',
@@ -73,6 +75,7 @@ const services = [
   },
   {
     title: 'UI Design',
+    revealDelay: 80,
     content:
       'Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare.',
     ctaLabel: 'view more',
@@ -81,6 +84,7 @@ const services = [
   },
   {
     title: 'website development',
+    revealDelay: 160,
     content:
       'Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare.',
     ctaLabel: 'view more',
@@ -89,6 +93,7 @@ const services = [
   },
   {
     title: 'mobile app development',
+    revealDelay: 240,
     content:
       'Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare.',
     ctaLabel: 'view more',
@@ -97,6 +102,7 @@ const services = [
   },
   {
     title: 'ecommerce',
+    revealDelay: 320,
     content:
       'Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare.',
     ctaLabel: 'view more',
@@ -105,6 +111,7 @@ const services = [
   },
   {
     title: 'customer loyalty',
+    revealDelay: 400,
     content:
       'Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare.',
     ctaLabel: 'view more',
@@ -113,6 +120,7 @@ const services = [
   },
   {
     title: 'digital transformation',
+    revealDelay: 480,
     content:
       'Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare.',
     ctaLabel: 'view more',
@@ -121,6 +129,7 @@ const services = [
   },
   {
     title: 'digital\nmarketing',
+    revealDelay: 560,
     content:
       'Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare.',
     ctaLabel: 'view more',
@@ -129,6 +138,7 @@ const services = [
   },
   {
     title: 'branding',
+    revealDelay: 640,
     content:
       'Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare.',
     ctaLabel: 'view more',

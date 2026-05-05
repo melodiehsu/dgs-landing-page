@@ -29,9 +29,9 @@
         <span class="showcase-content__name-text">{{ showcaseName }}</span>
       </div>
 
-      <div class="showcase-content__description">
+      <p class="showcase-content__description">
         {{ showcaseDescription }}
-      </div>
+      </p>
     </div>
   </article>
 </template>

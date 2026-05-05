@@ -1,12 +1,22 @@
 <template>
   <section class="awards-section">
-    <div class="awards-stack">
+    <div
+      ref="awardsStackRef"
+      class="awards-stack"
+    >
       <div
         class="awards-background"
         aria-hidden="true"
       ></div>
 
-      <div class="awards">
+      <div
+        ref="awardsRef"
+        class="awards awards--motion"
+        :style="{
+          '--awards-shift': `${awardsShift}px`,
+          '--awards-opacity': String(awardsOpacity),
+        }"
+      >
         <div class="awards-info">
           <div class="awards-section-title">
             <SectionTitle
@@ -29,25 +39,12 @@
         </div>
 
         <div class="awards-gallery">
-          <div class="award-item">
-            <img
-              src="../assets/awards/award.png"
-              alt="Award"
-            />
-          </div>
-          <div class="award-item">
-            <img
-              src="../assets/awards/award.png"
-              alt="Award"
-            />
-          </div>
-          <div class="award-item">
-            <img
-              src="../assets/awards/award.png"
-              alt="Award"
-            />
-          </div>
-          <div class="award-item">
+          <div
+            v-for="award in awardItems"
+            :key="award.id"
+            class="award-item scroll-reveal"
+            :style="{ '--reveal-delay': `${award.revealDelay}ms` }"
+          >
             <img
               src="../assets/awards/award.png"
               alt="Award"
@@ -60,7 +57,74 @@
 </template>
 
 <script setup lang="ts">
+import { onBeforeUnmount, onMounted, ref } from 'vue';
 import SectionTitle from './SectionTitle.vue';
+
+const awardItems = [
+  { id: 'award-1', revealDelay: 0 },
+  { id: 'award-2', revealDelay: 90 },
+  { id: 'award-3', revealDelay: 180 },
+  { id: 'award-4', revealDelay: 270 },
+];
+
+const awardsStackRef = ref<HTMLElement | null>(null);
+const awardsRef = ref<HTMLElement | null>(null);
+const awardsShift = ref(72);
+const awardsOpacity = ref(0);
+
+let rafId = 0;
+
+const updateAwardsState = () => {
+  const awardsStack = awardsStackRef.value;
+
+  if (!awardsStack) {
+    return;
+  }
+
+  if (window.scrollY <= 0) {
+    awardsShift.value = 0;
+    awardsOpacity.value = 1;
+    return;
+  }
+
+  const { top } = awardsStack.getBoundingClientRect();
+  const awards = awardsRef.value;
+  const viewportHeight = window.innerHeight;
+  const revealStart = viewportHeight * 0.58;
+  const revealEnd = viewportHeight / 3;
+  const maxShift = awards ? Math.max(24, window.innerWidth - awards.getBoundingClientRect().width) : 72;
+  const minShift = 0;
+  const clampedTop = Math.min(Math.max(top, revealEnd), revealStart);
+  const progress = (clampedTop - revealEnd) / (revealStart - revealEnd);
+  awardsShift.value = minShift + (maxShift - minShift) * progress;
+  awardsOpacity.value = 1 - progress;
+};
+
+const onScroll = () => {
+  if (rafId) {
+    return;
+  }
+
+  rafId = window.requestAnimationFrame(() => {
+    rafId = 0;
+    updateAwardsState();
+  });
+};
+
+onMounted(() => {
+  updateAwardsState();
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', onScroll);
+  window.removeEventListener('resize', onScroll);
+
+  if (rafId) {
+    window.cancelAnimationFrame(rafId);
+  }
+});
 </script>
 
 <style scoped lang="scss">
@@ -70,8 +134,18 @@ import SectionTitle from './SectionTitle.vue';
 
 .awards-stack {
   position: relative;
-  width: 100vw;
+  width: 100%;
   padding-top: 70px;
+  overflow-x: clip;
+}
+
+.awards--motion {
+  opacity: var(--awards-opacity, 1);
+  transform: translateX(var(--awards-shift, 72px));
+  transition:
+    opacity 0.18s linear,
+    transform 0.18s linear;
+  will-change: opacity, transform;
 }
 
 .awards-background {
@@ -80,6 +154,7 @@ import SectionTitle from './SectionTitle.vue';
   background: #26c6d0;
   z-index: 0;
   border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
 }
 
 .awards {
@@ -123,6 +198,7 @@ import SectionTitle from './SectionTitle.vue';
   justify-items: center;
   align-items: center;
   gap: 37px 19px;
+  overflow: visible;
 }
 
 .award-item {

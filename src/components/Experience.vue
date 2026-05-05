@@ -19,7 +19,7 @@
       molestie faucibus.
     </p>
 
-    <figure class="experience-clients">
+    <figure class="experience-clients scroll-reveal">
       <img
         class="experience-clients__image"
         src="../assets/digisalad-client-list.png"

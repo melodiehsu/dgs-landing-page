@@ -1,5 +1,5 @@
 <template>
-  <article class="service-card">
+  <article class="service-card scroll-reveal">
     <div
       v-if="imgSrc"
       class="service-card__image-wrapper"
@@ -35,12 +35,14 @@ withDefaults(
     content: string;
     imgAlt?: string;
     imgSrc?: string;
+    revealDelay?: number;
     title: string;
   }>(),
   {
     ctaLabel: '',
     imgAlt: '',
     imgSrc: '',
+    revealDelay: 0,
   },
 );
 </script>

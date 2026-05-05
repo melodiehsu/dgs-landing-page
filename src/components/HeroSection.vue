@@ -30,14 +30,14 @@
     </div>
 
     <div
-      class="hero-decoration"
+      class="hero-decoration scroll-reveal scroll-reveal--hero-decoration"
       aria-hidden="true"
     >
       <span class="hero-decoration-line"></span>
       <span class="hero-decoration-text">DIGITAL AGENCY</span>
     </div>
 
-    <div class="hero-content">
+    <div class="hero-content scroll-reveal scroll-reveal--hero-content">
       <a
         class="digisalad-logo-white"
         href="/"
@@ -247,6 +247,14 @@ onBeforeUnmount(() => {
   white-space: nowrap;
 }
 
+.hero-decoration.scroll-reveal {
+  transform: translateY(-24px) rotate(-90deg) translateX(-25%);
+}
+
+.hero-decoration.scroll-reveal.is-revealed {
+  transform: rotate(-90deg) translateX(-25%);
+}
+
 .hero-decoration-line {
   width: 113px;
   height: 2px;
@@ -388,6 +396,14 @@ onBeforeUnmount(() => {
       }
     }
   }
+}
+
+.hero-content.scroll-reveal {
+  transform: translateY(-24px);
+}
+
+.hero-content.scroll-reveal.is-revealed {
+  transform: translateY(0);
 }
 
 @media (max-width: 960px) {
