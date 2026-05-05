@@ -88,7 +88,7 @@ let fadeTimer: ReturnType<typeof setTimeout> | undefined;
 let player: YouTubePlayer | undefined;
 const videoId = '8_4JRK4QkqU';
 const apiScriptId = 'youtube-iframe-api';
-const youtubeSrc = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&disablekb=1&fs=0&playsinline=1&rel=0&controls=0&enablejsapi=1&origin=${encodeURIComponent(window.location.origin)}`;
+const youtubeSrc = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&disablekb=1&fs=0&playsinline=1&rel=0&controls=0&cc_load_policy=0&enablejsapi=1&origin=${encodeURIComponent(window.location.origin)}`;
 
 const coverHidden = ref(false);
 
@@ -112,6 +112,7 @@ const createPlayer = () => {
     playerVars: {
       autoplay: 1,
       controls: 0,
+      cc_load_policy: 0,
       disablekb: 1,
       fs: 0,
       origin: window.location.origin,
