@@ -21,6 +21,7 @@
             <a
               class="digisalad-logo-white"
               href="/"
+              :tabindex="TAB_INDEX_LOGO"
             >
               <div class="digisalad-logo-white__image">
                 <img
@@ -35,6 +36,7 @@
               class="close-button"
               type="button"
               aria-label="Close menu"
+              :tabindex="TAB_INDEX_CLOSE"
               @click="$emit('close')"
             >
               <svg
@@ -50,9 +52,10 @@
             <nav aria-label="Site sections">
               <ul class="menu-grid">
                 <li>
-                  <a
+                <a
                     class="menu-card-link"
                     href="#about"
+                    :tabindex="TAB_INDEX_ABOUT"
                     @click="$emit('close')"
                   >
                     <div class="menu-card menu-card--about">
@@ -75,9 +78,10 @@
                 </li>
 
                 <li>
-                  <a
+                <a
                     class="menu-card-link"
                     href="#careers"
+                    :tabindex="TAB_INDEX_CAREERS"
                     @click="$emit('close')"
                   >
                     <div class="menu-card menu-card--careers">
@@ -100,9 +104,10 @@
                 </li>
 
                 <li>
-                  <a
+                <a
                     class="menu-card-link"
                     href="#services"
+                    :tabindex="TAB_INDEX_SERVICES"
                     @click="$emit('close')"
                   >
                     <div class="menu-card menu-card--services">
@@ -125,9 +130,10 @@
                 </li>
 
                 <li>
-                  <a
+                <a
                     class="menu-card-link"
                     href="#works"
+                    :tabindex="TAB_INDEX_WORKS"
                     @click="$emit('close')"
                   >
                     <div class="menu-card menu-card--works">
@@ -150,9 +156,10 @@
                 </li>
 
                 <li>
-                  <a
+                <a
                     class="menu-card-link"
                     href="#insights"
+                    :tabindex="TAB_INDEX_INSIGHTS"
                     @click="$emit('close')"
                   >
                     <div class="menu-card menu-card--insights">
@@ -175,9 +182,10 @@
                 </li>
 
                 <li>
-                  <a
+                <a
                     class="menu-card-link"
                     href="#contact"
+                    :tabindex="TAB_INDEX_CONTACT"
                     @click="$emit('close')"
                   >
                     <div class="menu-card menu-card--contact">
@@ -212,6 +220,14 @@ const emit = defineEmits<{
 
 const panelRef = ref<HTMLElement | null>(null);
 const closeButtonRef = ref<HTMLButtonElement | null>(null);
+const TAB_INDEX_CLOSE = 1;
+const TAB_INDEX_ABOUT = 2;
+const TAB_INDEX_CAREERS = 3;
+const TAB_INDEX_SERVICES = 4;
+const TAB_INDEX_WORKS = 5;
+const TAB_INDEX_INSIGHTS = 6;
+const TAB_INDEX_CONTACT = 7;
+const TAB_INDEX_LOGO = 8;
 let previousActiveElement: HTMLElement | null = null;
 let previousBodyOverflow = '';
 
@@ -230,8 +246,7 @@ const getFocusableElements = () => {
 };
 
 const focusFirstElement = () => {
-  const [firstFocusable] = getFocusableElements();
-  (firstFocusable ?? closeButtonRef.value ?? panelRef.value)?.focus();
+  (closeButtonRef.value ?? getFocusableElements()[0] ?? panelRef.value)?.focus();
 };
 
 const lockBodyScroll = () => {

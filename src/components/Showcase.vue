@@ -8,6 +8,7 @@
         class="last-page-button"
         type="button"
         aria-label="Previous showcase"
+        :tabindex="TAB_INDEX_PREV"
         @click="prevShowcase"
       >
         <span
@@ -40,6 +41,7 @@
         class="next-page-button"
         type="button"
         aria-label="Next showcase"
+        :tabindex="TAB_INDEX_NEXT"
         @click="nextShowcase"
       >
         <span
@@ -116,6 +118,8 @@ const showcaseItems = [
 
 const activeIndex = ref(0);
 const transitionDirection = ref<'prev' | 'next'>('next');
+const TAB_INDEX_NEXT = 2;
+const TAB_INDEX_PREV = 3;
 
 const activeShowcase = computed(() => showcaseItems[activeIndex.value]);
 const showcaseTransitionName = computed(() =>

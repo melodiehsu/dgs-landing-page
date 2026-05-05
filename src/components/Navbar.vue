@@ -18,7 +18,7 @@
     <div class="nav-actions">
       <a
         class="nav-cta"
-        href="/"
+        href="#start-your-project"
       >
         START YOUR PROJECT
       </a>

@@ -14,6 +14,7 @@
       <button
         class="showcase-content__cta"
         type="button"
+        :tabindex="TAB_INDEX_VIEW_PROJECT"
       >
         <span>view project</span>
         <span
@@ -51,6 +52,7 @@ const props = defineProps<{
 }>();
 
 const isCompactLayout = computed(() => props.showcaseDescription.length < 260);
+const TAB_INDEX_VIEW_PROJECT = 1;
 </script>
 
 <style scoped lang="scss">
