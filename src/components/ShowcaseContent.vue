@@ -259,9 +259,6 @@ const isCompactLayout = computed(() => props.showcaseDescription.length < 260);
     right: clamp(-20px, -2vw, -8px);
     bottom: clamp(-28px, -2.5vw, -16px);
     padding: 28px 20px;
-  }
-
-  .showcase-content__cta {
     position: relative;
     justify-self: center;
     transform: translateX(-10px);
@@ -276,7 +273,6 @@ const isCompactLayout = computed(() => props.showcaseDescription.length < 260);
 
 @media (max-width: 480px) {
   .showcase-content {
-    width: 100%;
     grid-column: 1 / span 3;
     gap: 24px;
     min-height: auto;

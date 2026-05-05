@@ -359,7 +359,6 @@ onBeforeUnmount(() => {
   width: fit-content;
 
   h1 {
-    position: relative;
     font-size: 38px;
     font-weight: 700;
     line-height: 70px; /* 184.211% */
