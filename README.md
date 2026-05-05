@@ -1,48 +1,82 @@
-# dgs-landing-page
+# DigiSalad Landing Page
 
-This template should help get you started developing with Vue 3 in Vite.
+A polished Vue 3 landing page for DigiSalad, built with Vite and designed for motion-rich storytelling, scroll-based reveals, and responsive interaction.
 
-## Recommended IDE Setup
+## Tech Stack
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- Vue 3
+- Vite
+- TypeScript
+- SCSS
+- GitHub Pages
 
-## Recommended Browser Setup
+## Features
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+- Responsive landing page layout
+- Animated hero section with embedded video background
+- Scroll reveal transitions for sections and paragraphs
+- Showcase carousel with directional transitions
+- Side menu modal with slide-in / slide-out motion
+- Custom SEO metadata and social sharing tags
 
-## Type Support for `.vue` Imports in TS
+## Prerequisites
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+- Node.js `20.19+` or `22.12+`
+- `pnpm` `8.15.5`
 
-## Customize configuration
+## Setup
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+Install dependencies:
 
-## Project Setup
-
-```sh
+```bash
 pnpm install
 ```
 
-### Compile and Hot-Reload for Development
+Run the local dev server:
 
-```sh
+```bash
 pnpm dev
 ```
 
-### Type-Check, Compile and Minify for Production
+Create a production build:
 
-```sh
+```bash
 pnpm build
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+Preview the production build locally:
 
-```sh
+```bash
+pnpm preview
+```
+
+## Linting
+
+Run the available lint checks:
+
+```bash
 pnpm lint
 ```
+
+## Project Structure
+
+- `src/layouts/Index.vue` - page layout and section order
+- `src/components/` - reusable landing page sections
+- `src/styles/` - global styles, reset, and theme tokens
+- `public/` - static files such as `lettuce.png`
+
+## Deployment
+
+This project is configured for GitHub Pages.
+
+- Vite base path is set to `/dgs-landing-page/`
+- GitHub Actions workflow is defined in `.github/workflows/static.yml`
+- Pushing to `main` triggers a build and deployment
+
+If the repository name changes, update `base` in `vite.config.ts` and the deployment URLs in `index.html`.
+
+## Notes
+
+- The page uses scroll reveal behavior for text and selected blocks.
+- Primary and secondary colors are centralized in `src/styles/theme.ts` and CSS variables in `src/styles/global.scss`.
+- The favicon uses `public/lettuce.png`.
