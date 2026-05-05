@@ -179,9 +179,9 @@ onBeforeUnmount(() => {
   left: 50%;
   z-index: 0;
   border: 0;
-  width: max(112vw, 200vh);
-  height: max(63vw, 112vh);
-  transform: translate(-50%, -50%);
+  width: max(124vw, 220vh);
+  height: max(70vw, 125vh);
+  transform: translate(-50%, -40%);
   pointer-events: none;
 }
 
@@ -421,8 +421,8 @@ onBeforeUnmount(() => {
   }
 
   #hero-video-player {
-    width: max(130vw, 180vh);
-    height: max(74vw, 110vh);
+    width: max(144vw, 200vh);
+    height: max(82vw, 122vh);
   }
 
   .hero-content {
@@ -463,8 +463,8 @@ onBeforeUnmount(() => {
   }
 
   #hero-video-player {
-    width: max(180vw, 170vh);
-    height: max(102vw, 106vh);
+    width: max(200vw, 190vh);
+    height: max(114vw, 118vh);
   }
 
   .hero-decoration {
