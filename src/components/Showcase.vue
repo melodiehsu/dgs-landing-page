@@ -141,12 +141,14 @@ const nextShowcase = () => {
 </script>
 
 <style scoped lang="scss">
+@use '../styles/mixins' as *;
+
 .showcase-section {
   position: relative;
   width: 100%;
   padding: clamp(120px, 13vw, 250px) 0;
-  border-bottom-left-radius: 50px;
-  border-bottom-right-radius: 50px;
+  border-bottom-left-radius: var(--radius-section);
+  border-bottom-right-radius: var(--radius-section);
   overflow: hidden;
   color: #fff;
   scroll-margin-top: -90px;
@@ -188,20 +190,14 @@ const nextShowcase = () => {
   justify-content: center;
   flex: 0 0 auto;
   box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-  transition:
-    transform 0.32s ease,
-    box-shadow 0.32s ease,
-    filter 0.32s ease;
-}
+  @include transition-surface;
 
-.last-page-button:hover,
-.next-page-button:hover,
-.last-page-button:focus-visible,
-.next-page-button:focus-visible {
-  transform: translateY(-2px);
-  background: #fff;
-  border-color: var(--color-primary);
-  box-shadow: 0 12px 28px rgba(7, 43, 53, 0.12);
+  @include hover-surface(
+    $transform: translateY(-2px),
+    $background: #fff,
+    $border-color: var(--color-primary),
+    $box-shadow: var(--shadow-elevated)
+  );
 }
 
 .button-icon {
@@ -218,7 +214,7 @@ const nextShowcase = () => {
   height: 100%;
   object-fit: contain;
   display: block;
-  transition: filter 0.32s ease;
+  transition: filter var(--duration-interactive) ease;
 }
 
 .next-page-button .button-icon {
@@ -304,8 +300,8 @@ const nextShowcase = () => {
 .showcase-pagination :deep(.showcase-pagination-slide-down-enter-active),
 .showcase-pagination :deep(.showcase-pagination-slide-down-leave-active) {
   transition:
-    opacity 0.32s ease,
-    transform 0.32s ease;
+    opacity var(--duration-interactive) ease,
+    transform var(--duration-interactive) ease;
 }
 
 .showcase-pagination :deep(.showcase-pagination-slide-up-enter-from),
@@ -333,8 +329,8 @@ const nextShowcase = () => {
 .showcase-slide-right-enter-active,
 .showcase-slide-right-leave-active {
   transition:
-    opacity 0.38s ease,
-    transform 0.38s ease;
+    opacity var(--duration-emphasis) ease,
+    transform var(--duration-emphasis) ease;
 }
 
 .showcase-slide-left-enter-from,
@@ -386,8 +382,8 @@ const nextShowcase = () => {
 @media (max-width: 480px) {
   .showcase-section {
     padding: 120px 0 120px;
-    border-bottom-left-radius: 28px;
-    border-bottom-right-radius: 28px;
+    border-bottom-left-radius: var(--radius-card-sm);
+    border-bottom-right-radius: var(--radius-card-sm);
   }
 
   .showcase-stage {

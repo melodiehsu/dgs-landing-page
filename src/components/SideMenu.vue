@@ -317,15 +317,15 @@ onBeforeUnmount(() => {
 .side-menu-modal {
   position: fixed;
   inset: 0;
-  z-index: 1000;
+  z-index: var(--z-modal);
   overflow: hidden;
 }
 
 .side-menu-slide-enter-active,
 .side-menu-slide-leave-active {
   transition:
-    transform 0.42s ease,
-    opacity 0.42s ease;
+    transform var(--duration-modal) ease,
+    opacity var(--duration-modal) ease;
 }
 
 .side-menu-slide-enter-from,
@@ -383,9 +383,9 @@ onBeforeUnmount(() => {
   background: transparent;
   cursor: pointer;
   transition:
-    transform 0.32s ease,
-    background-color 0.32s ease,
-    box-shadow 0.32s ease;
+    transform var(--duration-interactive) ease,
+    background-color var(--duration-interactive) ease,
+    box-shadow var(--duration-interactive) ease;
 }
 
 .close-button svg {
@@ -411,7 +411,7 @@ onBeforeUnmount(() => {
   position: relative;
   display: inline-block;
   margin-left: 14px;
-  border-radius: 8px;
+  border-radius: var(--radius-tiny);
 }
 
 .digisalad-logo-white:hover,
@@ -451,20 +451,20 @@ onBeforeUnmount(() => {
   display: block;
   color: inherit;
   text-decoration: none;
-  border-radius: 30px;
+  border-radius: var(--radius-card);
 }
 
 .menu-card-link:hover .menu-card,
 .menu-card-link:focus-visible .menu-card {
   transform: translateY(calc(var(--card-translate-y, 0px) - 4px));
-  box-shadow: 0 14px 32px rgba(17, 31, 53, 0.14);
+  box-shadow: var(--shadow-menu-card);
   filter: saturate(1.04) brightness(1.02);
 }
 
 .menu-card {
   position: relative;
   height: var(--card-height, 220px);
-  border-radius: 30px;
+  border-radius: var(--radius-card);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -476,9 +476,9 @@ onBeforeUnmount(() => {
   transform: translateY(var(--card-translate-y, 0px));
   box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   transition:
-    transform 0.32s ease,
-    box-shadow 0.32s ease,
-    filter 0.32s ease;
+    transform var(--duration-interactive) ease,
+    box-shadow var(--duration-interactive) ease,
+    filter var(--duration-interactive) ease;
 }
 
 .menu-card::before {

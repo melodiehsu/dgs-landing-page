@@ -144,8 +144,8 @@ onBeforeUnmount(() => {
   opacity: var(--awards-opacity, 1);
   transform: translateX(var(--awards-shift, 72px));
   transition:
-    opacity 0.18s linear,
-    transform 0.18s linear;
+    opacity var(--duration-follow) linear,
+    transform var(--duration-follow) linear;
   will-change: opacity, transform;
 }
 
@@ -154,8 +154,8 @@ onBeforeUnmount(() => {
   inset: 50% 0 0;
   background: var(--color-primary);
   z-index: 0;
-  border-top-left-radius: 50px;
-  border-top-right-radius: 50px;
+  border-top-left-radius: var(--radius-section);
+  border-top-right-radius: var(--radius-section);
 }
 
 .awards {
@@ -165,9 +165,9 @@ onBeforeUnmount(() => {
   width: clamp(960px, 93vw, 1440px);
   margin: 0 0 0 auto;
   padding: 65px 70px;
-  border-top-left-radius: 50px;
-  border-bottom-left-radius: 50px;
-  border-bottom-right-radius: 50px;
+  border-top-left-radius: var(--radius-section);
+  border-bottom-left-radius: var(--radius-section);
+  border-bottom-right-radius: var(--radius-section);
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -228,7 +228,7 @@ onBeforeUnmount(() => {
     width: 100%;
     padding: 48px 32px;
     gap: 28px;
-    border-top-right-radius: 50px;
+    border-top-right-radius: var(--radius-section);
     flex-direction: column;
     align-items: stretch;
   }
@@ -266,10 +266,10 @@ onBeforeUnmount(() => {
 
   .awards {
     padding: 32px 20px;
-    border-top-right-radius: 36px;
-    border-top-left-radius: 36px;
-    border-bottom-left-radius: 36px;
-    border-bottom-right-radius: 36px;
+    border-top-right-radius: var(--radius-panel-sm);
+    border-top-left-radius: var(--radius-panel-sm);
+    border-bottom-left-radius: var(--radius-panel-sm);
+    border-bottom-right-radius: var(--radius-panel-sm);
     flex-direction: column;
     align-items: stretch;
   }

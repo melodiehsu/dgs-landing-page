@@ -1,0 +1,80 @@
+@mixin transition-lift {
+  transition:
+    transform var(--duration-interactive) ease,
+    box-shadow var(--duration-interactive) ease;
+}
+
+@mixin transition-lift-filter {
+  transition:
+    transform var(--duration-interactive) ease,
+    box-shadow var(--duration-interactive) ease,
+    filter var(--duration-interactive) ease;
+}
+
+@mixin transition-surface {
+  transition:
+    transform var(--duration-interactive) ease,
+    background-color var(--duration-interactive) ease,
+    box-shadow var(--duration-interactive) ease,
+    color var(--duration-interactive) ease,
+    border-color var(--duration-interactive) ease,
+    filter var(--duration-interactive) ease;
+}
+
+@mixin hover-surface(
+  $transform: null,
+  $background: null,
+  $color: null,
+  $border-color: null,
+  $box-shadow: null,
+  $filter: null
+) {
+  &:hover,
+  &:focus-visible {
+    @if $transform != null {
+      transform: $transform;
+    }
+
+    @if $background != null {
+      background: $background;
+    }
+
+    @if $color != null {
+      color: $color;
+    }
+
+    @if $border-color != null {
+      border-color: $border-color;
+    }
+
+    @if $box-shadow != null {
+      box-shadow: $box-shadow;
+    }
+
+    @if $filter != null {
+      filter: $filter;
+    }
+  }
+}
+
+@mixin hover-child(
+  $selector,
+  $transform: null,
+  $box-shadow: null,
+  $filter: null
+) {
+  &:hover #{$selector},
+  &:focus-visible #{$selector} {
+    @if $transform != null {
+      transform: $transform;
+    }
+
+    @if $box-shadow != null {
+      box-shadow: $box-shadow;
+    }
+
+    @if $filter != null {
+      filter: $filter;
+    }
+  }
+}

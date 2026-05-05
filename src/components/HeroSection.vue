@@ -181,7 +181,8 @@ onBeforeUnmount(() => {
   border: 0;
   width: max(124vw, 220vh);
   height: max(70vw, 125vh);
-  transform: translate(-50%, -40%);
+  transform: translate(-50%, -40%) scale(1.08);
+  transform-origin: center;
   pointer-events: none;
 }
 
@@ -192,8 +193,8 @@ onBeforeUnmount(() => {
   color: #fff;
   letter-spacing: 2px;
   overflow: hidden;
-  border-bottom-left-radius: 50px;
-  border-bottom-right-radius: 50px;
+  border-bottom-left-radius: var(--radius-section);
+  border-bottom-right-radius: var(--radius-section);
 
   &::after {
     content: '';
@@ -286,8 +287,8 @@ onBeforeUnmount(() => {
   cursor: pointer;
   transform: translateX(-50%);
   transition:
-    transform 0.32s ease,
-    filter 0.32s ease;
+    transform var(--duration-interactive) ease,
+    filter var(--duration-interactive) ease;
 }
 
 .hero-cta:hover,
@@ -305,7 +306,7 @@ onBeforeUnmount(() => {
   position: relative;
   width: clamp(65px, 4.5vw, 65px);
   aspect-ratio: 1 / 1;
-  transition: transform 0.32s ease;
+  transition: transform var(--duration-interactive) ease;
 }
 
 .hero-cta-icon img {
@@ -314,8 +315,8 @@ onBeforeUnmount(() => {
   width: 100%;
   height: 100%;
   transition:
-    filter 0.32s ease,
-    transform 0.32s ease;
+    filter var(--duration-interactive) ease,
+    transform var(--duration-interactive) ease;
 }
 
 .hero-cta:hover .hero-cta-icon img,
@@ -327,10 +328,10 @@ onBeforeUnmount(() => {
 .digisalad-logo-white {
   display: block;
   margin-bottom: 32px;
-  border-radius: 8px;
+  border-radius: var(--radius-tiny);
   transition:
-    transform 0.32s ease,
-    filter 0.32s ease;
+    transform var(--duration-interactive) ease,
+    filter var(--duration-interactive) ease;
 }
 
 .digisalad-logo-white:hover,
@@ -408,8 +409,8 @@ onBeforeUnmount(() => {
 @media (max-width: 960px) {
   .hero {
     height: min(820px, 92vh);
-    border-bottom-left-radius: 40px;
-    border-bottom-right-radius: 40px;
+    border-bottom-left-radius: var(--radius-panel);
+    border-bottom-right-radius: var(--radius-panel);
 
     h1 span::after {
       bottom: clamp(12px, 1.2vw, 16px);
@@ -423,6 +424,7 @@ onBeforeUnmount(() => {
   #hero-video-player {
     width: max(144vw, 200vh);
     height: max(82vw, 122vh);
+    transform: translate(-50%, -55%) scale(1.07);
   }
 
   .hero-content {
@@ -453,8 +455,8 @@ onBeforeUnmount(() => {
 @media (max-width: 480px) {
   .hero {
     height: min(680px, 88vh);
-    border-bottom-left-radius: 28px;
-    border-bottom-right-radius: 28px;
+    border-bottom-left-radius: var(--radius-card-sm);
+    border-bottom-right-radius: var(--radius-card-sm);
 
     h1 span::after {
       height: 6px;
@@ -465,6 +467,7 @@ onBeforeUnmount(() => {
   #hero-video-player {
     width: max(200vw, 190vh);
     height: max(114vw, 118vh);
+    transform: translate(-50%, -54%) scale(1.06);
   }
 
   .hero-decoration {

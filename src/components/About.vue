@@ -94,6 +94,8 @@ const handlePlay = () => {
 </script>
 
 <style scoped lang="scss">
+@use '../styles/mixins' as *;
+
 .about-section {
   width: 100%;
   scroll-margin-top: 100px;
@@ -137,21 +139,17 @@ const handlePlay = () => {
   background: transparent;
   cursor: pointer;
   border: 1px solid #f2f2f2;
-  transition:
-    background-color 0.32s ease,
-    box-shadow 0.32s ease,
-    transform 0.32s ease;
-}
+  @include transition-surface;
 
-.video-overlay:hover,
-.video-overlay:focus-visible {
-  background: rgba(38, 198, 208, 0.08);
-  box-shadow: inset 0 0 0 2px rgba(38, 198, 208, 0.45);
-}
+  @include hover-surface(
+    $background: rgba(38, 198, 208, 0.08),
+    $box-shadow: inset 0 0 0 2px rgba(38, 198, 208, 0.45)
+  );
 
-.video-overlay:hover .video-overlay-icon,
-.video-overlay:focus-visible .video-overlay-icon {
-  transform: scale(1.05);
+  &:hover .video-overlay-icon,
+  &:focus-visible .video-overlay-icon {
+    transform: scale(1.05);
+  }
 }
 
 .video-overlay-icon {
@@ -159,7 +157,7 @@ const handlePlay = () => {
   place-items: center;
   width: clamp(72px, 9vw, 112.514px);
   height: clamp(72px, 9vw, 113.181px);
-  transition: transform 0.32s ease;
+  transition: transform var(--duration-interactive) ease;
 }
 
 .about-content {
@@ -181,7 +179,7 @@ const handlePlay = () => {
   align-self: center;
   border: 2px solid transparent;
   appearance: none;
-  border-radius: 1px;
+  border-radius: var(--radius-plain);
   background: var(--color-primary);
   color: #fff;
   font-size: 16px;
@@ -192,19 +190,15 @@ const handlePlay = () => {
   cursor: pointer;
   padding: 33px 24.53px;
   box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-  transition:
-    transform 0.32s ease,
-    box-shadow 0.32s ease,
-    filter 0.32s ease;
-}
+  @include transition-surface;
 
-.about-cta:hover,
-.about-cta:focus-visible {
-  transform: translateY(-2px);
-  background: #fff;
-  border-color: var(--color-primary);
-  color: var(--color-primary);
-  box-shadow: 0 10px 24px rgba(38, 198, 208, 0.14);
+  @include hover-surface(
+    $transform: translateY(-2px),
+    $background: #fff,
+    $color: var(--color-primary),
+    $border-color: var(--color-primary),
+    $box-shadow: var(--shadow-primary-soft)
+  );
 }
 
 .about-cta:hover .decoration-line,

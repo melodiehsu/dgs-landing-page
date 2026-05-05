@@ -54,6 +54,8 @@ const isCompactLayout = computed(() => props.showcaseDescription.length < 260);
 </script>
 
 <style scoped lang="scss">
+@use '../styles/mixins' as *;
+
 .showcase-content {
   position: relative;
   width: 100%;
@@ -74,11 +76,9 @@ const isCompactLayout = computed(() => props.showcaseDescription.length < 260);
   max-width: 554px;
   aspect-ratio: 1 / 1;
   height: auto;
-  border-radius: 50px;
+  border-radius: var(--radius-section);
   overflow: hidden;
-  transition:
-    transform 0.32s ease,
-    box-shadow 0.32s ease;
+  @include transition-lift;
 
   img {
     position: absolute;
@@ -94,7 +94,7 @@ const isCompactLayout = computed(() => props.showcaseDescription.length < 260);
   .showcase-content__media:has(.showcase-content__cta:focus-visible)
     .showcase-content__image-wrapper {
     transform: scale(1.01);
-    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.16);
+    box-shadow: var(--shadow-card-strong);
   }
 }
 
@@ -116,7 +116,7 @@ const isCompactLayout = computed(() => props.showcaseDescription.length < 260);
   justify-content: center;
   border: 2px solid transparent;
   appearance: none;
-  border-radius: 1px;
+  border-radius: var(--radius-plain);
   background: var(--color-primary);
   color: #fff;
   width: fit-content;
@@ -130,19 +130,15 @@ const isCompactLayout = computed(() => props.showcaseDescription.length < 260);
   text-transform: uppercase;
   white-space: nowrap;
   box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-  transition:
-    transform 0.32s ease,
-    box-shadow 0.32s ease,
-    filter 0.32s ease;
-}
+  @include transition-surface;
 
-.showcase-content__cta:hover,
-.showcase-content__cta:focus-visible {
-  transform: translateY(-3px);
-  background: #fff;
-  border-color: var(--color-primary);
-  color: var(--color-primary);
-  box-shadow: 0 14px 28px rgba(38, 198, 208, 0.14);
+  @include hover-surface(
+    $transform: translateY(-3px),
+    $background: #fff,
+    $color: var(--color-primary),
+    $border-color: var(--color-primary),
+    $box-shadow: var(--shadow-primary)
+  );
 }
 
 .showcase-content__cta:hover .showcase-content__cta-line,

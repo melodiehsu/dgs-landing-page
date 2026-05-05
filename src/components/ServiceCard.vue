@@ -48,6 +48,8 @@ withDefaults(
 </script>
 
 <style scoped lang="scss">
+@use '../styles/mixins' as *;
+
 .service-card {
   display: flex;
   flex-direction: column;
@@ -99,9 +101,7 @@ withDefaults(
   display: flex;
   align-items: center;
   justify-content: center;
-  transition:
-    transform 0.32s ease,
-    box-shadow 0.32s ease;
+  @include transition-lift;
 
   img {
     width: 50%;
@@ -114,7 +114,7 @@ withDefaults(
   .service-card:has(.service-card__cta:hover) .service-card__image-wrapper,
   .service-card:has(.service-card__cta:focus-visible) .service-card__image-wrapper {
     transform: translateY(-3px) scale(1.03);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.14);
+    box-shadow: var(--shadow-card);
   }
 }
 
@@ -122,13 +122,13 @@ withDefaults(
   .service-card:hover .service-card__image-wrapper,
   .service-card:focus-within .service-card__image-wrapper {
     transform: translateY(-3px) scale(1.03);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.14);
+    box-shadow: var(--shadow-card);
   }
 }
 
 .service-card__cta {
   color: #fff;
-  border-radius: 30px;
+  border-radius: var(--radius-card);
   border: 2px solid #fff;
   background-color: transparent;
   appearance: none;
@@ -139,19 +139,14 @@ withDefaults(
   font-weight: 700;
   letter-spacing: 2.222px;
   box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-  transition:
-    transform 0.32s ease,
-    box-shadow 0.32s ease,
-    background-color 0.32s ease,
-    color 0.32s ease;
-}
+  @include transition-surface;
 
-.service-card__cta:hover,
-.service-card__cta:focus-visible {
-  transform: translateY(-2px);
-  background-color: #fff;
-  color: var(--color-primary);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+  @include hover-surface(
+    $transform: translateY(-2px),
+    $background: #fff,
+    $color: var(--color-primary),
+    $box-shadow: var(--shadow-card-strong)
+  );
 }
 
 @media (max-width: 960px) {

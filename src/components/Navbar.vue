@@ -79,6 +79,8 @@ onBeforeUnmount(() => {
 </script>
 
 <style scoped lang="scss">
+@use '../styles/mixins' as *;
+
 nav {
   position: fixed;
   top: 0;
@@ -90,7 +92,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   background: transparent;
-  z-index: 10;
+  z-index: var(--z-nav);
   transition: background 0.25s ease;
 }
 
@@ -100,12 +102,12 @@ nav {
 
 .nav-logo {
   display: inline-flex;
-  border-radius: 10px;
+  border-radius: var(--radius-small);
   opacity: 1;
   transition:
-    opacity 0.32s ease,
-    transform 0.32s ease,
-    filter 0.32s ease;
+    opacity var(--duration-interactive) ease,
+    transform var(--duration-interactive) ease,
+    filter var(--duration-interactive) ease;
   margin-left: 40px;
 }
 
@@ -140,10 +142,7 @@ nav {
   background: transparent;
   color: #fff;
   cursor: pointer;
-  transition:
-    color 0.32s ease,
-    transform 0.32s ease,
-    filter 0.32s ease;
+  @include transition-lift-filter;
 }
 
 .nav--scrolled .menu-button {
@@ -172,7 +171,7 @@ nav {
   min-width: clamp(200px, 14vw, 200px);
   height: 41.026px;
   border: 0;
-  border-radius: 24px;
+  border-radius: var(--radius-control);
   background: linear-gradient(90deg, #4ee5ea 3.94%, #26d0a8 94.73%);
   color: #fff;
   cursor: pointer;
@@ -182,20 +181,21 @@ nav {
   letter-spacing: 1.143px;
   text-decoration: none;
   box-shadow: 0 0 0 0 rgba(255, 188, 88, 0);
-  transition:
-    transform 0.32s ease,
-    box-shadow 0.32s ease,
-    filter 0.32s ease;
-}
+  @include transition-surface;
 
-.nav-cta:hover,
-.nav-cta:focus-visible {
-  transform: translateY(-2px);
-  background: #fff;
-  color: var(--color-primary);
-  box-shadow:
-    inset 0 0 0 2px var(--color-primary),
-    0 10px 24px rgba(14, 47, 61, 0.12);
+  @include hover-surface(
+    $transform: translateY(-2px),
+    $background: #fff,
+    $color: var(--color-primary),
+    $border-color: var(--color-primary)
+  );
+
+  &:hover,
+  &:focus-visible {
+    box-shadow:
+      inset 0 0 0 2px var(--color-primary),
+      var(--shadow-nav-hover);
+  }
 }
 
 @media (max-width: 960px) {

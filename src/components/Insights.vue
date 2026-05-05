@@ -133,8 +133,8 @@ onBeforeUnmount(() => {
     right: 0;
     background: var(--color-primary);
     z-index: 0;
-    border-bottom-right-radius: 50px;
-    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: var(--radius-section);
+    border-bottom-left-radius: var(--radius-section);
   }
 }
 
@@ -142,8 +142,8 @@ onBeforeUnmount(() => {
   opacity: var(--insights-opacity, 1);
   transform: translateX(var(--insights-shift, 72px));
   transition:
-    opacity 0.18s linear,
-    transform 0.18s linear;
+    opacity var(--duration-follow) linear,
+    transform var(--duration-follow) linear;
   will-change: opacity, transform;
 }
 
@@ -153,9 +153,9 @@ onBeforeUnmount(() => {
   margin: 0 auto 0 0;
   overflow: hidden;
   background: var(--color-primary);
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
-  border-bottom-left-radius: 50px;
+  border-top-right-radius: var(--radius-section);
+  border-bottom-right-radius: var(--radius-section);
+  border-bottom-left-radius: var(--radius-section);
   display: grid;
   grid-template-columns: 300px minmax(0, 1fr);
   align-items: center;
@@ -275,7 +275,7 @@ onBeforeUnmount(() => {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 40px;
     padding: 72px 40px;
-    border-top-left-radius: 50px;
+    border-top-left-radius: var(--radius-section);
   }
 
   .insights-profile {
@@ -300,16 +300,16 @@ onBeforeUnmount(() => {
 @media (max-width: 480px) {
   .insights-stack::after {
     height: 34%;
-    border-bottom-right-radius: 28px;
+    border-bottom-right-radius: var(--radius-card-sm);
   }
 
   .insights {
     gap: 28px;
     padding: 48px 20px;
-    border-top-left-radius: 28px;
-    border-top-right-radius: 28px;
-    border-bottom-right-radius: 28px;
-    border-bottom-left-radius: 28px;
+    border-top-left-radius: var(--radius-card-sm);
+    border-top-right-radius: var(--radius-card-sm);
+    border-bottom-right-radius: var(--radius-card-sm);
+    border-bottom-left-radius: var(--radius-card-sm);
   }
 
   .insights-profile {

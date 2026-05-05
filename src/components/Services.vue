@@ -196,7 +196,7 @@ const services = [
   align-items: center;
   justify-content: center;
   border: 0;
-  border-radius: 1px;
+  border-radius: var(--radius-plain);
   color: #fff;
   font-size: 16px;
   font-weight: 700;
@@ -227,8 +227,8 @@ const services = [
   text-decoration: none;
   white-space: nowrap;
   transition:
-    transform 0.32s ease,
-    filter 0.32s ease;
+    transform var(--duration-interactive) ease,
+    filter var(--duration-interactive) ease;
 
   &::after {
     content: '';
@@ -239,7 +239,7 @@ const services = [
     height: clamp(6px, 0.8vw, 10px);
     background: #ffbc58;
     z-index: -1;
-    transition: height 0.32s ease;
+    transition: height var(--duration-interactive) ease;
   }
 
   &:hover,

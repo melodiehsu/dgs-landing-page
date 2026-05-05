@@ -1,6 +1,29 @@
 :root {
   --color-primary: #26c6d0;
   --color-secondary: #ee6c8a;
+  --duration-interactive: 0.32s;
+  --duration-emphasis: 0.38s;
+  --duration-modal: 0.42s;
+  --duration-follow: 0.18s;
+  --duration-reveal: 0.7s;
+  --radius-section: 50px;
+  --radius-panel: 40px;
+  --radius-panel-sm: 36px;
+  --radius-card: 30px;
+  --radius-card-sm: 28px;
+  --radius-control: 24px;
+  --radius-small: 10px;
+  --radius-tiny: 8px;
+  --radius-plain: 1px;
+  --shadow-primary-soft: 0 10px 24px rgba(38, 198, 208, 0.14);
+  --shadow-primary: 0 14px 28px rgba(38, 198, 208, 0.14);
+  --shadow-card: 0 12px 24px rgba(0, 0, 0, 0.14);
+  --shadow-card-strong: 0 18px 36px rgba(0, 0, 0, 0.16);
+  --shadow-elevated: 0 12px 28px rgba(7, 43, 53, 0.12);
+  --shadow-menu-card: 0 14px 32px rgba(17, 31, 53, 0.14);
+  --shadow-nav-hover: 0 10px 24px rgba(14, 47, 61, 0.12);
+  --z-nav: 10;
+  --z-modal: 1000;
 }
 
 body {
@@ -13,8 +36,8 @@ body {
   opacity: 0;
   transform: translateY(-24px);
   transition:
-    opacity 0.7s ease,
-    transform 0.7s ease;
+    opacity var(--duration-reveal) ease,
+    transform var(--duration-reveal) ease;
   transition-delay: var(--reveal-delay, 0ms);
   will-change: opacity, transform;
 }
@@ -37,12 +60,12 @@ body {
 
 :where(a, button, [role='button']) {
   transition:
-    transform 0.32s ease,
-    box-shadow 0.32s ease,
-    color 0.32s ease,
-    background-color 0.32s ease,
-    opacity 0.32s ease,
-    filter 0.32s ease;
+    transform var(--duration-interactive) ease,
+    box-shadow var(--duration-interactive) ease,
+    color var(--duration-interactive) ease,
+    background-color var(--duration-interactive) ease,
+    opacity var(--duration-interactive) ease,
+    filter var(--duration-interactive) ease;
 }
 
 :where(a, button, [role='button']):focus-visible {
