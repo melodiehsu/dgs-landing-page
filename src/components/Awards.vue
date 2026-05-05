@@ -162,7 +162,7 @@ onBeforeUnmount(() => {
   position: relative;
   z-index: 1;
   background: #fff;
-  width: min(93%, 1440px);
+  width: clamp(960px, 93vw, 1440px);
   margin: 0 0 0 auto;
   padding: 65px 70px;
   border-top-left-radius: 50px;
@@ -176,7 +176,7 @@ onBeforeUnmount(() => {
 }
 
 .awards-info {
-  width: min(30%, 420px);
+  width: clamp(300px, 30vw, 420px);
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -192,9 +192,9 @@ onBeforeUnmount(() => {
 }
 
 .awards-gallery {
-  width: 45%;
+  width: clamp(480px, 45vw, 650px);
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-template-rows: repeat(2, max-content);
   justify-items: center;
   align-items: center;
@@ -204,7 +204,8 @@ onBeforeUnmount(() => {
 
 .award-item {
   position: relative;
-  width: clamp(180px, 20vw, 283px);
+  width: 100%;
+  max-width: 283px;
   aspect-ratio: 283 / 108;
 
   img {
@@ -253,7 +254,8 @@ onBeforeUnmount(() => {
   }
 
   .award-item {
-    width: clamp(200px, 24vw, 283px);
+    width: 100%;
+    max-width: 283px;
   }
 }
 

@@ -342,7 +342,7 @@ onBeforeUnmount(() => {
 
 .wrapper {
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background:
     linear-gradient(180deg, rgba(30, 46, 84, 0.48), rgba(38, 198, 208, 0.72)),
