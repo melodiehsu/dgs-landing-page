@@ -150,7 +150,7 @@ withDefaults(
 .service-card__cta:focus-visible {
   transform: translateY(-2px);
   background-color: #fff;
-  color: #26c6d0;
+  color: var(--color-primary);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
 }
 

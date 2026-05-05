@@ -117,7 +117,7 @@ const isCompactLayout = computed(() => props.showcaseDescription.length < 260);
   border: 2px solid transparent;
   appearance: none;
   border-radius: 1px;
-  background: #26c6d0;
+  background: var(--color-primary);
   color: #fff;
   width: fit-content;
   padding: clamp(40px, 4.167vw, 60px) clamp(20px, 2.292vw, 33px);
@@ -140,8 +140,8 @@ const isCompactLayout = computed(() => props.showcaseDescription.length < 260);
 .showcase-content__cta:focus-visible {
   transform: translateY(-3px);
   background: #fff;
-  border-color: #26c6d0;
-  color: #26c6d0;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
   box-shadow: 0 14px 28px rgba(38, 198, 208, 0.14);
 }
 
@@ -179,7 +179,12 @@ const isCompactLayout = computed(() => props.showcaseDescription.length < 260);
   font-weight: 700;
   letter-spacing: 3px;
   z-index: 0;
-  background: linear-gradient(transparent 72%, #26c6d0 72%, #26c6d0 88%, transparent 88%);
+  background: linear-gradient(
+    transparent 72%,
+    var(--color-primary) 72%,
+    var(--color-primary) 88%,
+    transparent 88%
+  );
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
   white-space: normal;
@@ -192,7 +197,7 @@ const isCompactLayout = computed(() => props.showcaseDescription.length < 260);
     width: clamp(8px, 0.694vw, 10px);
     height: clamp(8px, 0.694vw, 10px);
     border-radius: 50%;
-    background: #ee6c8a;
+    background: var(--color-secondary);
     z-index: -1;
     transform: translateY(-50%);
   }

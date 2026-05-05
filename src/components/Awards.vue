@@ -21,8 +21,8 @@
           <div class="awards-section-title">
             <SectionTitle
               title="awards"
-              wave-color="#26C6D0"
-              dot-color="#EE6C8A"
+              :wave-color="PRIMARY_COLOR"
+              :dot-color="SECONDARY_COLOR"
               :wave-loop-count="1"
               :wave-offset-x="8"
               :wave-offset-y="10"
@@ -59,6 +59,7 @@
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted, ref } from 'vue';
 import SectionTitle from './SectionTitle.vue';
+import { PRIMARY_COLOR, SECONDARY_COLOR } from '@/styles/theme';
 
 const awardItems = [
   { id: 'award-1', revealDelay: 0 },
@@ -151,7 +152,7 @@ onBeforeUnmount(() => {
 .awards-background {
   position: absolute;
   inset: 50% 0 0;
-  background: #26c6d0;
+  background: var(--color-primary);
   z-index: 0;
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;

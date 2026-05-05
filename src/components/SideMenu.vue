@@ -346,7 +346,7 @@ onBeforeUnmount(() => {
   height: 100vh;
   background:
     linear-gradient(180deg, rgba(30, 46, 84, 0.48), rgba(38, 198, 208, 0.72)),
-    linear-gradient(180deg, #585880 3.61%, #26c6d0 95.7%);
+    linear-gradient(180deg, #585880 3.61%, var(--color-primary) 95.7%);
   overflow: hidden;
   color: #fff;
 }
@@ -537,13 +537,13 @@ onBeforeUnmount(() => {
     width: clamp(6px, 0.72vw, 10px);
     height: clamp(6px, 0.72vw, 10px);
     border-radius: 50%;
-    background: #ee6c8a;
+    background: var(--color-secondary);
     transform: translateY(-100%);
   }
 }
 
 .menu-card--works .menu-card__title::after {
-  background: #26c6d0;
+  background: var(--color-primary);
 }
 
 .menu-card__eyebrow {
@@ -666,7 +666,7 @@ onBeforeUnmount(() => {
 }
 
 .menu-card--contact .menu-card__title {
-  color: #26c6d0;
+  color: var(--color-primary);
 }
 
 .row-card-content {

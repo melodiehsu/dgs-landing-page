@@ -4,8 +4,8 @@
       <SectionTitle
         id="about"
         title="about digisalad"
-        wave-color="#26C6D0"
-        dot-color="#EE6C8A"
+        :wave-color="PRIMARY_COLOR"
+        :dot-color="SECONDARY_COLOR"
         :wave-loop-count="2"
         :scroll-margin-top="120"
       />
@@ -76,6 +76,7 @@
 
 <script setup lang="ts">
 import SectionTitle from '@/components/SectionTitle.vue';
+import { PRIMARY_COLOR, SECONDARY_COLOR } from '@/styles/theme';
 import { computed, ref } from 'vue';
 import playSymbol from '../assets/video/media-play-symbol.png';
 
@@ -181,7 +182,7 @@ const handlePlay = () => {
   border: 2px solid transparent;
   appearance: none;
   border-radius: 1px;
-  background: #26c6d0;
+  background: var(--color-primary);
   color: #fff;
   font-size: 16px;
   font-weight: 700;
@@ -201,8 +202,8 @@ const handlePlay = () => {
 .about-cta:focus-visible {
   transform: translateY(-2px);
   background: #fff;
-  border-color: #26c6d0;
-  color: #26c6d0;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
   box-shadow: 0 10px 24px rgba(38, 198, 208, 0.14);
 }
 

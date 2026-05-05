@@ -131,7 +131,7 @@ onBeforeUnmount(() => {
     height: calc(50% + 1px);
     top: -1px;
     right: 0;
-    background: #26c6d0;
+    background: var(--color-primary);
     z-index: 0;
     border-bottom-right-radius: 50px;
     border-bottom-left-radius: 50px;
@@ -152,7 +152,7 @@ onBeforeUnmount(() => {
   width: min(92%, 1440px);
   margin: 0 auto 0 0;
   overflow: hidden;
-  background: #26c6d0;
+  background: var(--color-primary);
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
   border-bottom-left-radius: 50px;

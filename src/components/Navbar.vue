@@ -192,9 +192,9 @@ nav {
 .nav-cta:focus-visible {
   transform: translateY(-2px);
   background: #fff;
-  color: #26c6d0;
+  color: var(--color-primary);
   box-shadow:
-    inset 0 0 0 2px #26c6d0,
+    inset 0 0 0 2px var(--color-primary),
     0 10px 24px rgba(14, 47, 61, 0.12);
 }
 

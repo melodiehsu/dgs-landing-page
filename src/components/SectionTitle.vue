@@ -49,6 +49,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
+import { PRIMARY_COLOR, SECONDARY_COLOR } from '@/styles/theme';
 
 const props = withDefaults(
   defineProps<{
@@ -62,13 +63,13 @@ const props = withDefaults(
     waveLoopCount?: number;
   }>(),
   {
-    dotColor: '#ee6c8a',
+    dotColor: SECONDARY_COLOR,
     dotOffsetX: 22,
     id: '',
     scrollMarginTop: 0,
     title: '',
     titleColor: '#262626',
-    waveColor: '#26c6d0',
+    waveColor: PRIMARY_COLOR,
     waveLoopCount: 2,
   },
 );

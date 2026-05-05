@@ -181,7 +181,7 @@ const nextShowcase = () => {
   height: clamp(42px, 3.6vw, 53px);
   border-radius: 50%;
   border: 2px solid transparent;
-  background: #26c6d0;
+  background: var(--color-primary);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -200,7 +200,7 @@ const nextShowcase = () => {
 .next-page-button:focus-visible {
   transform: translateY(-2px);
   background: #fff;
-  border-color: #26c6d0;
+  border-color: var(--color-primary);
   box-shadow: 0 12px 28px rgba(7, 43, 53, 0.12);
 }
 
@@ -269,7 +269,7 @@ const nextShowcase = () => {
     top: 50%;
     width: 1px;
     height: 72%;
-    background: #26c6d0;
+    background: var(--color-primary);
     transform: translate(-50%, -50%) rotate(45deg);
     transform-origin: center;
   }

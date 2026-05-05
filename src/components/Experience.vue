@@ -3,8 +3,8 @@
     <SectionTitle
       id="experience"
       title="our brand experience"
-      wave-color="#26C6D0"
-      dot-color="#EE6C8A"
+      :wave-color="PRIMARY_COLOR"
+      :dot-color="SECONDARY_COLOR"
       :wave-loop-count="3"
       :scroll-margin-top="120"
     />
@@ -31,6 +31,7 @@
 
 <script setup lang="ts">
 import SectionTitle from './SectionTitle.vue';
+import { PRIMARY_COLOR, SECONDARY_COLOR } from '@/styles/theme';
 </script>
 
 <style scoped lang="scss">

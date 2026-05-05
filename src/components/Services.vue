@@ -5,7 +5,7 @@
         id="ingredients"
         title="our ingredients"
         wave-color="#585880"
-        dot-color="#EE6C8A"
+        :dot-color="SECONDARY_COLOR"
         titleColor="#fff"
         :dotOffsetX="7"
         :wave-loop-count="2"
@@ -59,6 +59,7 @@
 <script setup lang="ts">
 import SectionTitle from './SectionTitle.vue';
 import ServiceCard from './ServiceCard.vue';
+import { SECONDARY_COLOR } from '@/styles/theme';
 
 const ingredientImage = (fileName: string) =>
   new URL(`../assets/ingredients/${fileName}`, import.meta.url).href;
@@ -150,7 +151,7 @@ const services = [
 
 <style scoped lang="scss">
 .services-section {
-  background: #26c6d0;
+  background: var(--color-primary);
   width: 100%;
   box-sizing: border-box;
 }

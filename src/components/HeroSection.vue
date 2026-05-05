@@ -378,7 +378,7 @@ onBeforeUnmount(() => {
         width: clamp(8px, 0.694vw, 10px);
         height: clamp(8px, 0.694vw, 10px);
         border-radius: 50%;
-        background: #ee6c8a;
+        background: var(--color-secondary);
       }
 
       &::after {
@@ -388,7 +388,7 @@ onBeforeUnmount(() => {
         bottom: 18px;
         left: 0;
         height: 8px;
-        background: #26c6d0;
+        background: var(--color-primary);
         z-index: -1;
         transform: translateX(-6px);
       }
