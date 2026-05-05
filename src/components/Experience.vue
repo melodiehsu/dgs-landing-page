@@ -22,7 +22,7 @@
     <figure class="experience-clients scroll-reveal">
       <img
         class="experience-clients__image"
-        src="../assets/digisalad-client-list.png"
+        src="../assets/experience/digisalad-client-list.png"
         alt="Digisalad client list"
       />
     </figure>

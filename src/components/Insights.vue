@@ -18,7 +18,7 @@
         <div class="insights-profile">
           <div class="insights-avatar">
             <img
-              src="../assets/tony-avatar.png"
+              src="../assets/insights/tony-avatar.png"
               alt=""
             />
           </div>
@@ -29,7 +29,7 @@
         <div class="insights-quote">
           <div class="insights-quote-mark">
             <img
-              src="../assets/left-quote.png"
+              src="../assets/insights/left-quote.png"
               alt=""
             />
           </div>
@@ -170,7 +170,7 @@ onBeforeUnmount(() => {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url('../assets/insights-bg.png');
+  background-image: url('../assets/insights/insights-bg.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

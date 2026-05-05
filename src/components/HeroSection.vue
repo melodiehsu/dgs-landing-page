@@ -67,7 +67,7 @@
         aria-hidden="true"
       >
         <img
-          src="../assets/salad-image.png"
+          src="../assets/hero/salad-image.png"
           alt=""
           width="65"
           height="65"
@@ -319,8 +319,7 @@ onBeforeUnmount(() => {
 
 .hero-cta:hover .hero-cta-icon img,
 .hero-cta:focus-visible .hero-cta-icon img {
-  filter:
-    drop-shadow(0 0 8px rgba(255, 188, 88, 0.7))
+  filter: drop-shadow(0 0 8px rgba(255, 188, 88, 0.7))
     drop-shadow(0 0 18px rgba(255, 188, 88, 0.38));
 }
 

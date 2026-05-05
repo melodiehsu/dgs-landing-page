@@ -15,7 +15,7 @@
           aria-hidden="true"
         >
           <img
-            src="../assets/arrow.png"
+            src="../assets/showcase/arrow.png"
             alt=""
           />
         </span>
@@ -47,7 +47,7 @@
           aria-hidden="true"
         >
           <img
-            src="../assets/arrow.png"
+            src="../assets/showcase/arrow.png"
             alt=""
           />
         </span>
@@ -76,7 +76,7 @@
 
 <script setup lang="ts">
 import { computed, ref } from 'vue';
-import highlightedShowcase from '../assets/highlighted-showcase.png';
+import highlightedShowcase from '../assets/showcase/highlighted-showcase.png';
 import ShowcaseContent from './ShowcaseContent.vue';
 
 const showcaseItems = [
@@ -118,14 +118,13 @@ const activeIndex = ref(0);
 const transitionDirection = ref<'prev' | 'next'>('next');
 
 const activeShowcase = computed(() => showcaseItems[activeIndex.value]);
-const showcaseTransitionName = computed(
-  () => (transitionDirection.value === 'prev' ? 'showcase-slide-right' : 'showcase-slide-left'),
+const showcaseTransitionName = computed(() =>
+  transitionDirection.value === 'prev' ? 'showcase-slide-right' : 'showcase-slide-left',
 );
-const showcasePaginationTransitionName = computed(
-  () =>
-    transitionDirection.value === 'prev'
-      ? 'showcase-pagination-slide-up'
-      : 'showcase-pagination-slide-down',
+const showcasePaginationTransitionName = computed(() =>
+  transitionDirection.value === 'prev'
+    ? 'showcase-pagination-slide-up'
+    : 'showcase-pagination-slide-down',
 );
 
 const formatPaginationNumber = (value: number) => String(value).padStart(2, '0');
@@ -240,15 +239,8 @@ const nextShowcase = () => {
 .last-page-button:focus-visible .button-icon img,
 .next-page-button:hover .button-icon img,
 .next-page-button:focus-visible .button-icon img {
-  filter:
-    brightness(0)
-    saturate(100%)
-    invert(59%)
-    sepia(71%)
-    saturate(508%)
-    hue-rotate(138deg)
-    brightness(94%)
-    contrast(92%);
+  filter: brightness(0) saturate(100%) invert(59%) sepia(71%) saturate(508%) hue-rotate(138deg)
+    brightness(94%) contrast(92%);
 }
 
 .last-page-button {
