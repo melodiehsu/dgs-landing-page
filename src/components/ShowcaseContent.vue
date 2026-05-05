@@ -1,5 +1,8 @@
 <template>
-  <article class="showcase-content">
+  <article
+    class="showcase-content"
+    :class="{ 'showcase-content--compact': isCompactLayout }"
+  >
     <div class="showcase-content__media">
       <div class="showcase-content__image-wrapper">
         <img
@@ -37,13 +40,17 @@
 </template>
 
 <script setup lang="ts">
-defineProps<{
+import { computed } from 'vue';
+
+const props = defineProps<{
   imageSrc: string;
   imageAlt: string;
   title: string;
   showcaseName: string;
   showcaseDescription: string;
 }>();
+
+const isCompactLayout = computed(() => props.showcaseDescription.length < 260);
 </script>
 
 <style scoped lang="scss">
@@ -57,6 +64,10 @@ defineProps<{
   grid-column: 2;
 }
 
+.showcase-content--compact {
+  gap: clamp(20px, 2.6vw, 44px);
+}
+
 .showcase-content__image-wrapper {
   position: relative;
   width: 100%;
@@ -65,7 +76,9 @@ defineProps<{
   height: auto;
   border-radius: 50px;
   overflow: hidden;
-  transition: transform 0.32s ease, box-shadow 0.32s ease;
+  transition:
+    transform 0.32s ease,
+    box-shadow 0.32s ease;
 
   img {
     position: absolute;
@@ -78,7 +91,8 @@ defineProps<{
 
 @supports selector(.showcase-content__media:has(.showcase-content__cta:hover)) {
   .showcase-content__media:has(.showcase-content__cta:hover) .showcase-content__image-wrapper,
-  .showcase-content__media:has(.showcase-content__cta:focus-visible) .showcase-content__image-wrapper {
+  .showcase-content__media:has(.showcase-content__cta:focus-visible)
+    .showcase-content__image-wrapper {
     transform: scale(1.01);
     box-shadow: 0 18px 36px rgba(0, 0, 0, 0.16);
   }
@@ -203,6 +217,11 @@ defineProps<{
     width: 100%;
     grid-template-columns: 1fr;
     gap: 32px;
+    min-height: clamp(820px, 88vw, 980px);
+  }
+
+  .showcase-content--compact {
+    gap: 24px;
   }
 
   .showcase-content__media {
@@ -241,6 +260,18 @@ defineProps<{
     bottom: clamp(-28px, -2.5vw, -16px);
     padding: 28px 20px;
   }
+
+  .showcase-content__cta {
+    position: relative;
+    justify-self: center;
+    transform: translateX(-10px);
+  }
+}
+
+@media (max-width: 720px) {
+  .showcase-content {
+    min-height: clamp(640px, 86vw, 760px);
+  }
 }
 
 @media (max-width: 480px) {
@@ -248,11 +279,10 @@ defineProps<{
     width: 100%;
     grid-column: 1 / span 3;
     gap: 24px;
+    min-height: auto;
   }
 
   .showcase-content__cta {
-    // right: clamp(8px, 2vw, 12px);
-    // bottom: clamp(8px, 2vw, 12px);
     padding: 18px 16px;
     font-size: 13px;
   }
@@ -278,8 +308,8 @@ defineProps<{
     align-items: center;
   }
 
-  .showcase-content__cta {
-    position: relative;
+  .showcase-content--compact {
+    gap: 18px;
   }
 }
 </style>

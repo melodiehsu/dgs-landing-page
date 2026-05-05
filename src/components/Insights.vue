@@ -3,8 +3,18 @@
     id="insights"
     class="insights-section"
   >
-    <div class="insights-stack">
-      <div class="insights">
+    <div
+      ref="insightsStackRef"
+      class="insights-stack"
+    >
+      <div
+        ref="insightsRef"
+        class="insights insights--motion"
+        :style="{
+          '--insights-shift': `${insightsShift}px`,
+          '--insights-opacity': String(insightsOpacity),
+        }"
+      >
         <div class="insights-profile">
           <div class="insights-avatar">
             <img
@@ -37,7 +47,70 @@
   </section>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { onBeforeUnmount, onMounted, ref } from 'vue';
+
+const insightsStackRef = ref<HTMLElement | null>(null);
+const insightsRef = ref<HTMLElement | null>(null);
+const insightsShift = ref(72);
+const insightsOpacity = ref(0);
+
+let rafId = 0;
+
+const updateInsightsState = () => {
+  const insightsStack = insightsStackRef.value;
+
+  if (!insightsStack) {
+    return;
+  }
+
+  if (window.scrollY <= 0) {
+    insightsShift.value = 0;
+    insightsOpacity.value = 1;
+    return;
+  }
+
+  const { top } = insightsStack.getBoundingClientRect();
+  const insights = insightsRef.value;
+  const viewportHeight = window.innerHeight;
+  const revealStart = viewportHeight * 0.58;
+  const revealEnd = viewportHeight / 3;
+  const maxShift = insights
+    ? Math.max(24, window.innerWidth - insights.getBoundingClientRect().width)
+    : 72;
+  const clampedTop = Math.min(Math.max(top, revealEnd), revealStart);
+  const progress = (clampedTop - revealEnd) / (revealStart - revealEnd);
+
+  insightsShift.value = -(maxShift * progress);
+  insightsOpacity.value = 1 - progress;
+};
+
+const onScroll = () => {
+  if (rafId) {
+    return;
+  }
+
+  rafId = window.requestAnimationFrame(() => {
+    rafId = 0;
+    updateInsightsState();
+  });
+};
+
+onMounted(() => {
+  updateInsightsState();
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', onScroll);
+  window.removeEventListener('resize', onScroll);
+
+  if (rafId) {
+    window.cancelAnimationFrame(rafId);
+  }
+});
+</script>
 
 <style scoped lang="scss">
 .insights-section {
@@ -49,18 +122,29 @@
 .insights-stack {
   position: relative;
   width: 100%;
+  overflow-x: clip;
 
   &::after {
     content: '';
     position: absolute;
     width: 100%;
-    height: 50%;
-    top: 0;
+    height: calc(50% + 1px);
+    top: -1px;
     right: 0;
     background: #26c6d0;
     z-index: 0;
     border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
   }
+}
+
+.insights--motion {
+  opacity: var(--insights-opacity, 1);
+  transform: translateX(var(--insights-shift, 72px));
+  transition:
+    opacity 0.18s linear,
+    transform 0.18s linear;
+  will-change: opacity, transform;
 }
 
 .insights {

@@ -372,8 +372,9 @@ const nextShowcase = () => {
 
   .showcase-stage {
     width: min(94%, 1440px);
-    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-columns: auto minmax(0, 1fr) auto;
     gap: 24px;
+    min-height: clamp(940px, 96vw, 1120px);
   }
 
   .next-page-button {
@@ -414,14 +415,6 @@ const nextShowcase = () => {
   .next-page-button {
     grid-row: 3;
     grid-column: 2;
-  }
-
-  .last-page-button {
-    transform: translateX(30px);
-  }
-
-  .next-page-button {
-    transform: translateX(-30px);
   }
 }
 </style>
